@@ -2,6 +2,8 @@
 import { lazy, Suspense } from 'react'
 // react router dom
 import { Navigate, useRoutes } from 'react-router-dom'
+// components
+import { SplashScreen } from 'src/components/loading'
 // paths
 import { paths } from './paths';
 // pages
@@ -12,7 +14,7 @@ export default function Router() {
         {
             path: paths.home,
             element: (
-                <Suspense fallback={<div>loading</div>}>
+                <Suspense fallback={<SplashScreen />}>
                     <HomePage />
                 </Suspense>
             )
