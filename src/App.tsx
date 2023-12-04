@@ -1,3 +1,6 @@
+// routes
+import Router from 'src/routes'
+
 function App() {
 
   const charAt = `
@@ -8,9 +11,7 @@ function App() {
   console.info(charAt)
 
   return (
-    <h1>
-      Simple React Typescript Tailwind Sample
-    </h1>
+    <Router />
   );
 }
 
