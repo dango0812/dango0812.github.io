@@ -1,4 +1,8 @@
 export const paths = {
     home: '/',
-    page404: '/404'
+    aboutMe: '#',
+    Experience: '/Experience',
+    projects: '/projects',
+    links: '/links',
+    page404: '/404',
 }
