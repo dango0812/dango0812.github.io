@@ -42,6 +42,7 @@
         "no-restricted-exports": 0,
         "react/no-children-prop": 0,
         "react/react-in-jsx-scope": 0,
+        "import/no-extraneous-dependencies": 0,
         "jsx-a11y/anchor-is-valid": 0,
         "react/no-array-index-key": 0,
         "no-promise-executor-return": 0,
