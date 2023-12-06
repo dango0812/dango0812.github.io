@@ -9,7 +9,7 @@ function HomeHero() {
                 <h1 className="font-bold text-2xl">
                     Dango0812
                 </h1>
-                <h2 className="text-base whitespace-nowrap">Frontend Developer dango0812 portfolio🫠</h2>
+                <h2 className="text-base whitespace-nowrap">Frontend Developer 🫠</h2>
             </div>
         </section>
     )
