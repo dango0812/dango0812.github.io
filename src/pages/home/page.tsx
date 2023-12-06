@@ -1,15 +1,40 @@
+import { useEffect, useState } from "react"
+// components
+import Card from "src/components/card"
 // sections
 import HomeHero from "src/sections/home/home-hero"
 // hooks
 import useTabs from 'src/hooks/useTabs'
 
+interface ProfileItem {
+    label: string;
+    value: string;
+}
+
 export default function HomePage() {
     const { currentTab, onChangeTab } = useTabs('About Me')
+    const [profile, setProfile] = useState<ProfileItem[]>([]);
 
     const HOME_TABS = [
         {
             value: 'About Me',
-            component: <>tab0</>
+            component: (
+                <Card>
+                    <h1 className="text-2xl font-bold tracking-tighter text-gray-700">
+                        프로필
+                    </h1>
+                    {profile.map((item) => (
+                        <div className="flex">
+                            <p className="mt-2 font-normal text-gray-700 dark:text-gray-400">
+                                {item.label}:
+                            </p>
+                            <p className="mt-2 font-normal text-gray-700 dark:text-gray-400">
+                                &nbsp;{item.value}
+                            </p>
+                        </div>
+                    ))}
+                </Card>
+            )
         },
         {
             value: 'Experience',
@@ -25,6 +50,16 @@ export default function HomePage() {
         },
     ];
 
+    const getProfile = () => {
+        fetch("/api/v1/getProfile")
+        .then((response) => response.json())
+        .then((data) => setProfile(data))
+    }
+    
+    useEffect(() => {
+        getProfile();
+    }, []);
+
     return (
         <main className="bg-white overflow-hidden">
             <HomeHero />
@@ -33,10 +68,10 @@ export default function HomePage() {
                     {HOME_TABS.map((tab) => (
                         <li key={tab.value} className="me-2 cursor-pointer">
                             <h3 className={`inline-block px-4 py-2 mb-1 rounded-lg
-                                    text-${tab.value === currentTab ? 'orange-500' : 'zinc-600'}
-                                    font-${tab.value === currentTab && 'bold'} 
-                                    hover:bg-${tab.value !== currentTab && 'gray-100'} 
-                                    hover:text-${tab.value !== currentTab && 'zinc-800'}
+                                    ${tab.value === currentTab ? 'text-orange-500' : 'text-zinc-500'}
+                                    ${tab.value === currentTab && 'font-bold'}
+                                    ${tab.value !== currentTab && 'hover:bg-gray-100'}
+                                    ${tab.value !== currentTab && 'hover:text-zinc-800'}
                                 `}
                             >
                                 {tab.value}
@@ -48,7 +83,7 @@ export default function HomePage() {
 
             {HOME_TABS.map((tab) => {
                 const isMatched = tab.value === currentTab;
-                return isMatched && <section>{tab.component}</section>
+                return isMatched && <section key={tab.value} className="max-w-screen-lg mx-auto pt-8">{tab.component}</section>
             })}
         </main>
     );
