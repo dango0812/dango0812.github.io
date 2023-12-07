@@ -16,14 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
           
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.4.0
         with:
-          node-version: '19.9.0'
+          version: lastest-8
+          standalone: true
 
-      - name: Install Dependencies
+      - name: pnpm install
         run: |
-          npm install
+          pnpm install
 
       - name: Build
         run: |
