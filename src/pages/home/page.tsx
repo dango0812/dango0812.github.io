@@ -12,7 +12,7 @@ interface ProfileItem {
 }
 
 export default function HomePage() {
-    const { currentTab, onChangeTab } = useTabs('About Me')
+    const { currentTab } = useTabs('About Me')
     const [profile, setProfile] = useState<ProfileItem[]>([]);
 
     const HOME_TABS = [
