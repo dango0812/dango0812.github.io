@@ -1,12 +1,13 @@
 import React from 'react'
 
 type Props = {
-    children: React.ReactNode
+    children: React.ReactNode,
+    className?: string
 }
 
-export default function Card({ children }: Props) {
+export default function Card({ children, className }: Props) {
     return (
-        <div className='block py-4 px-6 max-w-sm bg-white border border-gray-200 rounded-lg shadow'>
+        <div className={`block py-4 px-6 max-w-sm bg-white border border-gray-200 rounded-lg shadow ${className}`}>
             {children}
         </div>
     )
