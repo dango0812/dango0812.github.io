@@ -64,5 +64,6 @@
   },
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "homepage": "https://dango0812.github.io"
 }
