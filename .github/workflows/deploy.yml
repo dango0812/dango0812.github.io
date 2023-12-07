@@ -5,8 +5,11 @@ name: Deploy
 on:
   # manual trigger
   workflow_dispatch:
-  release:
-  types: [created]
+  push:
+    # use branch setting
+    branches:
+    - 'main'
+    - 'dev-*'
 
   # auto trigger
   #push:
