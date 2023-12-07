@@ -31,5 +31,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main
-          publish_dir: ./build
+          folder: ./build
           github_token: ${{ secrets.GITHUB_TOKEN }}
