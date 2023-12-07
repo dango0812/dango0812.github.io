@@ -19,21 +19,23 @@ export default function HomePage() {
         {
             value: 'About Me',
             component: (
-                <Card>
-                    <h1 className="text-2xl font-bold tracking-tighter text-gray-700">
-                        프로필
-                    </h1>
-                    {profile.map((item) => (
-                        <div className="flex">
-                            <p className="mt-2 font-normal text-gray-700 dark:text-gray-400">
-                                {item.label}:
-                            </p>
-                            <p className="mt-2 font-normal text-gray-700 dark:text-gray-400">
-                                &nbsp;{item.value}
-                            </p>
-                        </div>
-                    ))}
-                </Card>
+                <div className="flex flex-wrap justify-center gap-4">
+                    <Card className="w-full">
+                        <h1 className="text-2xl font-bold tracking-tighter text-gray-700">
+                            프로필
+                        </h1>
+                        {profile.map((item) => (
+                            <div className="flex">
+                                <p className="mt-2 font-normal text-gray-700 dark:text-gray-400">
+                                    {item.label}:
+                                </p>
+                                <p className="mt-2 font-normal text-gray-700 dark:text-gray-400">
+                                    &nbsp;{item.value}
+                                </p>
+                            </div>
+                        ))}
+                    </Card>
+                </div>
             )
         },
         {
@@ -61,9 +63,9 @@ export default function HomePage() {
     }, []);
 
     return (
-        <main className="bg-white overflow-hidden">
+        <main className="bg-white">
             <HomeHero />
-            <section className="border-b border-gray-200 text-sm font-medium text-center pt-10">
+            <section className="border-b border-gray-200 text-sm font-medium text-center pt-8">
                 <ul className="-mb-px flex justify-center items-center">
                     {HOME_TABS.map((tab) => (
                         <li key={tab.value} className="me-2 cursor-pointer">
@@ -83,7 +85,7 @@ export default function HomePage() {
 
             {HOME_TABS.map((tab) => {
                 const isMatched = tab.value === currentTab;
-                return isMatched && <section key={tab.value} className="max-w-screen-lg mx-auto pt-8">{tab.component}</section>
+                return isMatched && <section key={tab.value} className="max-w-screen-lg mx-auto py-6">{tab.component}</section>
             })}
         </main>
     );
