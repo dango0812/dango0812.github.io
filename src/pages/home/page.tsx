@@ -1,42 +1,16 @@
-import { useEffect, useState } from "react"
-// components
-import Card from "src/components/card"
 // sections
 import HomeHero from "src/sections/home/home-hero"
 // hooks
 import useTabs from 'src/hooks/useTabs'
-
-interface ProfileItem {
-    label: string;
-    value: string;
-}
+import AboutMeTabView from "src/sections/home/tab/about-me-tab-view";
 
 export default function HomePage() {
     const { currentTab } = useTabs('About Me')
-    const [profile, setProfile] = useState<ProfileItem[]>([]);
 
     const HOME_TABS = [
         {
             value: 'About Me',
-            component: (
-                <div className="flex flex-wrap justify-center gap-4">
-                    <Card className="w-full">
-                        <h1 className="text-2xl font-bold tracking-tighter text-gray-700">
-                            프로필
-                        </h1>
-                        {profile.map((item) => (
-                            <div className="flex">
-                                <p className="mt-2 font-normal text-gray-700 dark:text-gray-400">
-                                    {item.label}:
-                                </p>
-                                <p className="mt-2 font-normal text-gray-700 dark:text-gray-400">
-                                    &nbsp;{item.value}
-                                </p>
-                            </div>
-                        ))}
-                    </Card>
-                </div>
-            )
+            component: <AboutMeTabView />
         },
         {
             value: 'Experience',
@@ -51,16 +25,6 @@ export default function HomePage() {
             component: <>tab2</>
         },
     ];
-
-    const getProfile = () => {
-        fetch("https://my-json-server.typicode.com/dango0812/portfolio-db/getProfile")
-        .then((response) => response.json())
-        .then((data) => setProfile(data))
-    }
-    
-    useEffect(() => {
-        getProfile();
-    }, []);
 
     return (
         <main className="bg-white">
