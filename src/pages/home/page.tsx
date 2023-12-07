@@ -53,7 +53,7 @@ export default function HomePage() {
     ];
 
     const getProfile = () => {
-        fetch("/api/v1/getProfile")
+        fetch("https://my-json-server.typicode.com/dango0812/portfolio-db/getProfile")
         .then((response) => response.json())
         .then((data) => setProfile(data))
     }
