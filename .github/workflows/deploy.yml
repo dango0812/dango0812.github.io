@@ -5,16 +5,11 @@ name: Deploy
 on:
   # manual trigger
   workflow_dispatch:
-  push:
-    # use branch setting
-    branches:
-    - 'main'
-    - 'dev-*'
 
   # auto trigger
-  #push:
-  #  branches:
-  #    - develop # use build branch
+  push:
+    branches:
+    - develop # use build branch
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
