@@ -2,15 +2,15 @@
 import HomeHero from "src/sections/home/home-hero"
 // hooks
 import useTabs from 'src/hooks/useTabs'
-import AboutMeTabView from "src/sections/home/tab/about-me-tab-view";
+import { ResumeView } from "src/sections/home/tab/resume/view";
 
 export default function HomePage() {
-    const { currentTab } = useTabs('About Me')
+    const { currentTab } = useTabs('Resume')
 
     const HOME_TABS = [
         {
-            value: 'About Me',
-            component: <AboutMeTabView />
+            value: 'Resume',
+            component: <ResumeView />
         },
         {
             value: 'Experience',
