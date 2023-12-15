@@ -51,11 +51,11 @@ export default function Typography({ className='', variant='body2', noWrap=false
             defaultTypographyStyle += 'text-xl font-medium leading-7'
             break;
         case 'body1':
-            defaultTypographyStyle += 'text-lg font-medium leading-7'
+            defaultTypographyStyle += 'text-lg font-normal leading-7'
             break;
         // default body2
         default:
-            defaultTypographyStyle += 'text-md font-medium leading-none'
+            defaultTypographyStyle += 'text-md font-normal leading-none'
     }
 
     const elementProps = {
