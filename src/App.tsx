@@ -1,3 +1,5 @@
+// theme
+import ThemeProvider from 'src/theme/theme-provider';
 // routes
 import Router from 'src/routes'
 
@@ -11,7 +13,9 @@ function App() {
   console.info(charAt)
 
   return (
-    <Router />
+    <ThemeProvider>
+      <Router />
+    </ThemeProvider>
   );
 }
 
