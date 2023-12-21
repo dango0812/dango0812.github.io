@@ -1,5 +1,3 @@
-import React from 'react'
-
 const directionMapping = {
     vertical: 'flex flex-row',
     horizontal: 'flex flex-col',
@@ -14,12 +12,12 @@ const alignMapping = {
 };
 
 const justifyMapping = {
-    start: 'flex-start',
-    end: 'flex-end',
-    center: 'flex-center',
-    between: 'space-between',
-    around: 'space-around',
-    stretch: 'stretch'
+    start: 'justify-start',
+    end: 'justify-end',
+    center: 'justify-center',
+    between: 'justify-between',
+    around: 'justify-around',
+    stretch: 'justify-stretch'
 };
 
 const spacingMapping = {
