@@ -1,4 +1,4 @@
-import React, { createElement } from 'react'
+import { createElement } from 'react'
 
 const variantMapping = {
     h1: 'h1',
@@ -23,39 +23,39 @@ type Props = {
 
 export default function Typography({ className='', variant='body2', noWrap=false, color='black', children, ...props }: Props) {
 
-    let defaultTypographyStyle = `${noWrap && 'truncate' || ''} font-default text-${color}-500 `
+    let defaultTypographyStyle = `${noWrap && 'truncate' || ''} font-default ${color === 'white' || color === 'black' ? `text-${color}` : `text-${color}-500`}  `
 
     switch (variant) {
         case 'h1':
-            defaultTypographyStyle += 'text-8xl font-bold leading-snug'
+            defaultTypographyStyle += 'text-7xl font-bold leading-snug'
             break;
         case 'h2':
-            defaultTypographyStyle += 'text-7xl font-bold leading-none'
+            defaultTypographyStyle += 'text-6xl font-bold leading-none'
             break;
         case 'h3':
-            defaultTypographyStyle += 'text-6xl font-semibold leading-none'
-            break;
-        case 'h4':
             defaultTypographyStyle += 'text-5xl font-semibold leading-none'
             break;
+        case 'h4':
+            defaultTypographyStyle += 'text-4xl font-semibold leading-none'
+            break;
         case 'h5':
-            defaultTypographyStyle += 'text-4xl font-medium leading-9'
+            defaultTypographyStyle += 'text-3xl font-medium leading-9'
             break;
         case 'h6':
-            defaultTypographyStyle += 'text-3xl font-medium leading-8'
-            break;
-        case 'subtitle1':
             defaultTypographyStyle += 'text-2xl font-medium leading-8'
             break;
+        case 'subtitle1':
+            defaultTypographyStyle += 'text-xl font-medium leading-8'
+            break;
         case 'subtitle2':
-            defaultTypographyStyle += 'text-xl font-medium leading-7'
+            defaultTypographyStyle += 'text-lg font-medium leading-7'
             break;
         case 'body1':
-            defaultTypographyStyle += 'text-lg font-normal leading-7'
+            defaultTypographyStyle += 'text-md font-normal leading-7'
             break;
         // default body2
         default:
-            defaultTypographyStyle += 'text-md font-normal leading-none'
+            defaultTypographyStyle += 'text-sm font-normal leading-none'
     }
 
     const elementProps = {
