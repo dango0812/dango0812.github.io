@@ -2,7 +2,6 @@ import { memo } from 'react'
 
 // components
 import Card from 'src/components/card'
-import Stack from 'src/components/stack'
 import Container from 'src/components/container'
 import Typography from 'src/components/typography'
 
