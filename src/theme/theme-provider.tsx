@@ -44,6 +44,7 @@ export default function ThemeProvider({ children }: Props) {
             newThemeColor = 'dark'
         }
 
+        window.localStorage.setItem(storageKey, newThemeColor);
         setThemeColor(newThemeColor)
     }, [themeColor]);
 
