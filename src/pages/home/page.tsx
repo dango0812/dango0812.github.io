@@ -1,55 +1,29 @@
+// components
+import Container from 'src/components/container'
+import ThemeToggle from 'src/components/themeToggle'
 // sections
-import HomeHero from "src/sections/home/home-hero"
-// hooks
-import useTabs from 'src/hooks/useTabs'
-// view
-import { ResumeView } from "src/sections/home/tab/resume/view";
+import HomeHero from 'src/sections/home/home-hero'
+import HomeIntroduce from 'src/sections/home/home-introduce'
+// useTheme
+import { useThemeContext } from 'src/theme/theme-context'
+
+const rootStyle = 'bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-none dark:bg-[#161c24] min-h-screen p-6';
 
 export default function HomePage() {
-    const { currentTab, onChangeTab } = useTabs('Resume')
 
-    const HOME_TABS = [
-        {
-            value: 'Resume',
-            component: <ResumeView />
-        },
-        {
-            value: 'Projects',
-            component: <>Projects</>
-        },
-        {
-            value: 'StudyLog',
-            component: <>StudyLog</>
-        },
-    ];
-
+    const { currentTheme, changeTheme } = useThemeContext();
+    
     return (
-        <main className="bg-white">
-            <HomeHero />
-            <section className="border-b border-gray-200 text-sm font-medium text-center pt-8">
-                <ul className="-mb-px flex justify-center items-center" role="tablist">
-                    {HOME_TABS.map((tab) => (
-                        // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/click-events-have-key-events.md
-                        <li key={tab.value} value={tab.value} className="me-2 cursor-pointer" role="tab" aria-selected={currentTab === tab.value}
-                        onClick={() => onChangeTab(tab.value)} onKeyUp={() => null}>
-                            <h3 className={`inline-block px-4 py-2 mb-1 rounded-lg
-                                    ${tab.value === currentTab ? 'text-orange-500' : 'text-zinc-500'}
-                                    ${tab.value === currentTab && 'font-bold'}
-                                    ${tab.value !== currentTab && 'hover:bg-gray-100'}
-                                    ${tab.value !== currentTab && 'hover:text-zinc-800'}
-                                `}
-                            >
-                                {tab.value}
-                            </h3>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
-            {HOME_TABS.map((tab) => {
-                const isMatched = tab.value === currentTab;
-                return isMatched && <section key={tab.value} className="max-w-screen-lg mx-auto py-6" role="tabpanel">{tab.component}</section>
-            })}
+        <main className={rootStyle}>
+            <header>
+                <Container size='lg' className='h-20 flex items-center justify-end'>
+                    <ThemeToggle themeColor={currentTheme || 'dark'} handleThemeColor={changeTheme}/>
+                </Container>
+            </header>
+            <article className='flex flex-col justify-center gap-8 md:gap-16'>
+                <HomeHero />
+                <HomeIntroduce />
+            </article>
         </main>
     );
 }
