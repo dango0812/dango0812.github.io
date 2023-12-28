@@ -17,13 +17,13 @@ type Props = {
     className?: string,
     variant?: keyof typeof variantMapping,
     noWrap?: boolean,
-    color?: 'black' | 'gray' | 'white' | 'red' | 'orange' | 'green' | 'blue'
+    color?: 'black' | 'white' | 'gray' | 'red' | 'orange' | 'green' | 'blue'
     children: React.ReactNode
 }
 
 export default function Typography({ className='', variant='body2', noWrap=false, color='black', children, ...props }: Props) {
 
-    let defaultTypographyStyle = `${noWrap && 'truncate' || ''} font-default ${color === 'white' || color === 'black' ? `text-${color}` : `text-${color}-500`}  `
+    let defaultTypographyStyle = `${noWrap && 'truncate' || ''} font-default ${color === 'black' || 'white' ? `text-${color}` : `text-${color}-500`} `
 
     switch (variant) {
         case 'h1':
