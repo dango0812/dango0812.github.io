@@ -23,7 +23,17 @@ type Props = {
 
 export default function Typography({ className='', variant='body2', noWrap=false, color='black', children, ...props }: Props) {
 
-    let defaultTypographyStyle = `${noWrap && 'truncate' || ''} font-default ${color === 'black' || 'white' ? `text-${color}` : `text-${color}-500`} `
+    let defaultTypographyStyle = `${noWrap && 'truncate' || ''} font-defaul `
+
+    if (color === 'black') {
+        defaultTypographyStyle += 'text-black ';
+
+    } else if (color === 'white') {
+        defaultTypographyStyle += 'text-white ';
+        
+    } else {
+        defaultTypographyStyle += `text-${color}-500 `;
+    }
 
     switch (variant) {
         case 'h1':
