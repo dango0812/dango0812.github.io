@@ -7,7 +7,7 @@ type Props = {
 
 export default function Card({ children, className }: Props) {
     return (
-        <div className={`block py-4 px-6 bg-white border border-gray-200 rounded-lg shadow-lg ${className}`}>
+        <div className={`block py-4 px-6 bg-white dark:bg-[#212b36] border border-gray-200 dark:border-[#202b37] rounded-lg shadow-2xl ${className}`}>
             {children}
         </div>
     )
