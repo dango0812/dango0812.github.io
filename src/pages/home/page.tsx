@@ -16,11 +16,11 @@ export default function HomePage() {
     return (
         <main className={rootStyle}>
             <header>
-                <Container size='lg' className='h-20 flex items-center justify-end'>
+                <Container size='md' className='h-20 flex items-center justify-end'>
                     <ThemeToggle themeColor={currentTheme || 'dark'} handleThemeColor={changeTheme}/>
                 </Container>
             </header>
-            <article className='flex flex-col justify-center gap-8 md:gap-16'>
+            <article className='flex flex-col justify-center gap-14 md:gap-16'>
                 <HomeHero />
                 <HomeIntroduce />
             </article>
