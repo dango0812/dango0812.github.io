@@ -27,12 +27,12 @@ function HomeHero() {
 
     return (
         <section>
-            <Container size='lg'>
+            <Container size='md'>
                 <div className='grid grid-flow-row md:grid-cols-2 gap-8'>
-                    <div className='flex justify-center items-center'>
-                        <img className="h-48 md:h-72" src="/assets/profile.jpg" alt="profile"/>
+                    <div className='flex justify-center md:justify-start items-center'>
+                        <img className="h-48 md:h-64" src="/assets/profile.jpg" alt="profile"/>
                     </div>
-                    <div className='flex flex-col justify-center gap-8'>
+                    <div className='flex flex-col justify-center gap-8 animate-fadeIn'>
                         <Stack direction='horizontal' className='items-center md:items-start' spacing={8}>
                             <Typography variant='h4' className='dark:text-white'>
                                 김 동 규
@@ -41,7 +41,7 @@ function HomeHero() {
                                 Web Frontend Developer 🫠
                             </Typography>
                         </Stack>
-                        <Stack direction='horizontal' justify='start' align='start' spacing={8}>
+                        <Stack direction='horizontal' justify='start' align='start' spacing={8} className='animate-fadeInUp'>
                             <hr className="w-full h-px border bg-red-500 dark:bg-gray-500" />
                             {CONTACT_CHANNEL_INFORMATION.map((info) => (
                                 <a className='max-w-max md:hover:scale-110 transition-transform ease-in-out duration-300' href={info.link} target='_blank' rel="noreferrer noopener">
