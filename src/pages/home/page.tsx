@@ -4,6 +4,7 @@ import ThemeToggle from 'src/components/themeToggle'
 // sections
 import HomeHero from 'src/sections/home/home-hero'
 import HomeIntroduce from 'src/sections/home/home-introduce'
+import HomeTechStack from 'src/sections/home/home-tech-stack'
 // useTheme
 import { useThemeContext } from 'src/theme/theme-context'
 
@@ -23,6 +24,7 @@ export default function HomePage() {
             <article className='flex flex-col justify-center gap-14 md:gap-16'>
                 <HomeHero />
                 <HomeIntroduce />
+                <HomeTechStack />
             </article>
         </main>
     );
