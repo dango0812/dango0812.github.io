@@ -4,6 +4,7 @@ import ThemeToggle from 'src/components/themeToggle'
 // sections
 import HomeHero from 'src/sections/home/home-hero'
 import HomeIntroduce from 'src/sections/home/home-introduce'
+import HomeProjects from 'src/sections/home/home-projects'
 import HomeTechStack from 'src/sections/home/home-tech-stack'
 // useTheme
 import { useThemeContext } from 'src/theme/theme-context'
@@ -13,7 +14,7 @@ const rootStyle = 'bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-none dark:
 export default function HomePage() {
 
     const { currentTheme, changeTheme } = useThemeContext();
-    
+
     return (
         <main className={rootStyle}>
             <header>
@@ -25,6 +26,7 @@ export default function HomePage() {
                 <HomeHero />
                 <HomeIntroduce />
                 <HomeTechStack />
+                <HomeProjects />
             </article>
         </main>
     );
