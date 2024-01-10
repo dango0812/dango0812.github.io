@@ -1,4 +1,7 @@
+// react
 import React from 'react';
+// tailwind merge
+import { twMerge } from "tailwind-merge";
 
 type Props = {
     className?: string,
@@ -6,9 +9,9 @@ type Props = {
     children: React.ReactNode
 }
 
-export default function Container({ className='', size='full', children, ...props }: Props) {
-    
-    let defaultContainerSize = 'mx-auto ';
+export default function Container({ className, size='full', children, ...props }: Props) {
+
+    let defaultContainerSize = '';
     switch(size) {
         case 'sm':
             defaultContainerSize += 'max-w-screen-sm';
@@ -30,7 +33,7 @@ export default function Container({ className='', size='full', children, ...prop
             defaultContainerSize += 'max-w-full';
     }
     return (
-        <div className={`${defaultContainerSize} ${className}`} {...props}>
+        <div className={twMerge(`mx-auto ${defaultContainerSize}`, className)} {...props}>
             {children}
         </div>
     )

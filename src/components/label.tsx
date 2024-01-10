@@ -1,3 +1,6 @@
+// tailwind merge
+import { twMerge } from "tailwind-merge";
+
 const colorMapping = {
     dark: 'bg-gray-200',
     red: 'bg-red-200',
@@ -15,9 +18,9 @@ type Props = {
     className?: string
 }
 
-export default function Label({ children, color='dark', className='', ...props }: Props) {
+export default function Label({ children, color='dark', className, ...props }: Props) {
     return (
-        <span className={`inline-block px-1.5 py-1 text-xs font-bold rounded-lg text-${color}-800 ${colorMapping[color]} ${className}`} {...props}>
+        <span className={twMerge(`inline-block px-1.5 py-1 text-xs font-bold rounded-lg text-${color}-800 ${colorMapping[color]}`, className)} {...props}>
             {children}
         </span>
     )

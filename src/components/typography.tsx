@@ -1,4 +1,8 @@
-import { createElement } from 'react'
+// react
+import { createElement } from 'react';
+// tailwind merge
+import { twMerge } from "tailwind-merge";
+
 
 const variantMapping = {
     h1: 'h1',
@@ -21,56 +25,65 @@ type Props = {
     children: React.ReactNode
 }
 
-export default function Typography({ className='', variant='body2', noWrap=false, color='black', children, ...props }: Props) {
+export default function Typography({ className, variant='body2', noWrap=false, color='black', children, ...props }: Props) {
 
-    let defaultTypographyStyle = `${noWrap && 'truncate' || ''} font-default `
-
-    if (color === 'black') {
-        defaultTypographyStyle += 'text-black ';
-
-    } else if (color === 'white') {
-        defaultTypographyStyle += 'text-white ';
-
-    } else {
-        defaultTypographyStyle += `text-${color}-500 `;
+    const defaultStyles = {
+        root: `${noWrap && 'truncate' || ''} font-default`,
+        color: '',
+        size: ''
     }
 
     switch (variant) {
         case 'h1':
-            defaultTypographyStyle += 'text-7xl font-bold leading-snug'
+            defaultStyles.size = 'text-7xl font-bold leading-snug'
             break;
         case 'h2':
-            defaultTypographyStyle += 'text-6xl font-bold leading-none'
+            defaultStyles.size = 'text-6xl font-bold leading-none'
             break;
         case 'h3':
-            defaultTypographyStyle += 'text-5xl font-semibold leading-none'
+            defaultStyles.size = 'text-5xl font-semibold leading-none'
             break;
         case 'h4':
-            defaultTypographyStyle += 'text-4xl font-semibold leading-none'
+            defaultStyles.size = 'text-4xl font-semibold leading-none'
             break;
         case 'h5':
-            defaultTypographyStyle += 'text-3xl font-medium leading-9'
+            defaultStyles.size = 'text-3xl font-medium leading-9'
             break;
         case 'h6':
-            defaultTypographyStyle += 'text-2xl font-medium leading-8'
+            defaultStyles.size = 'text-2xl font-medium leading-8'
             break;
         case 'subtitle1':
-            defaultTypographyStyle += 'text-xl font-medium leading-8'
+            defaultStyles.size = 'text-xl font-medium leading-8'
             break;
         case 'subtitle2':
-            defaultTypographyStyle += 'text-lg font-medium leading-7'
+            defaultStyles.size = 'text-lg font-medium leading-7'
             break;
         case 'body1':
-            defaultTypographyStyle += 'text-md font-normal leading-7'
+            defaultStyles.size = 'text-md font-normal leading-7'
             break;
         // default body2
         default:
-            defaultTypographyStyle += 'text-sm font-normal leading-none'
+            defaultStyles.size = 'text-sm font-normal leading-none'
+    }
+
+    if (noWrap) {
+        defaultStyles.root = twMerge(defaultStyles.root, 'truncate')
+    }
+
+    if (color === 'black') {
+        defaultStyles.color = 'text-black';
+
+    } else if (color === 'white') {
+        defaultStyles.color = 'text-white';
+
+    } else {
+        defaultStyles.color = `text-${color}-500`;
     }
 
     const elementProps = {
+        className: twMerge(`${defaultStyles.root} ${defaultStyles.color} ${defaultStyles.size}`, className),
+        variant,
         noWrap,
-        className: `${defaultTypographyStyle} ${className}`,
         color,
         ...props
     };

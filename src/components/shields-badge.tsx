@@ -1,3 +1,6 @@
+// tailwind merge
+import { twMerge } from "tailwind-merge";
+
 type Props = {
     icon: string,
     color: string,
@@ -11,8 +14,8 @@ type Props = {
  * @returns badge component
  */
 
-export default function ShieldsBadge({ icon, color, className }: Props) {
+export default function ShieldsBadge({ icon, color, className, ...props }: Props) {
     return (
-        <img src={`https://img.shields.io/badge/${icon}-${color === 'white' ? 'FFFFFF' : '212b36'}?style=for-the-badge&logo=${icon}`} alt={`${icon}-badge`} className={`rounded-md ${className}`}/>
+        <img src={`https://img.shields.io/badge/${icon}-${color === 'white' ? 'FFFFFF' : '212b36'}?style=for-the-badge&logo=${icon}`} alt={`${icon}-badge`} className={twMerge('rounded-md', className)} {...props}/>
     )
 }

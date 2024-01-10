@@ -1,3 +1,6 @@
+// tailwind merge
+import { twMerge } from "tailwind-merge";
+
 import Typography from '../typography';
 
 type Props = {
@@ -10,7 +13,7 @@ type Props = {
     className?: string;
 }
 
-export default function RoundButton({ children, value, fullWidth, size='medium', color, className, ...other }: Props) {
+export default function RoundButton({ children, value, fullWidth, size='medium', color, className, ...props }: Props) {
 
     const defaultStyles = {
         root: 'border rounded-full px-5 py-2.5 me-3 mb-4 flex-grow md:flex-grow-0',
@@ -19,10 +22,10 @@ export default function RoundButton({ children, value, fullWidth, size='medium',
     }
 
     if (fullWidth) {
-        defaultStyles.size += 'w-full md:w-auto ';
+        defaultStyles.size = 'w-full md:w-auto';
 
     } else {
-        defaultStyles.size += 'w-auto ';
+        defaultStyles.size += 'w-auto';
     }
 
     if (color === 'blue') {
@@ -34,20 +37,20 @@ export default function RoundButton({ children, value, fullWidth, size='medium',
 
     switch(size) {
         case 'small':
-            defaultStyles.size += 'h-[36px]';
+            defaultStyles.size += twMerge(defaultStyles.size, 'h-[36px]');
             break;
 
         case 'large':
-            defaultStyles.size += 'h-[48px]';
+            defaultStyles.size += twMerge(defaultStyles.size, 'h-[48px]');
             break;
 
         // default medium
         default:
-            defaultStyles.size += 'h-[46px]';
+            defaultStyles.size += twMerge(defaultStyles.size, 'h-[46px]');
     }
 
     return (
-        <button type="button" value={value} className={`${defaultStyles.root} ${defaultStyles.color} ${defaultStyles.size} ${className}`} {...other}>
+        <button type="button" value={value} className={twMerge(`${defaultStyles.root} ${defaultStyles.color} ${defaultStyles.size}`, className)} {...props}>
             <Typography variant='body1' color='white'>
                 {children}
             </Typography>
