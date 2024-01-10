@@ -7,6 +7,7 @@ import Container from 'src/components/container';
 import Stack from 'src/components/stack';
 import Typography from 'src/components/typography';
 
+/*
 const PROJECTS = [
     {
         title: 'Portfolio',
@@ -41,6 +42,7 @@ const PROJECTS = [
         date: '2022년 09월 01일'
     }
 ];
+*/
 
 const SELECT_TYPE = ['전체', '소스코드 포함', '소스코드 미포함']
 
