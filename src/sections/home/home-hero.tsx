@@ -1,9 +1,9 @@
 // react
-import { memo } from 'react'
+import { memo } from 'react';
 // components
-import Typography from 'src/components/typography';
-import Stack from 'src/components/stack';
 import Container from 'src/components/container';
+import Stack from 'src/components/stack';
+import Typography from 'src/components/typography';
 
 function HomeHero() {
 
@@ -33,7 +33,7 @@ function HomeHero() {
                         <img className="h-48 md:h-64" src="/assets/profile.jpg" alt="profile"/>
                     </div>
                     <div className='flex flex-col justify-center gap-8 animate-fadeIn'>
-                        <Stack direction='horizontal' className='items-center md:items-start' spacing={8}>
+                        <Stack direction='horizontal' align='center' justify='start' className='items-center md:items-start' spacing={8}>
                             <Typography variant='h4' className='dark:text-white'>
                                 김 동 규
                             </Typography>

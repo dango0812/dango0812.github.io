@@ -2,9 +2,9 @@ import { memo } from 'react'
 
 // components
 import Container from 'src/components/container'
-import Typography from 'src/components/typography'
 import ShieldsBadge from 'src/components/shields-badge'
 import Stack from 'src/components/stack'
+import Typography from 'src/components/typography'
 
 // useTheme
 import { useThemeContext } from 'src/theme/theme-context'
@@ -48,10 +48,10 @@ function HomeTechStack() {
                     Tech Stack 👨‍🔧
                 </Typography>
                 <hr className="w-full h-px bg-slate-500" />
-                
-                <Stack direction='horizontal' align='start' spacing={8}>
+
+                <Stack direction='horizontal' align='start' justify='start' spacing={8}>
                     {TECH_STACK.map((tech) => (
-                        <Stack key={tech.id} direction='horizontal' align='start' spacing={4}>
+                        <Stack key={tech.id} direction='horizontal' align='start' justify='start' spacing={4}>
                             <Typography variant='body1' className='dark:text-white'>
                                 {tech.title}
                             </Typography>
