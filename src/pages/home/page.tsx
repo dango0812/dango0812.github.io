@@ -1,7 +1,8 @@
 // components
 import Container from 'src/components/container'
-import ThemeToggle from 'src/components/themeToggle'
+import ThemeToggle from 'src/components/theme-toggle'
 // sections
+import HomeBlogPosts from 'src/sections/home/home-blog-posts'
 import HomeHero from 'src/sections/home/home-hero'
 import HomeIntroduce from 'src/sections/home/home-introduce'
 import HomeProjects from 'src/sections/home/home-projects'
@@ -27,6 +28,7 @@ export default function HomePage() {
                 <HomeIntroduce />
                 <HomeTechStack />
                 <HomeProjects />
+                <HomeBlogPosts />
             </article>
         </main>
     );
