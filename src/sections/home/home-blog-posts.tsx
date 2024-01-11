@@ -53,7 +53,6 @@ function HomeBlogPosts() {
         refetchOnWindowFocus: false
     });
 
-    console.log(data)
     const memoizedBlogPosts = useMemo(
         () => ({
             data: isLoading ? [] : data as Array<postItem>,
@@ -77,7 +76,7 @@ function HomeBlogPosts() {
     }
 
     return (
-        <section className='animate-fadeInUp'>
+        <section id="blog" className='animate-fadeInUp'>
             <Container size='md' className='flex flex-col gap-4'>
                 <Typography variant='h6' className='dark:text-white'>
                     Blog Posts 📚
@@ -86,7 +85,7 @@ function HomeBlogPosts() {
                     <Stack direction='horizontal' align='start' justify='start' spacing={16}>
                         {memoizedBlogPosts.data.map((post: postItem) => (
                             <a key={post.id} href="#">
-                                <Card className='px-0 py-0 md:flex-row min-h-[160px] border-none dark:hover:bg-gray-700'>
+                                <Card className='px-0 py-0 md:flex-row min-h-[160px] border-none hover:bg-transparent dark:md:hover:bg-gray-700'>
                                     <Stack direction='horizontal' align='start' justify='start' className='md:flex md:flex-row' spacing={4}>
                                         <img className="w-full md:w-56 h-48 object-cover rounded-t-lg md:rounded-l-lg md:rounded-r-none" src={post.cover_image} alt="blog cover" />
                                         <Stack direction='horizontal' align='start' justify='start' spacing={16} className='p-4'>
