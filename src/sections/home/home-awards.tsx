@@ -16,7 +16,7 @@ function HomeAwards() {
                 <hr className="w-full h-px bg-slate-500" />
                 <Stack direction='horizontal' align='center' justify='center' className='md:flex-row gap-16'>
                     {['award_1.jpg', 'award_2.jpg'].map((image, idx) => (
-                        <img key={idx} loading="lazy" src={`/assets/awards/${image}`} alt="" className='w-[35%] h-24' />
+                        <img key={idx} loading="lazy" src={`/assets/awards/${image}`} alt="" className='w-auto md:w-[35%] h-24' />
                     ))}
                 </Stack>
             </Container>
