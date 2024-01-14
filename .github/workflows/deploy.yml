@@ -9,8 +9,8 @@ on:
   #auto trigger
   push:
     branches:
-    - develop # use build branch
-    
+    - main # use build branch
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       # install pnpm
       - name: Install pnpm
         uses: pnpm/action-setup@v2.4.0
@@ -37,6 +37,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main
+          branch: release
           folder: ./build
           github_token: ${{ secrets.GITHUB_TOKEN }}
