@@ -2,6 +2,7 @@
 import Container from 'src/components/container'
 import ThemeToggle from 'src/components/theme-toggle'
 // sections
+import HomeAwards from 'src/sections/home/home-awards'
 import HomeBlogPosts from 'src/sections/home/home-blog-posts'
 import HomeHero from 'src/sections/home/home-hero'
 import HomeIntroduce from 'src/sections/home/home-introduce'
@@ -27,6 +28,7 @@ export default function HomePage() {
                 <HomeHero />
                 <HomeIntroduce />
                 <HomeTechStack />
+                <HomeAwards />
                 <HomeProjects />
                 <HomeBlogPosts />
             </article>
