@@ -1,57 +1,25 @@
-// react
-import { useCallback, useState } from 'react';
-
 // components
-import RoundButton from 'src/components/button/round-button';
+import Accordion from 'src/components/accordion';
 import Container from 'src/components/container';
+import Label from 'src/components/label';
+import ShieldsBadge from 'src/components/shields-badge';
 import Stack from 'src/components/stack';
 import Typography from 'src/components/typography';
 
-/*
 const PROJECTS = [
     {
-        title: 'Portfolio',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        useTechnology: ['react', 'typescript', 'tailwindcss', 'eslint', 'pnpm'],
-        tag: 'Front-end',
-        image: '/assets/port.png',
-        date: '2022년 09월 01일'
-    },
-    {
-        title: 'Blur.Me (Video)',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-        useTechnology: ['React'],
-        tag: 'Full-stack',
-        image: '/logo192.png',
-        date: '2022년 09월 01일'
-    },
-    {
-        title: '비식별화',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-        useTechnology: ['React'],
-        tag: 'Full-stack',
-        image: '/logo192.png',
-        date: '2022년 09월 01일'
-    },
-    {
-        title: 'GS엠비즈 EV-Smart & 한전 Ai-Ev',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-        useTechnology: ['React'],
-        tag: 'Front-end',
-        image: '/logo192.png',
-        date: '2022년 09월 01일'
+        title: 'Portfolio Web 🐯',
+        description: `페이지 한 장으로 모든 모습을 보여줄 수 없지만,\nUI를 어떻게 설계하면 나에 대해 빠르게 파악할 수 있을까? 고민을 많이 할 수 있어서 좋았던 프로젝트였어요.\n프로젝트를 통해 개발에 대한 나의 마음가짐, 기술적인 역량, 수상 내역, 프로젝트, 블로그를 확인할 수 있어요.`,
+        image: "portfolio.jpg",
+        tags: ['react', 'typescript', 'tailwind-css', 'react-query', 'eslint', 'prettierrc', 'pnpm', 'github-actions'],
+        expanded: true,
+        url: 'https://github.com/dango0812/dango0812.github.io',
+        startDate: '2023. 12. 13',
+        endDate: '2024. 01. 24'
     }
 ];
-*/
-
-const SELECT_TYPE = ['전체', '소스코드 포함', '소스코드 미포함']
 
 export default function HomeProjects() {
-    const [selected, setSelected] = useState(SELECT_TYPE[0]);
-
-    const handleSelect = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
-        setSelected(event.currentTarget.value);
-    }, []);
 
     return (
         <section className='animate-fadeInUp'>
@@ -61,35 +29,39 @@ export default function HomeProjects() {
                 </Typography>
                 <hr className="w-full h-px border bg-red-500 dark:bg-gray-500" />
 
-                <Stack direction='vertical' justify='start' align='center' className='flex-wrap w-full md:justify-center mt-4'>
-                    {SELECT_TYPE.map((text) => (
-                        <RoundButton key={text} value={text} color={selected === text ? 'blue' : 'dark'} fullWidth={text === SELECT_TYPE[0]} size='medium' onClick={handleSelect}>
-                            {text}
-                        </RoundButton>
-                    ))}
-                </Stack>
+                {PROJECTS.map((project) => (
+                    <Accordion title={project.title} expanded={project.expanded}>
+                        <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 gap-6'>
+                            <div className='w-full h-full flex items-center justify-center'>
+                                <img className='rounded-xl' src={`assets/projects/${project.image}`} alt="" />
+                            </div>
 
+                            <Stack direction='horizontal' align='start' justify='between' spacing={24}>
+                                <Typography variant='body1' className='whitespace-pre-wrap dark:text-white'>
+                                    {project.description}
+                                </Typography>
 
-                <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
-                    <div className="grid gap-4">
-                        <div>
-                            <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="t"/>
-                        </div>
-                        <div>
-                            <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="s"/>
-                        </div>
-                    </div>
-                    <div className="grid gap-4">
-                        <div>
-                            <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="" />
-                        </div>
-                        <div>
-                            <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
-                        </div>
-                    </div>
-                </div>
+                                <Stack className='flex-wrap' direction='vertical' align='start' justify='start' spacing={16}>
+                                    {project.tags.map((tag) => (
+                                        <Label color='blue'>
+                                            {tag}
+                                        </Label>
+                                    ))}
+                                </Stack>
 
+                                <Stack className='w-full' direction='vertical' align='center' justify='between'>
+                                    <a href={project.url} target='_blank' rel="noreferrer noopener">
+                                        <ShieldsBadge icon="github" color="black"/>
+                                    </a>
 
+                                    <div className='text-gray-300'>
+                                        {project.startDate} ~ {project.endDate}
+                                    </div>
+                                </Stack>
+                            </Stack>
+                        </div>
+                    </Accordion>
+                ))}
             </Container>
         </section>
     )
