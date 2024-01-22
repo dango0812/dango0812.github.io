@@ -1,8 +1,8 @@
 import { memo } from 'react'
 
 // components
+import ShieldsBadge from 'src/components/badge/shields-badge'
 import Container from 'src/components/container'
-import ShieldsBadge from 'src/components/shields-badge'
 import Stack from 'src/components/stack'
 import Typography from 'src/components/typography'
 

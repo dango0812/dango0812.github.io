@@ -1,8 +1,8 @@
 // components
 import Accordion from 'src/components/accordion';
+import Badge from 'src/components/badge/badge';
+import ShieldsBadge from 'src/components/badge/shields-badge';
 import Container from 'src/components/container';
-import Label from 'src/components/label';
-import ShieldsBadge from 'src/components/shields-badge';
 import Stack from 'src/components/stack';
 import Typography from 'src/components/typography';
 
@@ -43,9 +43,9 @@ export default function HomeProjects() {
 
                                 <Stack className='flex-wrap' direction='vertical' align='start' justify='start' spacing={16}>
                                     {project.tags.map((tag) => (
-                                        <Label color='blue'>
+                                        <Badge color='blue'>
                                             {tag}
-                                        </Label>
+                                        </Badge>
                                     ))}
                                 </Stack>
 
