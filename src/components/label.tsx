@@ -7,7 +7,7 @@ const colorMapping = {
     green: 'bg-green-200',
     orange: 'bg-orange-200',
     yellow: 'bg-yellow-200',
-    blue: 'bg-blue-200',
+    blue: 'bg-sky-200',
     purple: 'bg-purple-200',
     pink: 'bg-pink-200'
 }
