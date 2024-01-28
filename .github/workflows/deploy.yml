@@ -27,6 +27,13 @@ jobs:
           version: latest-8
           standalone: true
 
+      # env data setting
+      - name: .env setting
+        run: |
+          echo "REACT_APP_BLOG_API=${{ secrets.REACT_APP_BLOG_API }}" >> .env
+          echo "REACT_APP_BLOG_API_KEY=${{ secrets.REACT_APP_BLOG_API_KEY }}" >> .env
+          echo "REACT_APP_BLOG_API_USERNAME=${{ secrets.REACT_APP_BLOG_API_USERNAME }}" >> .env
+      
       # install & build
       - name: Install and Build
         run: |
