@@ -5,26 +5,25 @@ import Container from 'src/components/container';
 import Stack from 'src/components/stack';
 import Typography from 'src/components/typography';
 
+const CONTACT_CHANNEL_INFORMATION = [
+    {
+        icon: '✉️',
+        value: 'ehdrbsla12000@gmail.com',
+        link: 'mailto:ehdrbsla12000@gmail.com'
+    },
+    {
+        icon: '🧑‍💻',
+        value: 'Github',
+        link: 'https://github.com/dango0812'
+    },
+    {
+        icon: '📚',
+        value: 'Study Log',
+        link: '#blog'
+    },
+];
+
 function HomeHero() {
-
-    const CONTACT_CHANNEL_INFORMATION = [
-        {
-            icon: '✉️',
-            value: 'ehdrbsla12000@gmail.com',
-            link: 'mailto:ehdrbsla12000@gmail.com'
-        },
-        {
-            icon: '🧑‍💻',
-            value: 'Github',
-            link: 'https://github.com/dango0812'
-        },
-        {
-            icon: '📚',
-            value: 'Study Log',
-            link: '#blog'
-        },
-    ];
-
     return (
         <section>
             <Container size='md'>
@@ -44,7 +43,7 @@ function HomeHero() {
                         <Stack direction='horizontal' justify='start' align='start' spacing={8} className='animate-fadeInUp'>
                             <hr className="w-full h-px border bg-red-500 dark:bg-gray-500" />
                             {CONTACT_CHANNEL_INFORMATION.map((info) => (
-                                <a className='max-w-max md:hover:scale-110 transition-transform ease-in-out duration-300' href={info.link} target={`${info.link.startsWith('#') ? '_self' : '_blank'}`} rel="noreferrer noopener">
+                                <a key={info.value} className='max-w-max md:hover:scale-110 transition-transform ease-in-out duration-300' href={info.link} target={`${info.link.startsWith('#') ? '_self' : '_blank'}`} rel="noreferrer noopener">
                                     <Typography variant='subtitle1' className='dark:text-white'>
                                         {info.icon} {info.value}
                                     </Typography>
