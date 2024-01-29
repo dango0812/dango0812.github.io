@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 // components
 import Card from 'src/components/card';
 import Container from 'src/components/container';
+import EmptyContent from 'src/components/empty-content';
 import Stack from 'src/components/stack';
 import Typography from 'src/components/typography';
 // utils
@@ -26,7 +27,7 @@ function HomeBlogPosts() {
             loading: isLoading,
             fetching: isFetching,
             error: error || null,
-            empty: !isLoading && data.length === 0,
+            empty: !isLoading && data?.length === 0,
         }),
         [data, isLoading, isFetching, error]
     );
@@ -49,12 +50,15 @@ function HomeBlogPosts() {
                     Blog Posts 📚
                 </Typography>
                 <hr className="w-full h-px bg-slate-500" />
+                {memoizedBlogPosts.empty ? (
+                    <EmptyContent title='No Data' description={`문제가 발생하여 블로그 게시글을 읽어오지 못 했습니다.\n이용에 불편을 드려 죄송합니다. 💦`}/>
+                ) : (
                     <Stack direction='horizontal' align='start' justify='start' spacing={16}>
                         {memoizedBlogPosts.data.map((post: PostItem) => (
                             <a key={post.id} href={post.url} target='_blank' rel='noreferrer noopener'>
                                 <Card className='px-0 py-0 md:flex-row min-h-[160px] border-none hover:bg-transparent dark:md:hover:bg-gray-700'>
                                     <Stack direction='horizontal' align='start' justify='start' className='md:flex md:flex-row' spacing={4}>
-                                        <img className="w-full md:w-56 md:h-56 rounded-t-lg md:rounded-l-lg md:rounded-r-none" src={post.cover_image} alt="blog cover" />
+                                        <img className="w-full md:w-56 md:h-56 object-fill rounded-t-lg md:rounded-l-lg md:rounded-r-none" src={post.cover_image} alt="blog cover" />
                                         <Stack direction='horizontal' align='start' justify='start' spacing={16} className='p-4'>
                                             <Typography variant='h6' color='black' className='font-bold  dark:text-white'>
                                                 {post.title}
@@ -71,6 +75,7 @@ function HomeBlogPosts() {
                             </a>
                         ))}
                     </Stack>
+                )}
             </Container>
         </section>
     )
