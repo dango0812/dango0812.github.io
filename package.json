@@ -13,6 +13,7 @@
     "@types/react": "^18.2.41",
     "@types/react-dom": "^18.2.17",
     "eslint-import-resolver-typescript": "^3.6.1",
+    "framer-motion": "^11.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
@@ -22,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3030 && react-scripts start",
     "win-build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "linux-build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",

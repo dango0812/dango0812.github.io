@@ -30,7 +30,7 @@ export default function HomeProjects() {
                 <hr className="w-full h-px border bg-red-500 dark:bg-gray-500" />
 
                 {PROJECTS.map((project) => (
-                    <Accordion title={project.title} expanded={project.expanded}>
+                    <Accordion key={project.title} title={project.title} expanded={project.expanded}>
                         <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 gap-6'>
                             <div className='w-full h-full flex items-center justify-center'>
                                 <img className='rounded-xl' src={`assets/projects/${project.image}`} alt="" />

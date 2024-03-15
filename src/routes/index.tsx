@@ -1,13 +1,15 @@
 // react
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense } from 'react';
 // react router dom
-import { Navigate, useRoutes } from 'react-router-dom'
+import { Navigate, useRoutes } from 'react-router-dom';
 // components
-import { SplashScreen } from 'src/components/loading'
+import { SplashScreen } from 'src/components/loading';
+// layouts
+import Layout from 'src/layouts';
 // paths
 import { paths } from './paths';
 // pages
-const HomePage = lazy(() => import('src/pages/home/page'));
+const HomePage = lazy(() => import('src/pages/home-page'));
 
 export default function Router() {
     return useRoutes([
@@ -15,7 +17,9 @@ export default function Router() {
             path: paths.home,
             element: (
                 <Suspense fallback={<SplashScreen />}>
-                    <HomePage />
+                    <Layout>
+                        <HomePage />
+                    </Layout>
                 </Suspense>
             )
         },

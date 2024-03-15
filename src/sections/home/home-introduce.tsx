@@ -7,7 +7,7 @@ import Typography from 'src/components/typography'
 
 function HomeIntroduce() {
     return (
-        <section className='animate-fadeInUp'>
+        <section>
             <Container size='md' className='flex flex-col gap-4'>
                 <Typography variant='h6' className='dark:text-white'>
                     Introduce 🐙

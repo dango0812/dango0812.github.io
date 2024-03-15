@@ -2,6 +2,7 @@
 import React from 'react';
 // tailwind merge
 import { twMerge } from "tailwind-merge";
+// hooks
 
 type Props = {
     className?: string,

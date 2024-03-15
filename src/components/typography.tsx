@@ -3,7 +3,6 @@ import { createElement } from 'react';
 // tailwind merge
 import { twMerge } from "tailwind-merge";
 
-
 const variantMapping = {
     h1: 'h1',
     h2: 'h2',
