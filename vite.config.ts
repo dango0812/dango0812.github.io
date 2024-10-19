@@ -15,4 +15,7 @@ export default defineConfig({
       modernPolyfills: true
     })
   ],
+  css: {
+    postcss: "postcss.config.js"
+  }
 })
