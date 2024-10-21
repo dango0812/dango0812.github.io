@@ -8,14 +8,13 @@ import legacy from "@vitejs/plugin-legacy";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      jsxImportSource: "@emotion/react"
+    }),
     pathAlias(),
     legacy({
       targets: ['chrome >= 64', 'safari >= 12'],
       modernPolyfills: true
     })
-  ],
-  css: {
-    postcss: "postcss.config.js"
-  }
+  ]
 })
