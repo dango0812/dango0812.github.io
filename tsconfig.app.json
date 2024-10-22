@@ -10,8 +10,10 @@
     "useDefineForClassFields": true,
     
     "paths": {
-      "@": ["src/*"],
-      "@components": ["src/components/*"]
+      "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@providers/*": ["src/providers/*"],
+      "@components/*": ["src/components/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
