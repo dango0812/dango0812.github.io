@@ -2,14 +2,22 @@
 import { Suspense, lazy } from "react";
 import * as ReactRouterDOM from "react-router-dom";
 
+// components
+import Layout from "@/components/common/Layout";
+
 // pages
 const MainPage = lazy(() => import("@app/page"));
 
 export default function RouterProvider() {
     const router = ReactRouterDOM.createBrowserRouter([
         {
-            path: "/",
-            element: <MainPage />
+            element: <Layout />,
+            children: [
+                {
+                    path: "/",
+                    element: <MainPage />
+                }
+            ]
         }
     ]);
   

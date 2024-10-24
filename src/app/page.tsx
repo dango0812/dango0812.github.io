@@ -1,7 +1,10 @@
+// components
+import HeroSection from "@/components/main/HeroSection";
+
 export default function MainPage() {
     return (
         <div>
-            Main
+            <HeroSection />
         </div>
     )
 }
