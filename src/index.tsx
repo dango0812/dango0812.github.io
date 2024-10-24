@@ -2,10 +2,10 @@
 import { createRoot } from "react-dom/client";
 
 // providers
-import RouterProvider from "@/providers/RouterProvider";
+import RouterProvider from "@providers/RouterProvider";
 
 // components
-import GlobalStyles from "@components/GlobalStyles";
+import GlobalStyles from "@/components/common/GlobalStyles";
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 
