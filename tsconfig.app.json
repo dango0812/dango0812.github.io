@@ -12,6 +12,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@app/*": ["src/app/*"],
+      "@constants/*": ["src/constants/*"],
       "@providers/*": ["src/providers/*"],
       "@components/*": ["src/components/*"]
     },
