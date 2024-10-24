@@ -1,5 +1,7 @@
 // emotion
 import { Global, css } from "@emotion/react";
+// constants
+import { mediaQuery } from "@constants/mediaQuery";
 
 export default function GlobalStyles() {
     return (
@@ -21,6 +23,36 @@ export default function GlobalStyles() {
                     -webkit-font-smoothing: antialiased;
                     word-break: keep-all;
                     word-wrap: break-word;
+                    color: #F2F2F2;
+                    background-color: #000000;
+                }
+                h1 {
+                    font-size: var(--font-size-h1);
+                    letter-spacing: 0.06em;
+                    line-height: var(--font-line-height-h1);
+                    ${mediaQuery.tablet} {
+                        font-size: var(--font-size-h2);
+                        line-height: var(--font-line-height-h2);
+                    }
+                    ${mediaQuery.mobile} {
+                        font-size: var(--font-size-h3);
+                        line-height: var(--font-line-height-h3);
+                    }
+                }
+                h2 {
+                    font-size: var(--font-size-h2);
+                }
+                h3 {
+                    font-size: var(--font-size-h3);
+                }
+                h4 {
+                    font-size: var(--font-size-h4);
+                }
+                h5 {
+                    font-size: var(--font-size-h5);
+                }
+                h6 {
+                    font-size: var(--font-size-h6);
                 }
                 :root {
                     // font
@@ -30,12 +62,20 @@ export default function GlobalStyles() {
                     --font-size-h4: 32px;
                     --font-size-h5: 24px;
                     --font-size-h6: 20px;
-                    --font-size-p: 1rem;
+                    --font-size-p: 16px;
+                    --font-size-small: 14px;
                     
                     --font-weight-normal: 400;
                     --font-weight-medium: 500;
                     --font-weight-semibold: 600;
                     --font-weight-bold: 700;
+
+                    --font-line-height-h1: 76px;
+                    --font-line-height-h2: 64px;
+                    --font-line-height-h3: 52px;
+                    --font-line-height-h4: 40px;
+                    --font-line-height-h5: 28px;
+                    --font-line-height-h6: 16px;
                 }
             `}
         />
