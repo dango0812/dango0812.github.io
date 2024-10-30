@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 
 export const Navbar = styled.nav`
     width: 100%;
-    height: 60px;
 `;
 
 export const NavContainer = styled.div`
@@ -11,7 +10,7 @@ export const NavContainer = styled.div`
     height: inherit;
     display: flex;
     align-items: center;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0px 24px;
+    padding: 32px 24px 16px;
 `;

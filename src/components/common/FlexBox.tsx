@@ -9,7 +9,7 @@ interface FlexBoxProps {
 
 export const RowFlex = styled.div<FlexBoxProps>`
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     align-items: ${({ alignItems }) => alignItems || 'center'};
     justify-content: ${({ justifyContent }) => justifyContent || 'center'};
     gap: ${({ gap }) => `${gap}px`};
@@ -17,7 +17,7 @@ export const RowFlex = styled.div<FlexBoxProps>`
 
 export const ColumnFlex = styled.div<FlexBoxProps>`
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: ${({ alignItems }) => alignItems || 'center'};
     justify-content: ${({ justifyContent }) => justifyContent || 'center'};
     gap: ${({ gap }) => `${gap}px`};

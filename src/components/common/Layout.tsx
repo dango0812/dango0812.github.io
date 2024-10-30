@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 // emotion
 import { css } from "@emotion/react";
 // components
-import { ColumnFlex } from "@components/common/FlexBox";
+import { RowFlex } from "@components/common/FlexBox";
 import { Navbar, NavContainer } from "@components/common/Layout.styles";
 
 export default function Layout() {
@@ -12,31 +12,27 @@ export default function Layout() {
             <header>
                 <Navbar>
                     <NavContainer>
-                        <ColumnFlex
+                        <RowFlex
                             alignItems="flex-start"
+                            justifyContent="space-between"
                             gap={6}
                             css={css`
-                                width: 200px;
+                                width: 100%;
                                 height: 100%;
                             `}
                         >
                             <p css={css`
-                                    font-weight: 600;
-                                    letter-spacing: 0.08em;
-                                    font-size: var(--font-size-small);
+                                    color: #505050;
+                                    font-size: 16px;
                                 `}
                             >
-                                김동규
+                                Donggyu Kim
                             </p>
-                            <p css={css`
-                                    color: #666666;
-                                    letter-spacing: 0.03em;
-                                    font-size: var(--font-size-small);
-                                `}
-                            >
-                                Frontend Developer
+
+                            <p>
+                                about me
                             </p>
-                        </ColumnFlex>
+                        </RowFlex>
                     </NavContainer>
                 </Navbar>
             </header>

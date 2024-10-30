@@ -7,6 +7,13 @@ export default function GlobalStyles() {
     return (
         <Global
             styles={css`
+                @font-face {
+                    font-family: 'IBMPlexSansKR-Regular';
+                    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+
                 *, ::after, ::before {
                     box-sizing: border-box;
                 }
@@ -17,26 +24,27 @@ export default function GlobalStyles() {
                     vertical-align: baseline;
                 }
                 body {
-                    line-height: 1;
-                    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+                    line-height: var(--font-line-height-default);
+                    font-family: "IBMPlexSansKR-Regular", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
                     -moz-osx-font-smoothing: grayscale;
                     -webkit-font-smoothing: antialiased;
                     word-break: keep-all;
                     word-wrap: break-word;
-                    color: #F2F2F2;
-                    background-color: #000000;
+                    color: #111314;
+                    background-color: #F8F8F8;
+;
                 }
                 h1 {
                     font-size: var(--font-size-h1);
                     letter-spacing: 0.06em;
-                    line-height: var(--font-line-height-h1);
+                    line-height: var(--font-line-height-lg);
                     ${mediaQuery.tablet} {
                         font-size: var(--font-size-h2);
-                        line-height: var(--font-line-height-h2);
+                        line-height: var(--font-line-height-md);
                     }
                     ${mediaQuery.mobile} {
                         font-size: var(--font-size-h3);
-                        line-height: var(--font-line-height-h3);
+                        line-height: var(--font-line-height-sm);
                     }
                 }
                 h2 {
@@ -53,10 +61,18 @@ export default function GlobalStyles() {
                 }
                 h6 {
                     font-size: var(--font-size-h6);
+                    letter-spacing: 0.03em;
+                    line-height: var(--font-line-height-xl);
+                }
+                p {
+                    font-size: 16.8px;
+                    padding: 10px 0px;
+                    letter-spacing: 0.05em;
+                    line-height: 160%;
                 }
                 :root {
                     // font
-                    --font-size-h1: 56px;
+                    --font-size-h1: 40px;
                     --font-size-h2: 48px;
                     --font-size-h3: 36px;
                     --font-size-h4: 32px;
@@ -70,12 +86,14 @@ export default function GlobalStyles() {
                     --font-weight-semibold: 600;
                     --font-weight-bold: 700;
 
-                    --font-line-height-h1: 76px;
-                    --font-line-height-h2: 64px;
-                    --font-line-height-h3: 52px;
-                    --font-line-height-h4: 40px;
-                    --font-line-height-h5: 28px;
-                    --font-line-height-h6: 16px;
+                    --font-line-height-xs: 100%;
+                    --font-line-height-sm: 123%;
+                    --font-line-height-md: 128%;
+                    --font-line-height-lg: 123%;
+                    --font-line-height-xl: 133%;
+                    // z-index
+                    --z-index-0: 0;
+                    --z-index-header: 1100;
                 }
             `}
         />
