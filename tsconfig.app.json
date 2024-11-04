@@ -14,7 +14,8 @@
       "@app/*": ["src/app/*"],
       "@constants/*": ["src/constants/*"],
       "@providers/*": ["src/providers/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
