@@ -1,3 +1,5 @@
+// react
+import { lazy } from "react";
 // emotion
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
@@ -8,9 +10,9 @@ import Container from "@components/common/Container";
 import { RowFlex, ColumnFlex } from "@components/common/FlexBox";
 import AnimationFadeIn from "@components/animation/AnimationFadeIn";
 // assets
-import IconCake from "@assets/icon/IconCake";
-import IconBriefcase from "@assets/icon/IconBriefcase";
-import IconAccountSchool from "@/assets/icon/IconAccountSchool";
+const IconCake = lazy(() => import("@assets/icon/IconCake"));
+const IconBriefcase = lazy(() => import("@assets/icon/IconBriefcase"));
+const IconAccountSchool = lazy(() => import("@assets/icon/IconAccountSchool"));
 
 const RootStyle = styled.section`
     width: 100%;

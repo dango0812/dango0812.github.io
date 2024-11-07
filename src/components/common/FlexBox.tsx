@@ -12,7 +12,7 @@ export const RowFlex = styled.div<FlexBoxProps>`
     flex-direction: row;
     align-items: ${({ alignItems }) => alignItems || 'center'};
     justify-content: ${({ justifyContent }) => justifyContent || 'center'};
-    gap: ${({ gap }) => `${gap}px`};
+    gap: ${({ gap }) => `${gap || 0}px`};
 `;
 
 export const ColumnFlex = styled.div<FlexBoxProps>`
@@ -20,5 +20,5 @@ export const ColumnFlex = styled.div<FlexBoxProps>`
     flex-direction: column;
     align-items: ${({ alignItems }) => alignItems || 'center'};
     justify-content: ${({ justifyContent }) => justifyContent || 'center'};
-    gap: ${({ gap }) => `${gap}px`};
+    gap: ${({ gap }) => `${gap || 0}px`};
 `;

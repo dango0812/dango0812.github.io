@@ -10,6 +10,7 @@ const RootStyle = styled.section`
     width: 100%;
     height: 100%;
     padding: 20px 0px;
+    margin-top: 80px;
 `;
 
 export default function HeroSection() {
