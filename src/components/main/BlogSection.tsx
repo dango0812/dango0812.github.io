@@ -11,7 +11,7 @@ import { BlogPostsWraper, BlogPostBox, Link, BlogPostIndexBadge, BlogPostTitle, 
 // utils
 import { getFormattedUTCtoKST } from "@/utils/datetime";
 // types
-import { BlogArticlePost } from "@types/blog";
+import { BlogArticlePost } from "@type/blog";
 // env
 const BLOG_API_URL = import.meta.env.VITE_BLOG_API_URL;
 const BLOG_API_AUTH_USERNAME = import.meta.env.VITE_BLOG_API_USERNAME;

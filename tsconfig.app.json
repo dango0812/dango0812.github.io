@@ -16,7 +16,7 @@
       "@providers/*": ["src/providers/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
-      "@types/*": ["src/types/*"]
+      "@type/*": ["src/types/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
