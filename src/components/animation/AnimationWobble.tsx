@@ -8,6 +8,9 @@ interface AnimationWobbleProps {
 const Wrapper = styled.span`
     display: inline-block;
     animation: wobble 1s ease-in infinite;
+    -moz-animation: wobble 1s ease-in infinite; /* Firefox */
+    -webkit-animation: wobble 1s ease-in infinite; /* Safari and Chrome */
+    -o-animation: wobble 1s ease-in infinite; /* Opera */
 
     @keyframes wobble {
         0% {
