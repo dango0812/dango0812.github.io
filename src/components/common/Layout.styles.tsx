@@ -18,3 +18,10 @@ export const NavContainer = styled.div`
     margin: 0 auto;
     padding: 16px 24px;
 `;
+
+export const Link = styled.a`
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+`;

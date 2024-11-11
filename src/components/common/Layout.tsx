@@ -4,7 +4,9 @@ import { Outlet } from "react-router-dom";
 import { css } from "@emotion/react";
 // components
 import { RowFlex } from "@components/common/FlexBox";
-import { Navbar, NavContainer } from "@components/common/Layout.styles";
+import { Navbar, NavContainer, Link } from "@components/common/Layout.styles";
+// constants
+import { paths } from "@constants/paths";
 
 export default function Layout() {
     return (
@@ -18,20 +20,31 @@ export default function Layout() {
                             gap={6}
                             css={css`
                                 width: 100%;
-                                height: 100%;
+                                height: 40px;
                             `}
                         >
-                            <p css={css`
-                                    color: #505050;
-                                    font-size: 16px;
-                                `}
+                            <Link
+                                href={paths.home}
                             >
-                                Donggyu Kim
-                            </p>
+                                <p>
+                                    Donggyu Kim
+                                </p>
+                            </Link>
+                            
+                            <RowFlex
+                                gap={16}
+                            >
+                                <p>
+                                    Career
+                                </p>
+                                <p>
+                                    Works
+                                </p>
+                                <p>
+                                    Posts
+                                </p>
+                            </RowFlex>
 
-                            <p>
-                                about me
-                            </p>
                         </RowFlex>
                     </NavContainer>
                 </Navbar>
