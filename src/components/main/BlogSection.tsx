@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 // components
+import MoreLink from "@components/common/MoreLink";
 import Container from "@components/common/Container";
 import { ColumnFlex, RowFlex } from "@components/common/FlexBox";
 import AnimationLoadingDots from "@components/animation/AnimationLoadingDots";
@@ -82,6 +83,19 @@ export default function BlogSection() {
                                     </Link>
                                 </BlogPostBox>
                             ))}
+
+                            <MoreLink
+                                enabledEndDecorator
+                            >
+                                <p
+                                    css={css`
+                                        font-size: 14.8px;
+                                        padding: 0px;
+                                    `}
+                                >
+                                    더 많은 게시글 보기
+                                </p>
+                            </MoreLink>
                         </BlogPostsWraper>
                     )}
                 </ColumnFlex>

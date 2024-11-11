@@ -35,7 +35,6 @@ export const Link = styled.a`
     }
     width: 100%;
     text-decoration: none;
-    color: inherit;
 `;
 
 export const BlogPostIndexBadge = styled.div`
