@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-function AccountSchool({ ...props }) {
+function IconAccountSchool({ ...props }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,4 @@ function AccountSchool({ ...props }) {
     )
 }
 
-export default memo(AccountSchool);
+export default memo(IconAccountSchool);

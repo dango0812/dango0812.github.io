@@ -1,11 +1,11 @@
 import { memo } from "react";
 
-function Cake({ ...props }) {
+function IconCake({ ...props }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24px"
-            height="24px"
+            width="12px"
+            height="12px"
             viewBox="0 0 24 24"
             {...props}
         >
@@ -21,4 +21,4 @@ function Cake({ ...props }) {
     )
 }
 
-export default memo(Cake);
+export default memo(IconCake);
