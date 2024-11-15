@@ -4,8 +4,8 @@ function IconCake({ ...props }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="12px"
-            height="12px"
+            width="24px"
+            height="24px"
             viewBox="0 0 24 24"
             {...props}
         >

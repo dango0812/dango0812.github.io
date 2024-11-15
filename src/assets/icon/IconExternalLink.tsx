@@ -5,11 +5,11 @@ function IconExternalLink({ ...props }) {
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            width="24px"
-            height="24px"
+            width="14px"
+            height="14px"
             viewBox="0 0 24 24"
             strokeWidth="2.5"
-            stroke="#454545"
+            stroke="#494949"
             {...props}
         >
             <path
