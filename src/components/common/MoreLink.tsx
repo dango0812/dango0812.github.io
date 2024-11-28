@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 // components
 import { RowFlex } from "@components/common/FlexBox";
 // icons
-import IconExternalLink from "@assets/icon/IconExternalLink";
+import ExternalLinkIcon from "@assets/icon/ExternalLinkIcon";
 
 interface MoreLinkProps {
     enabledEndDecorator?: boolean;
@@ -41,7 +41,7 @@ export default function MoreLink({
                 {children}
                 
                 {enabledEndDecorator && (
-                    <IconExternalLink />
+                    <ExternalLinkIcon />
                 )}
             </RowFlex>
         </Link>

@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-function IconExternalLink({ ...props }) {
+const ExternalLinkIcon = ({ ...props }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@ function IconExternalLink({ ...props }) {
     )
 }
 
-export default memo(IconExternalLink);
+export default memo(ExternalLinkIcon);

@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-function IconAccountSchool({ ...props }) {
+const AccountSchoolIcon = ({ ...props }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,4 @@ function IconAccountSchool({ ...props }) {
     )
 }
 
-export default memo(IconAccountSchool);
+export default memo(AccountSchoolIcon);

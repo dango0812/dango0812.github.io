@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-function IconCake({ ...props }) {
+const CakeIcon = ({ ...props }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@ function IconCake({ ...props }) {
     )
 }
 
-export default memo(IconCake);
+export default memo(CakeIcon);

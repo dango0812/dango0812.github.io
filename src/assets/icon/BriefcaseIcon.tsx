@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-function IconBriefcase({ ...props }) {
+const BriefcaseIcon = ({ ...props }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@ function IconBriefcase({ ...props }) {
     )
 }
 
-export default memo(IconBriefcase);
+export default memo(BriefcaseIcon);
