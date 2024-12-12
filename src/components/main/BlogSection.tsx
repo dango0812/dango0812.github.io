@@ -7,10 +7,13 @@ import { css } from "@emotion/react";
 import MoreLink from "@components/common/MoreLink";
 import Container from "@components/common/Container";
 import { ColumnFlex, RowFlex } from "@components/common/FlexBox";
+import AnimationFadeIn from "@components/animation/AnimationFadeIn";
 import AnimationLoadingDots from "@components/animation/AnimationLoadingDots";
 import { BlogPostsWraper, BlogPostBox, Link, BlogPostIndexBadge, BlogPostTitle, BlogPostDate } from "@components/main/BlogSection.styles";
+// constants
+import { paths } from "@constants/paths";
 // utils
-import { getFormattedUTCtoKST } from "@/utils/datetime";
+import { getFormattedUTCtoKST } from "@utils/datetime";
 // types
 import { BlogArticlePost } from "@type/blog";
 // env
@@ -26,6 +29,7 @@ const RootStyle = styled.section`
 
 export default function BlogSection() {
     const { data, isLoading, isFetching } = useQuery({
+        initialData: [],
         queryKey: ["blog_posts"],
         queryFn: () => getBlogPosts(),
         refetchOnWindowFocus: false
@@ -37,20 +41,21 @@ export default function BlogSection() {
         return await response.json();
     };
 
+    if (loading) {
+        return <AnimationLoadingDots />
+    }
+
     return (
         <RootStyle>
             <Container>
-                <ColumnFlex
-                    alignItems="flex-start"
-                    gap={26}
-                >
-                    <h2>
-                        블로그
-                    </h2>
+                <AnimationFadeIn time={4}>
+                    <ColumnFlex
+                        gap={26}
+                    >
+                        <h2>
+                            블로그
+                        </h2>
 
-                    {loading ? (
-                        <AnimationLoadingDots />
-                    ) : (
                         <BlogPostsWraper>
                             {data.map((post: BlogArticlePost, idx: number) => (
                                 <BlogPostBox
@@ -62,7 +67,7 @@ export default function BlogSection() {
                                         rel="noreferrer noopener"
                                     >
                                         <RowFlex
-                                            justifyContent="flex-start"
+                                            alignItems="center"
                                             css={css`
                                                 width: inherit;
                                             `}
@@ -85,6 +90,7 @@ export default function BlogSection() {
                             ))}
 
                             <MoreLink
+                                href={paths.blogs}
                                 enabledEndDecorator
                             >
                                 <p
@@ -93,12 +99,12 @@ export default function BlogSection() {
                                         padding: 0px;
                                     `}
                                 >
-                                    더 많은 게시글 보기
+                                    모든 게시글 보기
                                 </p>
                             </MoreLink>
                         </BlogPostsWraper>
-                    )}
-                </ColumnFlex>
+                    </ColumnFlex>
+                </AnimationFadeIn>
             </Container>
         </RootStyle>
     )

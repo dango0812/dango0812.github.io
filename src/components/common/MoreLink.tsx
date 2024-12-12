@@ -5,7 +5,7 @@ import { RowFlex } from "@components/common/FlexBox";
 // icons
 import ExternalLinkIcon from "@assets/icon/ExternalLinkIcon";
 
-interface MoreLinkProps {
+interface MoreLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>{
     enabledEndDecorator?: boolean;
     children: React.ReactNode;
 };

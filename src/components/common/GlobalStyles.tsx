@@ -1,7 +1,5 @@
 // emotion
 import { Global, css } from "@emotion/react";
-// constants
-import { mediaQuery } from "@constants/mediaQuery";
 
 export default function GlobalStyles() {
     return (
@@ -32,67 +30,46 @@ export default function GlobalStyles() {
                     word-wrap: break-word;
                     color: #111314;
                     background-color: #F8F8F8;
-;
+                    letter-spacing: 0.04em;
+                }
+                div, article {
+                    width: 100%;
                 }
                 h1 {
                     font-size: var(--font-size-h1);
-                    letter-spacing: 0.06em;
-                    line-height: var(--font-line-height-lg);
-                    ${mediaQuery.tablet} {
-                        font-size: var(--font-size-h2);
-                        line-height: var(--font-line-height-md);
-                    }
-                    ${mediaQuery.mobile} {
-                        font-size: var(--font-size-h3);
-                        line-height: var(--font-line-height-sm);
-                    }
+                    font-weight: var(--font-weight-semibold);
+                    margin: 16px 0px;
                 }
                 h2 {
                     font-size: var(--font-size-h2);
+                    font-weight: var(--font-weight-semibold);
+                    margin: 10px 0px;
                 }
                 h3 {
                     font-size: var(--font-size-h3);
-                }
-                h4 {
-                    font-size: var(--font-size-h4);
-                }
-                h5 {
-                    font-size: var(--font-size-h5);
-                }
-                h6 {
-                    font-size: var(--font-size-h6);
-                    letter-spacing: 0.03em;
-                    line-height: var(--font-line-height-xl);
+                    font-weight: var(--font-weight-medium);
                 }
                 p {
-                    font-size: 16.8px;
-                    padding: 10px 0px;
-                    letter-spacing: 0.05em;
+                    font-size: var(--font-size-p);
+                    font-weight: var(--font-weight-medium);
                     line-height: 160%;
+                    padding: 10px 0px;
+                }
+                a {
+                    color: inherit;
                 }
                 :root {
-                    // font
-                    --font-size-h1: 40px;
-                    --font-size-h2: 48px;
-                    --font-size-h3: 36px;
-                    --font-size-h4: 32px;
-                    --font-size-h5: 24px;
-                    --font-size-h6: 20px;
-                    --font-size-p: 16px;
-                    --font-size-small: 14px;
-                    
+                    --font-size-h1: 24px;
+                    --font-size-h2: 22px;
+                    --font-size-h3: 20px;
+                    --font-size-h4: 18px;
+                    --font-size-p: 16.8px;
+
                     --font-weight-normal: 400;
                     --font-weight-medium: 500;
                     --font-weight-semibold: 600;
                     --font-weight-bold: 700;
 
-                    --font-line-height-xs: 100%;
-                    --font-line-height-sm: 123%;
-                    --font-line-height-md: 128%;
-                    --font-line-height-lg: 123%;
-                    --font-line-height-xl: 133%;
-                    // z-index
-                    --z-index-0: 0;
                     --z-index-header: 1100;
                 }
             `}
