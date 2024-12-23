@@ -6,10 +6,8 @@ import { ColumnFlex } from "@components/common/FlexBox";
 const Wrapper = styled.section`
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
-
     padding-top: 80px;
 `;
 
@@ -18,7 +16,7 @@ const Avatar = styled.img`
     height: 160px;
     object-fit: cover;
     box-sizing: border-box;
-    border-radius: 9999px;
+    border-radius: var(--border-radius-full);
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 `;
 

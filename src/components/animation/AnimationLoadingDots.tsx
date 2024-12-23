@@ -14,7 +14,7 @@ const Dot = styled.span<{
 }>`
     width: 10px;
     height: 10px;
-    border-radius: 50%;
+    border-radius: var(--border-radius-full);
     background-color: inherit;
     animation: bounce 1.5s linear infinite;
     -moz-animation: bounce 1.5s linear infinite; /* Firefox */

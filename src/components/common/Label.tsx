@@ -21,7 +21,7 @@ const LabelStylesMap: Record<string, { color: string, backgroundColor: string }>
 const LabelStyled = styled.span<LabelStyledProps>`
     display: flex;
     align-items: center;
-    border-radius: 8px;
+    border-radius: var(--border-radius-md);
     line-height: 1;
     color: ${({ color }) => color};
     background-color: ${({ backgroundColor }) => backgroundColor};
