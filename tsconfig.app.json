@@ -11,7 +11,7 @@
     
     "paths": {
       "@/*": ["src/*"],
-      "@app/*": ["src/app/*"],
+      "@pages/*": ["src/pages/*"],
       "@constants/*": ["src/constants/*"],
       "@providers/*": ["src/providers/*"],
       "@components/*": ["src/components/*"],

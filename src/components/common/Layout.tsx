@@ -5,13 +5,13 @@ import { css } from "@emotion/react";
 // components
 import Container from "@components/common/Container";
 import { ColumnFlex, RowFlex } from "@components/common/FlexBox";
-import { Navbar, NavContainer, NavList, NavLink, Main, Footer, Copyright } from "@components/common/Layout.styles";
+import { Navbar, NavContainer, NavList, NavLink, ContentWrapper, Footer, Link, Copyright } from "@components/common/Layout.styles";
 // icons
 import BlogIcon from "@assets/icon/BlogIcon";
 import MailIcon from "@assets/icon/MailIcon";
 import GithubIcon from "@assets/icon/GithubIcon";
 // constants
-import { paths } from "@constants/paths";
+import { routes, paths } from "@constants/paths";
 
 const navConfig = [
     {
@@ -28,24 +28,40 @@ const navConfig = [
     }
 ];
 
+const footerNavIconConfig = [
+    {
+        icon: <MailIcon />,
+        href: routes.mail
+    },
+    {
+        icon: <GithubIcon />,
+        href: routes.github
+    },
+    {
+        icon: <BlogIcon />,
+        href: paths.posts
+    }
+];
+
 export default function Layout() {
     return (
-        <>
+        <Container>
+            {/* header */}
             <Navbar>
                 <NavContainer>
                     <RowFlex
                         justifyContent="space-between"
                         gap={6}
-                        css={css`
-                            width: 100%;
-                        `}
                     >
                         <NavLink
                             href={paths.home}
+                            css={css`
+                                font-weight: 700;
+                            `}
                         >
-                            Donggyu Kim
+                            Donggyu
                         </NavLink>
-                        
+
                         <NavList>
                             {navConfig.map(({ name, href }) => (
                                 <li
@@ -59,62 +75,41 @@ export default function Layout() {
                                 </li>
                             ))}
                         </NavList>
-
                     </RowFlex>
                 </NavContainer>
             </Navbar>
             
-            <Main>
+            {/* content */}
+            <ContentWrapper>
                 <Outlet />
-            </Main>
-
+            </ContentWrapper>
+            
+            {/* footer */}
             <Footer>
-                <Container>
-                    <ColumnFlex
-                        alignItems="center"
+                <ColumnFlex
+                    alignItems="center"
+                    gap={16}
+                >
+                    <RowFlex
                         gap={20}
+                        alignItems="center"
+                        justifyContent="center"
                     >
-                        <RowFlex
-                            alignItems="center"
-                            justifyContent="center"
-                        >
-                            <NavList
-                                css={css`
-                                    align-items: center;
-                                    justify-content: center;
-                                    gap: 32px;
-                                `}
+                        {footerNavIconConfig.map(({ icon, href }, idx) => (
+                            <Link
+                                key={`link-icon-${idx}`}
+                                href={href}
                             >
-                                {navConfig.map(({ name, href }) => (
-                                    <li
-                                        key={name}
-                                    >
-                                        <NavLink
-                                            href={href}
-                                        >
-                                            {name}
-                                        </NavLink>
-                                    </li>
-                                ))}
-                            </NavList>
-                        </RowFlex>
+                                {icon}
+                            </Link>
+                        ))}
+                    </RowFlex>
 
-                        <RowFlex
-                            gap={24}
-                            alignItems="center"
-                            justifyContent="center"
-                        >
-                            <BlogIcon />
-                            <GithubIcon />
-                            <MailIcon />
-                        </RowFlex>
-
-                        <Copyright>
-                            © 2024 Donggyu Kim, All rights reserved
-                        </Copyright>
-                    </ColumnFlex>
-                </Container>
+                    <Copyright>
+                        © 2024 Donggyu Kim, All rights reserved
+                    </Copyright>
+                </ColumnFlex>
             </Footer>
-        </>
+        </Container>
     )
 }
