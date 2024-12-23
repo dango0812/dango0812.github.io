@@ -61,5 +61,5 @@ export const Footer = styled.footer`
 
 export const Copyright = styled.p`
     padding: 0px;
-    font-size: var(--font-size-small-p);
+    font-size: var(--font-size-medium);
 `;
