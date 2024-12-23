@@ -4,19 +4,24 @@ import * as ReactRouterDOM from "react-router-dom";
 
 // components
 import Layout from "@/components/common/Layout";
+import AnimationFadeIn from "@components/animation/AnimationFadeIn";
 
 // pages
-const MainPage = lazy(() => import("@app/page"));
-const TimelinePage = lazy(() => import("@app/timeline/page"));
-const ProjectsPage = lazy(() => import("@app/projects/page"));
-const PostsPage = lazy(() => import("@app/posts/page"));
+const MainPage = lazy(() => import("@/pages"));
+const TimelinePage = lazy(() => import("@pages/timeline/page"));
+const ProjectsPage = lazy(() => import("@pages/projects/page"));
+const PostsPage = lazy(() => import("@pages/posts/page"));
 // libs
 import { paths } from "@constants/paths";
 
 export default function RouterProvider() {
     const router = ReactRouterDOM.createBrowserRouter([
         {
-            element: <Layout />,
+            element: (
+                <AnimationFadeIn time={2}>
+                    <Layout />
+                </AnimationFadeIn>
+            ),
             children: [
                 {
                     path: paths.home,
