@@ -17,9 +17,6 @@ const Dot = styled.span<{
     border-radius: var(--border-radius-full);
     background-color: inherit;
     animation: bounce 1.5s linear infinite;
-    -moz-animation: bounce 1.5s linear infinite; /* Firefox */
-    -webkit-animation: bounce 1.5s linear infinite; /* Safari and Chrome */
-    -o-animation: bounce 1.5s linear infinite; /* Opera */
     animation-delay: ${({ delay }) => delay || 0};
 
     @keyframes bounce {

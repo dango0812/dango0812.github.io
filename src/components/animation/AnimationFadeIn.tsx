@@ -12,9 +12,6 @@ const Wrapper = styled.div<{
 }>`
     display: inline-block;
     animation: fadeIn ${({ time }) => `${time}s`};
-    -moz-animation: fadeIn ${({ time }) => `${time}s`}; /* Firefox */
-    -webkit-animation: fadeIn ${({ time }) => `${time}s`}; /* Safari and Chrome */
-    -o-animation: fadeIn ${({ time }) => `${time}s`}; /* Opera */
     
     @keyframes fadeIn {
         from {
