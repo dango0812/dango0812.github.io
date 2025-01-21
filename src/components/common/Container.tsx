@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 // constants
 import { mediaQuery } from "@constants/mediaQuery";
 
-const Container = styled.div`
+const Container = styled.main`
     width: 100%;
     height: 100%;
     max-width: var(--container-size);
