@@ -62,13 +62,14 @@ const InfoList = ({
     alignItems = "flex-start",
     justifyContent = "flex-start",
     gap = 0,
-    
+    ...props
 }: InfoListProps) => (
     <RootStyle
         direction={direction}
         alignItems={alignItems}
         justifyContent={justifyContent}
         gap={gap}
+        {...props}
     >
         <h2>
             {title}
