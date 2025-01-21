@@ -11,13 +11,14 @@ const awawrdsConfig = [
 ];
 
 const readBooksConfig = [
-    { text: "어쩌면 별들이 너의 슬픔을 가져갈지도 몰라", date: "2025. 01. 05" }
+    { text: "어쩌면 별들이 너의 슬픔을 가져갈지도 몰라" },
+    { text: "봉제인형 살인사건" }
 ];
 
 const contactConfig = [
     { text: "이메일", link: routes.mail },
     { text: "깃허브", link: routes.github },
-    { text: "블로그", link: paths.posts },
+    { text: "블로그", link: paths.blog },
 ];
 
 export default function MainPage() {
@@ -27,6 +28,7 @@ export default function MainPage() {
                 gap={40}
             >
                 <ColumnFlex
+                    as="section"
                     alignItems="center"
                     justifyContent="center"
                 >
@@ -63,18 +65,21 @@ export default function MainPage() {
                 </ColumnFlex>
 
                 <InfoList
+                    as="section"
                     title="수상 내역"
                     list={awawrdsConfig}
                     gap={20}
                 />
                 
                 <InfoList
+                    as="section"
                     title="2025 독서"
                     list={readBooksConfig}
                     gap={20}
                 />
 
                 <InfoList
+                    as="section"
                     title="연락처"
                     list={contactConfig}
                     gap={20}

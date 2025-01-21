@@ -15,7 +15,7 @@ const BLOG_API_URL = import.meta.env.VITE_BLOG_API_URL;
 const BLOG_API_AUTH_USERNAME = import.meta.env.VITE_BLOG_API_USERNAME;
 const BLOG_API_KEY = import.meta.env.VITE_BLOG_API_KEY;
 
-export default function PostsPage() {
+export default function BlogPostPage() {
     const { data, isLoading, isFetching } = useQuery({
         initialData: [],
         queryKey: ["blog_posts"],
@@ -41,6 +41,9 @@ export default function PostsPage() {
 
     return (
         <RootStyle>
+            <h1>
+                블로그
+            </h1>
             {loading ? (
                 <ColumnFlex>
                     <AnimationLoadingDots />

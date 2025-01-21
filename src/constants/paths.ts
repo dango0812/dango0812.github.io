@@ -5,7 +5,7 @@ export const routes = {
 
 export const paths = {
     home: "/",
-    timeline: "/timeline",
-    projects: "/projects",
-    posts: "/posts"
+    blog: "/blog",
+    career: "/career",
+    project: "/project"
 };

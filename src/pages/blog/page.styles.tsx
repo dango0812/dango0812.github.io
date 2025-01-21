@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 export const RootStyle = styled.section`
     width: 100%;
     height: 100%;
-    padding: 80pt 0px;
+    padding: 100px 0px;
 `;
 
 export const Wrapper = styled.ul`
