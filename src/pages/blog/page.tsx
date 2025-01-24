@@ -3,13 +3,13 @@ import { useCallback } from "react";
 // useQuery
 import { useQuery } from "@tanstack/react-query";
 // components
-import { RootStyle, Wrapper, PostBox, Link, PostIndexBadge, PostTitle, PostDate } from "@pages/posts/page.styles";
-import { ColumnFlex, RowFlex } from "@/components/common/FlexBox";
+import { RootStyle, Wrapper, PostBox, Link, PostIndexBadge, PostTitle, PostDate } from "@pages/blog/page.styles";
+import { ColumnFlex, RowFlex } from "@components/common/FlexBox";
 import AnimationLoadingDots from "@components/animation/AnimationLoadingDots";
 // utils
 import { getFormattedUTCtoKST } from "@utils/datetime";
 // types
-import BlogPostType from "@/pages/posts/types/BlogPostType";
+import BlogPostType from "@pages/blog/types/BlogPostType";
 // env
 const BLOG_API_URL = import.meta.env.VITE_BLOG_API_URL;
 const BLOG_API_AUTH_USERNAME = import.meta.env.VITE_BLOG_API_USERNAME;

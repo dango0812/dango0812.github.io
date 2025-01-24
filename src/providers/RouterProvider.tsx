@@ -12,7 +12,7 @@ const MainPage = lazy(() => import("@/pages"));
 const CareerPage = lazy(() => import("@/pages/career/page"));
 const ProjectsPage = lazy(() => import("@/pages/project/page"));
 const ProjectDetailPage = lazy(() => import("@/pages/project/detail/page"));
-const PostsPage = lazy(() => import("@pages/posts/page"));
+const BlogPostPage = lazy(() => import("@pages/blog/page"));
 
 // libs
 import { paths } from "@constants/paths";
@@ -56,7 +56,7 @@ export default function RouterProvider() {
                 },
                 {
                     path: paths.blog,
-                    element: <PostsPage />
+                    element: <BlogPostPage />
                 }
             ]
         }
