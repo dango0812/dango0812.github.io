@@ -13,6 +13,7 @@ const CareerPage = lazy(() => import("@/pages/career/page"));
 const ProjectsPage = lazy(() => import("@/pages/project/page"));
 const ProjectDetailPage = lazy(() => import("@/pages/project/detail/page"));
 const BlogPostPage = lazy(() => import("@pages/blog/page"));
+const NotFoundPage = lazy(() => import("@pages/404/page"));
 
 // libs
 import { paths } from "@constants/paths";
@@ -57,6 +58,10 @@ export default function RouterProvider() {
                 {
                     path: paths.blog,
                     element: <BlogPostPage />
+                },
+                {
+                    path: "*",
+                    element: <NotFoundPage />
                 }
             ]
         }
