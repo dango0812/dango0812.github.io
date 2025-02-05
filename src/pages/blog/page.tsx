@@ -9,7 +9,7 @@ import AnimationLoadingDots from "@components/animation/AnimationLoadingDots";
 // utils
 import { getFormattedUTCtoKST } from "@utils/datetime";
 // types
-import BlogPostType from "@pages/blog/types/BlogPostType";
+import { BlogPostType } from "@pages/blog/types/BlogPostType";
 // env
 const BLOG_API_URL = import.meta.env.VITE_BLOG_API_URL;
 const BLOG_API_AUTH_USERNAME = import.meta.env.VITE_BLOG_API_USERNAME;
