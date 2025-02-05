@@ -9,7 +9,7 @@ const RootStyle = styled.div`
     position: relative;
     display: flex;
     overflow: auto;
-    background-color: #F2F1F1;
+    background-color: var(--white100);
     border-radius: 20px;
 `;
 

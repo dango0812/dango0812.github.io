@@ -14,7 +14,7 @@ export const CompanyTitle = styled.h2`
 export const CompanyWorkDate = styled.p`
     font-size: var(--font-size-small);
     padding: 0px;
-    color: #475569;
+    color: var(--grey100);
 `;
 
 export const ProjectTitle = styled.span`

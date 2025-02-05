@@ -25,7 +25,7 @@ const Dot = styled.span<{
         }
         25% {
             margin-bottom: 12px;
-            background-color: #ff7171;
+            background-color: var(--pink);
         }
         50% {
             margin-bottom: 0

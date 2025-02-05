@@ -23,7 +23,7 @@ export const PostBox = styled.li`
     display: flex;
     align-items: center;
     padding: 0.625rem 0px; // 12px 0px
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid var(--white400);
     transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
     :hover {
         transform: scale(1.01);
@@ -40,7 +40,7 @@ export const PostIndexBadge = styled.div`
     justify-content: center;
     font-size: var(--font-size-small);
     border-radius: var(--border-radius-md);
-    background-color: #F3F4F6;
+    background-color: var(--white200);
 `;
 
 export const PostTitle = styled.p`
@@ -56,6 +56,6 @@ export const PostDate = styled.span`
     width: 100px;
     font-size: var(--font-size-small);
     letter-spacing: 0;
-    color: #4B5563;
+    color: var(--grey);
     white-space: nowrap;
 `;
