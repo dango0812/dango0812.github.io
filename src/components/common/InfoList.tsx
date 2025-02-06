@@ -2,6 +2,7 @@
 import styled from "@emotion/styled";
 
 interface InfoListProps {
+    as?: keyof JSX.IntrinsicElements;
     title: string;
     list: Array<{
         text: string;

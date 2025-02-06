@@ -5,7 +5,7 @@ import { ColumnFlex } from "@components/common/FlexBox";
 // routes
 import { routes, paths } from "@constants/paths";
 
-const awawrdsConfig = [
+const awardsConfig = [
     { text: "경찰행정 발전표창", date: "2019. 10" },
     { text: "대학교 UCC 공모전 대상", date: "2017. 07" },
     { text: "봉사활동 소감문 쓰기 대회 대상", date: "2014. 12" },
@@ -69,7 +69,7 @@ export default function MainPage() {
                 <InfoList
                     as="section"
                     title="수상 내역"
-                    list={awawrdsConfig}
+                    list={awardsConfig}
                     gap={20}
                 />
                 
