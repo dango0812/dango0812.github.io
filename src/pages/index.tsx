@@ -6,8 +6,10 @@ import { ColumnFlex } from "@components/common/FlexBox";
 import { routes, paths } from "@constants/paths";
 
 const awawrdsConfig = [
-    { text: "경찰행정 발전표창", date: "2019. 10. 21" },
-    { text: "창의성 UCC 영상 제작 공모전 1위", date: "2017. 07. 15" }
+    { text: "경찰행정 발전표창", date: "2019. 10" },
+    { text: "대학교 UCC 공모전 대상", date: "2017. 07" },
+    { text: "봉사활동 소감문 쓰기 대회 대상", date: "2014. 12" },
+    { text: "언어순화 캠페인 글짓기 대회 은상", date: "2014. 10" }
 ];
 
 const readBooksConfig = [
