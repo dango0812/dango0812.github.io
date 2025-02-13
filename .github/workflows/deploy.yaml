@@ -1,36 +1,34 @@
 name: Deploy
 
 on:
-  # Trigger on push to the main branch
   push:
     branches:
-      - main  # use your desired branch (e.g., build branch)
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Step 2: Install pnpm
+      # install pnpm
       - name: Install pnpm
         uses: pnpm/action-setup@v2.4.0
         with:
           version: latest-8
           standalone: true
 
-      # Step 3: Install dependencies and build the project
+      # install & build
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run build  # This will use the "build" script from your package.json
+          pnpm run linux-build
 
-      # Step 4: Deploy to GitHub Pages using gh-pages
+      # deploy & use github-pages-deploy action ( gh-pages )
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: release  # Target branch where you want to deploy
-          folder: ./dist    # Folder where Vite outputs the build
+          branch: release
+          folder: ./dist
           github_token: ${{ secrets.GITHUB_TOKEN }}
