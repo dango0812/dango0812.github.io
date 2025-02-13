@@ -8,6 +8,7 @@ export default function GlobalStyles() {
                 @font-face {
                     font-family: 'IBMPlexSansKR-Regular';
                     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+                    font-display: auto;
                     font-weight: normal;
                     font-style: normal;
                 }
@@ -22,18 +23,26 @@ export default function GlobalStyles() {
                     vertical-align: baseline;
                 }
                 body {
-                    line-height: var(--font-line-height-default);
                     font-family: "IBMPlexSansKR-Regular", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
                     -moz-osx-font-smoothing: grayscale;
                     -webkit-font-smoothing: antialiased;
-                    word-break: keep-all;
                     word-wrap: break-word;
-                    color: #111314;
-                    background-color: #F8F8F8;
+                    color: var(--black);
+                    background-color: var(--white);
                     letter-spacing: 0.04em;
                 }
-                div, article {
+                html, body, #root {
+                    display: flex;
+                    flex-direction: column;
                     width: 100%;
+                    height: 100%;
+                }
+                div {
+                    width: 100%;
+                }
+                a {
+                    color: inherit;
+                    text-decoration: none;
                 }
                 h1 {
                     font-size: var(--font-size-h1);
@@ -49,28 +58,67 @@ export default function GlobalStyles() {
                     font-size: var(--font-size-h3);
                     font-weight: var(--font-weight-medium);
                 }
+                h4 {
+                    font-size: var(--font-size-h4);
+                    font-weight: var(--font-weight-medium);
+                }
+                h5 {
+                    font-size: var(--font-size-h5);
+                    font-weight: var(--font-weight-medium);
+                }
+                h6 {
+                    font-size: var(--font-size-h6);
+                    font-weight: var(--font-weight-medium);
+                }
                 p {
                     font-size: var(--font-size-p);
                     font-weight: var(--font-weight-medium);
-                    line-height: 160%;
+                    line-height: 1.6;
                     padding: 10px 0px;
                 }
-                a {
-                    color: inherit;
-                }
+                
                 :root {
                     --font-size-h1: 24px;
                     --font-size-h2: 22px;
                     --font-size-h3: 20px;
                     --font-size-h4: 18px;
+                    --font-size-h5: 17px;
+                    --font-size-h6: 16px;
                     --font-size-p: 16.8px;
+                    --font-size-large: 15.8px;
+                    --font-size-medium: 14.8px;
+                    --font-size-small: 14px;
 
                     --font-weight-normal: 400;
                     --font-weight-medium: 500;
                     --font-weight-semibold: 600;
                     --font-weight-bold: 700;
 
+                    --border-radius-none: 0px;
+                    --border-radius-xs: 2px;
+                    --border-radius-sm: 4px;
+                    --border-radius-md: 8px;
+                    --border-radius-lg: 16px;
+                    --border-radius-xl: 24px;
+                    --border-radius-full: 9999px;
+
+                    --header-size: 60px;
+                    --container-size: 800px;
+
                     --z-index-header: 1100;
+
+                    --nav-background-color: rgba(248, 248, 248, .75);
+                    --footer-border: var(--white200);
+
+                    --white: #F8F8F8;
+                    --white100: #F2F1F1;
+                    --white200: #F3F4F6;
+                    --white300: #E4E4E7;
+                    --white400: #E5E7EB;
+                    --black: #111314;
+                    --grey: #4B5563;
+                    --grey100: #475569;
+                    --pink: #ff7171;
                 }
             `}
         />
