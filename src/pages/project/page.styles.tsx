@@ -27,7 +27,7 @@ export const CardMediaBox = styled.div`
 export const CardMedia = styled.img`
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     transition: all 500ms ease;
     transform: scale(1.0);
     :hover {
@@ -42,7 +42,7 @@ export const CardTitle = styled.h2`
 
 export const CardContent = styled.p`
     display: -webkit-box;
-    height: 72px;
+    height: 74px;
     padding: 0px;
     font-size: var(--font-size-medium);
     overflow: hidden;
