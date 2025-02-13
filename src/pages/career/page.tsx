@@ -84,6 +84,7 @@ const careerConfig = [
         works: [
             {
                 title: "자사 서비스 및 아프리카TV 멀티 버스 상품 구매 웹 페이지 기획",
+                details: [],
                 date: "2021년 4월 ~ 2021년 5월"
             }
         ],
