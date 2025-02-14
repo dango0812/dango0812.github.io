@@ -20,7 +20,7 @@ const projectConfig = [
         title: "NextAuth With AWS Cognito",
         description: "NextAuth와 AWS Cognito를 사용하여 이메일 및 구글 로그인 구현 방법을 제공하는 프로젝트입니다. 블로그 조회 수 4,000 이상을 달성하였고, 꾸준히 많은 사람들이 방문하고 있습니다.",
         date: "2024년 6월 ~ 2024년 8월",
-        featureImage: `${ASSETS_CDN_URL}/v1738817405/next-auth.png`,
+        featureImage: `${ASSETS_CDN_URL}/v1739253101/next-auth-aws-cognito.png`,
         featureImageAlt: "NextAuth with AWS Cognito"
     },
     {
@@ -44,7 +44,7 @@ const projectConfig = [
         title: "RTSP 기반 실시간 영상 비식별화 및 개인정보 보호 솔루션",
         description: "Jetson Xavier NX 기반으로 CCTV 등 공공서비스 영상에서의 개인정보 보호를 위한 실시간 마스킹/언마스킹할 수 있는 관리자용 웹 서비스입니다.",
         date: "2023년 1월 ~ 2023년 9월",
-        featureImage: `${ASSETS_CDN_URL}/v1739253101/next-auth-aws-cognito.png`,
+        featureImage: `${ASSETS_CDN_URL}/v1738817405/de-identification.png`,
         featureImageAlt: "de-identification"
     },
     {
