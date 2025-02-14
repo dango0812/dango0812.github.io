@@ -1,1 +1,0 @@
-System.register([],(function(e,t){"use strict";return{execute:function(){const t=600;e("m",{mobile:`@media screen and (max-width: ${t}px)`,tablet:`@media screen and (min-width: ${t}px) and (max-width: 1200px)`,laptop:"@media screen and (min-width: 900px)"})}}}));

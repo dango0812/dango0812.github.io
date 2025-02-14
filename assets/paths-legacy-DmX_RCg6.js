@@ -1,1 +1,0 @@
-System.register([],(function(e,t){"use strict";return{execute:function(){e("r",{mail:"mailto:ehdrbsla12000@gmail.com",github:"https://github.com/dango0812"}),e("p",{home:"/",blog:"/blog",career:"/career",project:"/project"})}}}));
