@@ -8,7 +8,7 @@ import Layout from "@/components/common/Layout";
 import AnimationFadeIn from "@components/animation/AnimationFadeIn";
 
 // pages
-const MainPage = lazy(() => import("@/pages"));
+const MainPage = lazy(() => import("@/pages/page"));
 const CareerPage = lazy(() => import("@/pages/career/page"));
 const ProjectsPage = lazy(() => import("@/pages/project/page"));
 const ProjectDetailPage = lazy(() => import("@/pages/project/detail/page"));
