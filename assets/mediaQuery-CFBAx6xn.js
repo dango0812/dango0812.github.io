@@ -1,0 +1,1 @@
+const e={mobile:600,tablet:900,laptop:1200},a={mobile:"@media screen and (max-width: ".concat(e.mobile,"px)"),tablet:"@media screen and (min-width: ".concat(e.mobile,"px) and (max-width: ").concat(e.laptop,"px)"),laptop:"@media screen and (min-width: ".concat(e.tablet,"px)")};export{a as m};
