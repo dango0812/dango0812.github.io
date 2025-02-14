@@ -22,7 +22,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run linux-build
+          pnpm run build
 
       # deploy & use github-pages-deploy action ( gh-pages )
       - name: Deploy
