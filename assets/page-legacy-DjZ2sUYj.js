@@ -1,4 +1,4 @@
-!function(){let e,t,n=e=>e;System.register(["./index-legacy-Dg07Li6_.js","./FlexBox-legacy-JxK1Ek8g.js"],(function(i,r){"use strict";var l,a,c,s,o;return{setters:[e=>{l=e.n,a=e.a,c=e.j,s=e.p},e=>{o=e.C}],execute:function(){i("default",(function(){return a(r,{children:c(o,{children:[a("h1",{children:"페이지를 찾을 수 없습니다."}),a("p",{children:"페이지의 주소가 잘못 입력되었거나, 변경 혹은 삭제되어 페이지를 찾을 수 없습니다."}),a(d,{href:s.home,children:"홈으로 이동"})]})})}));const r=l.article(e||(e=n`
+!function(){let e,t,n=e=>e;System.register(["./main-legacy-BwrSpEV_.js","./FlexBox-legacy-EGQ_A3sK.js","./modulepreload-polyfill-legacy-thrsW4a0.js"],(function(i,r){"use strict";var l,a,c,s,o;return{setters:[e=>{l=e.n,a=e.a,c=e.j,s=e.p},e=>{o=e.C},null],execute:function(){i("default",(function(){return a(r,{children:c(o,{children:[a("h1",{children:"페이지를 찾을 수 없습니다."}),a("p",{children:"페이지의 주소가 잘못 입력되었거나, 변경 혹은 삭제되어 페이지를 찾을 수 없습니다."}),a(d,{href:s.home,children:"홈으로 이동"})]})})}));const r=l.article(e||(e=n`
     width: 100%;
     height: 100%;
     display: flex;

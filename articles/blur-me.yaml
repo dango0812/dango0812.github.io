@@ -1,3 +1,4 @@
+slug: blur-me
 title: "블러미 이미지 & 영상 비식별화 웹 페이지"
 description: "AI로 사람, 얼굴, 차량, 번호판을 인식하여 쉽고 빠르게 블러 처리를 해주는 서비스입니다. 별도의 프로그램 설치 없이 웹에서 모든 처리가 가능하며, 글로벌 서비스로 다양한 국가에서 접속하여 사용하고 있습니다."
 feature_image: "https://res.cloudinary.com/dtcwegdlw/image/upload/v1738817405/blur-me.png"
