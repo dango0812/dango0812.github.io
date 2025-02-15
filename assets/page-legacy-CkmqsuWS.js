@@ -20,3 +20,4 @@
         transition: transform 0.3s cubic-bezier(0.1, 0.4, 0.3, 1);
     }
 `))}}}))}();
+//# sourceMappingURL=page-legacy-CkmqsuWS.js.map

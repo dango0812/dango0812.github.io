@@ -37,3 +37,4 @@
         transition: transform 0.3s cubic-bezier(0.1, 0.4, 0.3, 1);
     }
 `)),v=({title:t,list:e,direction:i="column",alignItems:n="flex-start",justifyContent:r="flex-start",gap:l=0,...a})=>c(m,{direction:i,alignItems:n,justifyContent:r,gap:l,...a,children:[p("h2",{children:t}),p(b,{children:e.map((({text:t,date:e,link:i})=>p(C,{children:i?c(y,{href:i,children:[t," ",e&&`(${e})`]}):c(x,{children:[t," ",e&&`(${e})`]})},t)))})]}),w=[{text:"경찰행정 발전표창",date:"2019. 10"},{text:"대학교 UCC 공모전 대상",date:"2017. 07"},{text:"봉사활동 소감문 쓰기 대회 대상",date:"2014. 12"},{text:"언어순화 캠페인 글짓기 대회 은상",date:"2014. 10"}],j=[{text:"어쩌면 별들이 너의 슬픔을 가져갈지도 몰라"},{text:"봉제인형 살인사건"}],$=[{text:"이메일",link:g.mail},{text:"깃허브",link:g.github},{text:"블로그",link:h.blog}]}}}))}();
+//# sourceMappingURL=page-legacy-C2lfNZXj.js.map

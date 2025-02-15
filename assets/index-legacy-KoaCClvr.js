@@ -236,3 +236,4 @@ function Xp(){return Xp=Object.assign?Object.assign.bind():function(e){for(var t
                     --pink: #ff7171;
                 }
             `))})}const Vy=new Vp;np(document.getElementById("root")).render(Vn(qn,{children:[Qn(Qy,{}),Qn(Gp,{client:Vy,children:Qn(qy,{})})]}))}}}))}();
+//# sourceMappingURL=index-legacy-KoaCClvr.js.map

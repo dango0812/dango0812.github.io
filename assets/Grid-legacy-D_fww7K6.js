@@ -13,3 +13,4 @@
         grid-column: ${0};
     }
 `),r.mobile,r.tablet,r.laptop,(({column:n})=>`span ${n}`)))}}}))}();
+//# sourceMappingURL=Grid-legacy-D_fww7K6.js.map

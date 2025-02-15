@@ -73,3 +73,4 @@
         }
     }
 `),(({delay:t})=>t||0));function jt(){return j(Ft,{children:[Q(_t,{delay:"0s"}),Q(_t,{delay:"0.3s"}),Q(_t,{delay:"0.6s"})]})}const Qt=t=>{const e=new Date(t);e.setHours(e.getHours()+9);return`${e.getFullYear()}년 ${e.getMonth()+1}월 ${e.getDay()}일`},Dt="https://dev.to",qt="dango0812",It="fDwtyzQ7BU8gb9MEjzt3CB4a"}}}))}();
+//# sourceMappingURL=page-legacy-CsRjeJS8.js.map

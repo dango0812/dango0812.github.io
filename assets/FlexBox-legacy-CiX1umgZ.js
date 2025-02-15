@@ -11,3 +11,4 @@
     justify-content: ${0};
     gap: ${0};
 `),(({alignItems:t})=>t||"flex-start"),(({justifyContent:t})=>t||"flex-start"),(({gap:t})=>`${t||0}px`)))}}}))}();
+//# sourceMappingURL=FlexBox-legacy-CiX1umgZ.js.map
