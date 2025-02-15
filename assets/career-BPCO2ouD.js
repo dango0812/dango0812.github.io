@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";import"./page-DqTe3h2v.js";import"./mediaQuery-F8TWGX1u.js";import"./Grid-6_D_0efl.js";import"./FlexBox-WSib11g5.js";function t(){import.meta.url,import("_").catch(()=>1),async function*(){}().next()}export{t as __vite_legacy_guard};
