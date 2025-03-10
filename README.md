@@ -1,35 +1,36 @@
-# Donggyu
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-<br />
-<p align="center">
-  <img src="https://res.cloudinary.com/dtcwegdlw/image/upload/v1739979734/profile.png" alt="logo" width="160px" />
-</p>
+## Getting Started
 
-자기소개, 수상 및 독서 내역, 자격증, 경력, 블로그, 프로젝트 내용을 담은 포트폴리오 웹 페이지입니다.  
-<a href="https://dango0812.github.io/" target="_blank">portfolio website</a>
-
-## Tech Stack
-
-- TypeScript
-- React
-- Vite
-- React-query
-- Emotion
-
-## Project Structure
+First, run the development server:
 
 ```bash
-.github
-└── workflows           # Github actions deploy script
-public
-├── articles            # Project detail articles (YAML)
-├── assets              # Static assets
-└── favicon             # Favicon
-src
-├── components          # UI components
-├── constants           # Constants
-├── pages               # Pages
-├── providers           # Providers
-├── utils               # Utils
-└── index.tsx           # Application entry point
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
