@@ -20,6 +20,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
+    "postcss": "^8.5.3",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^10.1.5",
+    "postcss-scss": "^4.0.9",
     "sass": "^1.85.1",
     "typescript": "^5"
   }
