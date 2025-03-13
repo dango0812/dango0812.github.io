@@ -1,7 +1,7 @@
 // react
 import { memo } from "react";
 
-interface StartfishBladeIconProps {
+interface StarfishBladeIconProps {
   className?: string;
   width: number;
   height: number;
@@ -9,13 +9,13 @@ interface StartfishBladeIconProps {
   crop?: string;
 }
 
-const StartfishBladeIcon = ({
+const StarfishBladeIcon = ({
   className,
   width,
   height,
   color,
   crop
-}: StartfishBladeIconProps) => {
+}: StarfishBladeIconProps) => {
 
   let viewBox = "0 0 151 136";
 
@@ -58,4 +58,4 @@ const StartfishBladeIcon = ({
   );
 };
 
-export default memo(StartfishBladeIcon);
+export default memo(StarfishBladeIcon);
