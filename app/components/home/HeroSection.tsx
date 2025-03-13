@@ -13,20 +13,32 @@ export default function HeroSection() {
             <div
                 className={styles["container"]}
             >
-                <h1
-                    className={styles["title"]}
+                <div
+                    className={styles["typography-box"]}
                 >
-                    안녕하세요.
-                    <SmailIcon
-                        className={styles["smail-icon"]}
-                        width={64}
-                        height={64}
-                    />
-                    <br/>
-                    프론트엔드 개발자 김동규입니다.
-                </h1>
+                    <h1
+                        className={styles["title"]}
+                    >
+                        안녕하세요.
+                        <SmailIcon
+                            className={styles["smail-icon"]}
+                            width={64}
+                            height={64}
+                        />
+                        <br/>
+                        프론트엔드 개발자 김동규입니다.
+                    </h1>
 
-                
+                    <p
+                        className={styles["caption"]}
+                    >
+                        사용자가 직관적으로 이해하고 편하게 사용할 수 있는 인터페이스를 만드는 걸 좋아합니다.<br/>
+                        팀원들과 함께 고민하고 발전시키는 과정에서 가장 큰 보람을 느껴요.<br/>
+                        가독성 좋은 코드를 고민하고, 새로운 기술에도 호기심을 가지고 도전하는 편입니다.<br/>
+                        끊임없이 배우고 성장하며, 더 나은 사용자 경험을 만들어가고 싶습니다.
+                    </p>
+                </div>
+
                 <div
                     className={styles["profile-container"]}
                 >

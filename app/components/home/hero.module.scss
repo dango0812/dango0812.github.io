@@ -25,19 +25,28 @@ $max-image: 360px;
         }
     }
 
-    .title {
-        font-size: $font-size-md;
-        font-weight: $font-weight-semibold;
-        @include mixins.responsive(lg) {
-            font-size: $font-size-lg;
-        }
-        @include mixins.responsive(md) {
-            font-size: $font-size-xl;
-        }
-    }
-
     .smail-icon {
         margin-left: 2rem;
+    }
+    
+    .typography-box {
+        display: flex;
+        flex-direction: column;
+        
+        .title {
+            font-size: $font-size-md;
+            font-weight: $font-weight-semibold;
+            @include mixins.responsive(lg) {
+                font-size: $font-size-lg;
+            }
+            @include mixins.responsive(md) {
+                font-size: $font-size-xl;
+            }
+        }
+
+        .caption {
+            font-size: $font-size-sm;
+        }
     }
 
     .profile-container {
@@ -48,25 +57,25 @@ $max-image: 360px;
         justify-content: center;
         width: 100%;
         max-width: $max-image;
-    }
-    
-    .profile-image {
-        width: 100%;
-        height: auto;
-        max-width: $max-image;
-        max-height: $max-image;
-        object-fit: cover;
-    }
-    
-    .profile-decoration {
-        display: none;
-        @include mixins.responsive(md) {
-            position: absolute;
-            display: flex;
-            flex-direction: row;
-            top: -45%;
-            right: 2%;
-            gap: 310px;
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            max-width: $max-image;
+            max-height: $max-image;
+            object-fit: cover;
+        }
+        
+        .profile-decoration {
+            display: none;
+            @include mixins.responsive(lg) {
+                position: absolute;
+                display: flex;
+                flex-direction: row;
+                top: -45%;
+                right: 2%;
+                gap: 310px;
+            }
         }
     }
 }
