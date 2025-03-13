@@ -1,0 +1,81 @@
+@use "styles/typography.scss" as *;
+@use "styles/mixins.scss" as mixins;
+
+$max-image: 360px;
+
+.root {
+    position: relative;
+    width: 100%;
+    padding: 160 0px;
+
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0px auto;
+        padding: 0px 24px;
+        @include mixins.responsive(md) {
+            flex-direction: row;
+        }
+        @include mixins.responsive(xl) {
+            padding: 0px;
+        }
+    }
+
+    .smail-icon {
+        margin-left: 2rem;
+    }
+    
+    .typography-box {
+        display: flex;
+        flex-direction: column;
+        
+        .title {
+            font-size: $font-size-md;
+            font-weight: $font-weight-semibold;
+            @include mixins.responsive(lg) {
+                font-size: $font-size-lg;
+            }
+            @include mixins.responsive(md) {
+                font-size: $font-size-xl;
+            }
+        }
+
+        .caption {
+            font-size: $font-size-sm;
+        }
+    }
+
+    .profile-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: $max-image;
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            max-width: $max-image;
+            max-height: $max-image;
+            object-fit: cover;
+        }
+        
+        .profile-decoration {
+            display: none;
+            @include mixins.responsive(lg) {
+                position: absolute;
+                display: flex;
+                flex-direction: row;
+                top: -45%;
+                right: 2%;
+                gap: 310px;
+            }
+        }
+    }
+}
