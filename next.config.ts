@@ -4,11 +4,15 @@ import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? true : false
+  },
+  images: {
+    unoptimized: true
   },
   webpack(config) {
     config.module.rules.push({
