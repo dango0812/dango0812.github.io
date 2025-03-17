@@ -1,13 +1,10 @@
-// components
-import HeroSection from "@components/home/HeroSection";
-import SideDecoration from "@components/common/SideDecoration";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
       <main>
-        <HeroSection />
-        <SideDecoration />
+      
       </main>
     </div>
   );
