@@ -12,7 +12,8 @@ import { cn } from "@libs/tailwind";
 export default function HomeCareerSection() {
     return (
         <section
-            className="py-30 px-5 lg:px-0"
+            id="career"
+            className="py-15 px-5 lg:px-0"
         >
             <Container
                 maxWidth="xs"

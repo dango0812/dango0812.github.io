@@ -1,12 +1,13 @@
 // mocks
-import { _HeroSection } from "@_mocks/home";
+import { _HeroSection, _TableOfContent } from "@_mocks/home";
 // components
 import { Container, ColumnFlex, Typography } from "@components/ui";
 
 export default function HomeHeroSection() {
     return (
         <section
-            className="pt-10 px-5 lg:px-0"
+            id="hero"
+            className="py-10 px-5 lg:px-0"
         >
             <Container
                 className="flex flex-col gap-10"

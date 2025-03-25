@@ -8,7 +8,8 @@ import { cn } from "@libs/tailwind";
 export default function HeroCoreCompetenciesSection() {
     return (
         <section
-            className="pt-30 px-5 lg:px-0"
+            id="coreCompetencies"
+            className="py-15 px-5 lg:px-0"
         >
             <Container
                 className="flex flex-col items-center justify-center gap-10"
