@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+body {
+  word-break: keep-all;
+  font-family: Pretendard, sans-serif, -apple-system,BlinkMacSystemFont,Basier Square,Apple SD Gothic Neo,Roboto,Noto Sans KR,Noto Sans,Helvetica Neue,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+@theme {
+  --color-yellow-500: #FF6600;
+  --color-sky-950: #1e2939;
+  --radius-3xl: 20px;
+}
+
+@keyframes rocketMove {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(3px, -2px);
+  }
+}
+
+.animate-rocket {
+  animation: rocketMove 2s ease-in-out infinite;
+  display: inline-block;
+}
