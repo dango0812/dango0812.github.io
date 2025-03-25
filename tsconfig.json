@@ -23,6 +23,7 @@
       "@/*": ["./*"],
       "@_mocks/*": ["./_mocks/*"],
       "@styles/*": ["./app/styles/*"],
+      "@provider/*": ["./app/components/provider/*"],
       // ui
       "@components/*": ["./app/components/*"],
       "@assets/*": ["./app/components/assets/*"],
