@@ -46,3 +46,9 @@ export const _CareerSection = {
         }
     ]
 }
+
+export const _TableOfContent = [
+    { link: `#${_HeroSection.title}`, content: _HeroSection.title },
+    { link: `#${_CoreCompetenciesSection.title}`, content: _CoreCompetenciesSection.title },
+    { link: `#${_CareerSection.title}`, content: _CareerSection.title }
+];
