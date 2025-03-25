@@ -2,6 +2,8 @@
 import type { Metadata } from "next";
 // mocks
 import { _MetaData } from "@_mocks/layout";
+// components
+import ReactQueryProvider from "@provider/ReactQueryProvider";
 // styles
 import "@styles/globals.css";
 
@@ -32,7 +34,9 @@ export default function RootLayout({
       </head>
 
       <body>
-        {children}
+        <ReactQueryProvider>
+          {children}
+        </ReactQueryProvider>
       </body>
     </html>
   );
