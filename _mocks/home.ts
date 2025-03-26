@@ -47,6 +47,12 @@ export const _CareerSection = {
     ]
 }
 
+export const _BlogPostSection = {
+    title: "블로그",
+    subtitle: "다양한 업무와 프로젝트를 통해 경험과 노하우를 쌓고 있습니다.",
+    loadError: "게시글을 읽어오다 오류가 발생했어요. 😭\n다음에 다시 시도해주세요. 🥺"
+}
+
 export const _TableOfContentSection = {
     title: "목차"
 }
@@ -54,5 +60,6 @@ export const _TableOfContentSection = {
 export const _TableOfContent = [
     { link: `#hero`, content: _HeroSection.title },
     { link: `#coreCompetencies`, content: _CoreCompetenciesSection.title },
-    { link: `#career`, content: _CareerSection.title }
+    { link: `#career`, content: _CareerSection.title },
+    { link: `#blogPosts`, content: _BlogPostSection.title },
 ];

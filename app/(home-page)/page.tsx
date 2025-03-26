@@ -1,10 +1,11 @@
 // components
 import Wave from "@assets/background/Wave";
 
-import HomeTableOfContents from "./components/HomeTableOfContents";
 import HomeHeroSection from "./components/HomeHeroSection";
 import HomeCoreCompetenciesSection from "./components/HomeCoreCompetenciesSection";
 import HomeCareerSection from "./components/HomeCareerSection";
+import HomeBlogSection from "./components/HomeBlogSection";
+import HomeTableOfContents from "./components/HomeTableOfContents";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HomeHeroSection />
       <HomeCoreCompetenciesSection />
       <HomeCareerSection />
+      <HomeBlogSection />
       <HomeTableOfContents />
     </main>
   );
