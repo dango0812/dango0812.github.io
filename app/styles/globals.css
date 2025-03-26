@@ -6,6 +6,7 @@ body {
 }
 
 @theme {
+  --color-gray-50: #F5F6F8;
   --color-yellow-500: #FF6600;
   --color-sky-950: #1e2939;
   --radius-3xl: 20px;
