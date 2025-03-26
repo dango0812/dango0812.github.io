@@ -105,6 +105,7 @@ export default function HomeBlogSection() {
                                             </Typography>
 
                                             <Typography
+                                                className="h-[72px] line-clamp-3"
                                                 as="p"
                                                 color="gray"
                                             >
