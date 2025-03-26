@@ -1,5 +1,5 @@
 // mocks
-import { _HeroSection, _TableOfContent } from "@_mocks/home";
+import { _HeroSection } from "@_mocks/home";
 // components
 import { Container, ColumnFlex, Typography } from "@components/ui";
 
