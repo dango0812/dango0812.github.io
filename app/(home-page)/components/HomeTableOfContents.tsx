@@ -63,7 +63,7 @@ export default function HomeTableOfContents() {
         setTimeout(() => {
             setCurrentHash(hash);
             isScrollingRef.current = false;
-        }, 200);
+        }, 500);
     };
 
     return (
