@@ -85,7 +85,7 @@ export default function HomeBlogSection() {
                                         className="bg-white border border-gray-100 rounded-3xl shadow-md"
                                     >
                                         <Image
-                                            className="w-full h-44 rounded-tl-3xl rounded-tr-3xl"
+                                            className="w-full h-44 rounded-tl-3xl rounded-tr-3xl object-cover"
                                             src={cover_image}
                                             width={326}
                                             height={176}
