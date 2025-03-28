@@ -7,7 +7,7 @@ export default function HomeHeroSection() {
     return (
         <section
             id="hero"
-            className="py-10 px-5 lg:px-0"
+            className="pt-15 pb-20 px-5 lg:px-0"
         >
             <Container
                 className="flex flex-col gap-10"
