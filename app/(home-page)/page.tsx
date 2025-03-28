@@ -5,6 +5,7 @@ import HomeHeroSection from "./components/HomeHeroSection";
 import HomeCoreCompetenciesSection from "./components/HomeCoreCompetenciesSection";
 import HomeCareerSection from "./components/HomeCareerSection";
 import HomeBlogSection from "./components/HomeBlogSection";
+import HomeTimeline from "./components/HomeTimeline";
 import HomeTableOfContents from "./components/HomeTableOfContents";
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
       <HomeCoreCompetenciesSection />
       <HomeCareerSection />
       <HomeBlogSection />
+      <HomeTimeline />
+      
       <HomeTableOfContents />
     </main>
   );
