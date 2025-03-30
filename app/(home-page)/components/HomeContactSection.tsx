@@ -7,7 +7,7 @@ export default function HomeContactSection() {
     return (
         <section
             id="contact"
-            className="py-25 px-5 lg:px-0 bg-gray-50"
+            className="py-20 xl:py-40 px-5 lg:px-0 bg-gray-50"
         >
             <Container
                 className="flex flex-col items-center justify-center gap-10"
