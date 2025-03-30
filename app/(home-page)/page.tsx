@@ -7,6 +7,7 @@ import HomeCareerSection from "./components/HomeCareerSection";
 import HomeBlogSection from "./components/HomeBlogSection";
 import HomeTimeline from "./components/HomeTimeline";
 import HomeTableOfContents from "./components/HomeTableOfContents";
+import HomeContactSection from "./components/HomeContactSection";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <HomeCareerSection />
       <HomeBlogSection />
       <HomeTimeline />
-      
+      <HomeContactSection />
       <HomeTableOfContents />
     </main>
   );
