@@ -3,7 +3,7 @@
 // react
 import { useEffect, useRef, useState } from "react";
 // mocks
-import { _TableOfContent, _TableOfContentSection } from "@_mocks/home";
+import { _TableOfContents } from "@_mocks/home";
 // components
 import { ColumnFlex, Container, Typography, Divider } from "@components/ui";
 // tailwind
@@ -11,7 +11,7 @@ import { cn } from "@libs/tailwind";
 
 export default function HomeTableOfContents() {
     const isScrollingRef = useRef<boolean>(false);
-    const [currentHash, setCurrentHash] = useState<string>(_TableOfContent[0].link.replace("#", ""));
+    const [currentHash, setCurrentHash] = useState<string>(_TableOfContents.details[0].link.replace("#", ""));
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -36,7 +36,7 @@ export default function HomeTableOfContents() {
         );
 
         // 목차에 해당하는 모든 section 요소를 가져옴
-        const sections = _TableOfContent.map(({ link }) =>
+        const sections = _TableOfContents.details.map(({ link }) =>
             document.querySelector(link)
         ).filter(Boolean) as HTMLElement[];
 
@@ -70,7 +70,7 @@ export default function HomeTableOfContents() {
         <div className="hidden xl:block fixed xl:right-5 2xl:right-10 top-1/2 -translate-y-1/2">
             <Container
                 maxWidth="md"
-                className="w-full min-w-52 border border-gray-200 bg-white rounded-3xl shadow-xl p-5"
+                className="w-full min-w-52 border border-gray-200 backdrop-blur-md bg-white/70 rounded-3xl shadow-xl p-5"
             >
                 <ColumnFlex className="gap-3">
                     <ColumnFlex className="gap-1.5">
@@ -80,13 +80,13 @@ export default function HomeTableOfContents() {
                             fontWeight={500}
                             color="primary"
                         >
-                            {_TableOfContentSection.title}
+                            {_TableOfContents.title}
                         </Typography>
                         <Divider color="primary" />
                     </ColumnFlex>
 
                     <ColumnFlex>
-                        {_TableOfContent.map(({ link, content }) => {
+                        {_TableOfContents.details.map(({ link, content }) => {
                             const hash = link.replace("#", "");
                             const isActive = hash === currentHash;
 

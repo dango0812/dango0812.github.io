@@ -116,9 +116,9 @@ export const _HomeContactSection = {
     ]
 }
 
-export const _TableOfContentSection = {
+export const _TableOfContents = {
     title: "목차",
-    contents: [
+    details: [
         { link: `#hero`, content: _HeroSection.title },
         { link: `#coreCompetencies`, content: _CoreCompetenciesSection.title },
         { link: `#career`, content: _CareerSection.title },
