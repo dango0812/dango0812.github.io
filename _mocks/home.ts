@@ -61,47 +61,69 @@ export const _HomeTimelineSection = {
             title: "교육",
             iconSrc: "/icons/icon-graduation-cap.svg",
             items: [
-                { icon: "🏫", title: "수원과학대학교", date: "2017.03-2021.02"},
-                { icon: "🏫", title: "야탑고등학교", date: "2014.03-2017.02"}
+                { icon: "🏫", title: "수원과학대학교" },
+                { icon: "🏫", title: "야탑고등학교" }
             ]
         },
         {
             title: "자격증",
             iconSrc: "/icons/icon-certificate-medal.svg",
             items: [
-                { icon: "🪪", title: "워드프로세서 1급", date: "2019.09"}
+                { icon: "🪪", title: "워드프로세서 1급" }
             ]
         },
         {
             title: "2025 독서",
             iconSrc: "/icons/icon-open-book.svg",
             items: [
-                { icon: "📖", title: "Clean Code 애자일 소프트웨어 장인 정신", date: "03.24-독서중"},
-                { icon: "📙", title: "봉제인형 살인사건", date: "02.04-02.22"},
-                { icon: "📙", title: "어쩌면 별들이 너의 슬픔을 가져갈지도 몰라", date: "01. 24-02.14"},
+                { icon: "📖", title: "Clean Code 애자일 소프트웨어 장인 정신" },
+                { icon: "📙", title: "봉제인형 살인사건" },
+                { icon: "📙", title: "어쩌면 별들이 너의 슬픔을 가져갈지도 몰라" },
             ]
         },
         {
             title: "수상",
             iconSrc: "/icons/icon-sports-medal.svg",
             items: [
-                { icon: "🎖️", title: "경찰행정 발전표창", date: "2019.10"},
-                { icon: "🥇", title: "대학교 UCC 공모전 대상", date: "2017.07"},
-                { icon: "🥇", title: "봉사활동 소감문 쓰기 대회 대상", date: "2014.12"},
-                { icon: "🥈", title: "언어순화 캠페인 글짓기 대회 은상", date: "2014.10"}
+                { icon: "🎖️", title: "경찰행정 발전표창" },
+                { icon: "🥇", title: "대학교 UCC 공모전 대상" },
+                { icon: "🥇", title: "봉사활동 소감문 쓰기 대회 대상" },
+                { icon: "🥈", title: "언어순화 캠페인 글짓기 대회 은상" }
             ]
         }
     ]
 }
 
-export const _TableOfContentSection = {
-    title: "목차"
+export const _HomeContactSection = {
+    title: "연락처",
+    subtitle: "궁금한 점이 있다면 언제든지 편하게 연락 주세요.\n감사합니다.",
+    contactInfo: [
+        {
+            title: "Github",
+            content: "@dango0812",
+            link: "https://github.com/dango0812"
+        },
+        {
+            title: "전화번호",
+            content: "010-2527-1731",
+            link: "tel:010-2527-1731"
+        },
+        {
+            title: "이메일",
+            content: "ehdrbsla12000@gmail.com",
+            link: "mailto:ehdrbsla12000@gmail.com"
+        }
+    ]
 }
 
-export const _TableOfContent = [
-    { link: `#hero`, content: _HeroSection.title },
-    { link: `#coreCompetencies`, content: _CoreCompetenciesSection.title },
-    { link: `#career`, content: _CareerSection.title },
-    { link: `#blogPosts`, content: _BlogPostSection.title },
-    { link: `#timeline`, content: _HomeTimelineSection.title },
-];
+export const _TableOfContentSection = {
+    title: "목차",
+    contents: [
+        { link: `#hero`, content: _HeroSection.title },
+        { link: `#coreCompetencies`, content: _CoreCompetenciesSection.title },
+        { link: `#career`, content: _CareerSection.title },
+        { link: `#blogPosts`, content: _BlogPostSection.title },
+        { link: `#timeline`, content: _HomeTimelineSection.title },
+        { link: `#contact`, content: _HomeContactSection.title },
+    ]
+}
