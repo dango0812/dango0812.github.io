@@ -1,57 +1,87 @@
 export const _HeroSection = {
     title: "김동규",
-    subtitle: "프론트엔드 개발자 / 3년차",
-    description: "누구나 쉽게 사용할 수 있는 사용자 인터페이스를 만드는 것을 선호하며 사용자의 관점에서 개선점을 찾고 발전시키는 것을 좋아합니다.\n팀에 소속되어 함께 일하며 주어진 업무의 목적을 이해하고 이를 바탕으로 논의와 개선을 이어가는 과정을 즐깁니다. 팀원들과 협업하며 최고의 퍼포먼스를 이끌어낼 때 가장 큰 보람을 느낍니다.\n가독성 좋은 코드를 작성하기 위해 노력하며 새로운 기술이나 지식에 도전할 때 두려움보다는 호기심과 열정으로 임하기 때문에 특정 분야에 한정되지 않고 끊임없이 배우고 성장하며 다양한 경험을 통해 넓은 시야를 가지려고 노력하고 있습니다.\n"
+    subtitle: "프론트엔드 개발자",
+    description: "사용자를 위한 따뜻한 경험에 가치를 두고, 작은 불편함도 놓치지 않고 개선합니다.\n주어진 업무의 본질을 명확히 파악하고, 기대하는 결과에 정확히 도달하는 것을 중요하게 생각합니다.\n단 한 줄의 코드에도 의미를 담아내며, 사용자를 위한 최고의 프론트엔드 개발자가 되고자 합니다.",
+    resumeDownload: "이력서 다운로드"
 };
 
 export const _CoreCompetenciesSection = {
     title: "핵심 역량",
-    subtitle: "유연하게 소통하고 견고하게 개발합니다.",
+    subtitle: "소통으로 다듬고 기술로 완성합니다.",
     details: [
         {
-            icon: "🌐",
+            icon: "💻",
             title: "모던 프론트엔드 개발",
-            description: "React, Next.js를 이용한 프론트엔드 개발경험이 있으며, Javascript와 Typescript 에 능숙합니다."
+            description: "React.js, Next.js를 이용한 프론트엔드 개발 경험이 있으며, JavaScript와 TypeScript에 능숙합니다."
         },
         {
-            icon: "🔎",
-            title: "글로벌 서비스 경험 & SEO 최적화",
-            description: "글로벌 서비스의 초기 기획부터 참여하여 개발과 서비스 운영한 경험이 있습니다. 성능을 측정하고 유지보수하며, SEO 최적화 기법을 활용해 사이트 유입률 22% 증가시킨 경험이 있습니다."
+            icon: "⚡",
+            title: "웹사이트 개선 및 최적화",
+            description: "글로벌 서비스의 초기 기획부터 참여하여 개발과 서비스 운영한 경험이 있습니다. 성능을 측정하고 유지보수하며, SEO 최적화 기법을 활용해 사이트 유입률 22% 증가시킨 경험이 있습니다 경험이 있습니다."
         },
         {
-            icon: "🚀",
+            icon: "🤝",
             title: "협업과 커뮤니케이션",
-            description: "Github와ㄴ Bitbucket을 활용한 협업 경험이 있으며, Jira 등 다양한 협업 도구를 사용해 애자일 방식으로 업무를 진행한 경험이 있습니다. 또한, 백엔드 개발자와 협업하여 Rest API를 연동하고, 모노레포 환경에서 공용 컴포넌트를 개발한 경험이 있습니다."
+            description: "애자일 환경에서 Github, Confluence, Jira 등을 활용해 협업한 경험이 있으며, 디자이너와 소통하며 인터랙티브한 공용 컴포넌트와 CMS 컴포넌트를 개발한 경험이 있습니다."
         }
     ]
 };
 
 export const _CareerSection = {
     title: "경력 사항",
-    subtitle: "다양한 업무와 프로젝트를 통해\n경험과 노하우를 쌓고 있습니다.",
-    experience: "업무 경험",
-    workExperience: [
+    subtitle: "끊임없이 학습하고 성장하며, 소중한 경험과 노하우를 쌓아왔습니다.",
+    companyExperience: "업무 경험",
+    project: "프로젝트",
+    moreInfo: "주요 업무 내용 보기",
+    github: "Github",
+    details: [
         {
-            date: "2024 - 현재",
-            company: "자라소프트",
-            description: "홈페이지 제작 외주 UI/UX 디자이너 및 Frontend 개발자",
-            currentEmployed: true,
+            type: "company",
+            date: "2021.06 - 현재",
+            title: "자라소프트",
+            description: "동영상, 사진 비식별화 글로벌 서비스 블러미와 공공기관 및 폐쇄망 기업에 특화된 엔터프라이즈 솔루션을 함께 만들어가고 있습니다.",
+            isActive: true,
             link: "#"
         },
         {
+            type: "company",
             date: "2021.04 - 05",
-            company: "이노벤터",
-            description: "게임 시스템 기획 및 아프리카 TV 외주 업무 진행",
-            currentEmployed: false,
+            title: "이노벤터",
+            description: "게임 시스템 기획과 아프리카 TV의 웹 페이지 개선 외주 업무를 경험했습니다.",
+            isActive: false
+        },
+        {
+            type: "project",
+            date: "2025.01 - 진행중",
+            title: "Frontend Study",
+            description: "실무 경험이 쌓일수록 더 넓은 시야에서 개발의 본질을 바라보고 싶었습니다. 2025년 목표로 탄탄한 기본기와 지식을 바탕으로 한층 더 깊이 있는 개발자로 나아가고자 시작한 정리형 프로젝트입니다.",
+            isActive: true,
+            link: "https://github.com/dango0812/frontend-study"
+        },
+        {
+            type: "project",
+            date: "2025.01 - 2025.04",
+            title: "Portfolio Website",
+            description: "Next.js 기반의 포트폴리오 웹 페이지입니다.",
+            isActive: false,
+            link: "https://github.com/dango0812/dango0812.github.io"
+        },
+        {
+            type: "project",
+            date: "2024.08 - 2024.10",
+            title: "NextAuth with AWS Cognito",
+            description: "NextAuth와 AWS Cognito를 사용한 로그인 연동 프로젝트입니다. 구글 로그인 관련 정보가 부족해 도움을 주고자 시작했으며, 블로그는 4,000회 이상 조회되었습니다.",
+            isActive: false,
+            link: "https://github.com/dango0812/nextauth-cognito"
         }
     ]
-}
+};
 
 export const _BlogPostSection = {
     title: "블로그",
-    subtitle: "다양한 업무와 프로젝트를 통해 경험과 노하우를 쌓고 있습니다.",
+    subtitle: "단순한 기록이 아닌, 실용적인 경험과 정보를 공유합니다.",
     loadError: "게시글을 읽어오다 오류가 발생했어요. 😭\n다음에 다시 시도해주세요. 🥺"
-}
+};
 
 export const _HomeTimelineSection = {
     title: "기록",
@@ -92,11 +122,11 @@ export const _HomeTimelineSection = {
             ]
         }
     ]
-}
+};
 
 export const _HomeContactSection = {
     title: "연락처",
-    subtitle: "궁금한 점이 있다면 언제든지 편하게 연락 주세요.\n감사합니다.",
+    subtitle: "궁금한 점이 있으시면 언제든지 편하게 연락 주세요, 감사합니다.",
     contactInfo: [
         {
             title: "Github",
@@ -114,7 +144,7 @@ export const _HomeContactSection = {
             link: "mailto:ehdrbsla12000@gmail.com"
         }
     ]
-}
+};
 
 export const _TableOfContents = {
     title: "목차",
@@ -126,4 +156,4 @@ export const _TableOfContents = {
         { link: `#timeline`, content: _HomeTimelineSection.title },
         { link: `#contact`, content: _HomeContactSection.title },
     ]
-}
+};
