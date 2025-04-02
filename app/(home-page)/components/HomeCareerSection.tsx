@@ -1,13 +1,20 @@
 // react
 import { Fragment } from "react";
+// next
+import Image from "next/image";
 // mocks
 import { _CareerSection } from "@_mocks/home";
 // components
 import { Container, RowFlex, ColumnFlex, Typography, Divider } from "@components/ui";
 // icons
 import StarIcon from "@assets/icons/StarIcon";
-// libs
+// tailwind
 import { cn } from "@libs/tailwind";
+
+const CATEGORIES = [
+    { type: "company", label: _CareerSection.companyExperience },
+    { type: "project", label: _CareerSection.project}
+];
 
 export default function HomeCareerSection() {
     return (
@@ -41,91 +48,136 @@ export default function HomeCareerSection() {
                     </Typography>
                 </ColumnFlex>
 
-                <Divider>
-                    {_CareerSection.experience}
-                </Divider>
-
-                <div
-                    className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-10 mx-auto"
-                >
-                    {_CareerSection.workExperience
-                    .map(({ date, company, description, currentEmployed, link }, idx) => (
-                        <Fragment
-                            key={idx}
+                {CATEGORIES.map(({ type, label }) => (
+                    <ColumnFlex
+                        key={type}
+                        alignItems="center"
+                        justifyContent="center"
+                        className="gap-10"
+                    >
+                        <Divider
+                            color="black"
                         >
-                            <div
-                                className="col-span-1"
+                            <Typography
+                                as="span"
+                                color="gray"
                             >
-                                <RowFlex
-                                    alignItems="center"
-                                    className="gap-2"
-                                >
-                                    <StarIcon
-                                        className={cn(
-                                            {
-                                                "fill-yellow-500" : currentEmployed,
-                                                "fill-zinc-300": !currentEmployed
-                                            }
-                                        )}
-                                        width={18}
-                                        height={18}
-                                    />
+                                {label}
+                            </Typography>
+                        </Divider>
 
-                                    <Typography
-                                        as="h3"
-                                        fontWeight={600}
+                        <div
+                            className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10"
+                        >
+                            {_CareerSection.details
+                                .filter((item) => item.type === type)
+                                .map(({ date, title, description, isActive, link }, idx) => (
+                                    <Fragment
+                                        key={idx}
                                     >
-                                        {date}
-                                    </Typography>
-                                </RowFlex>
-                            </div>
-
-                            <div
-                                className="col-span-2"
-                            >
-                                <ColumnFlex
-                                    className="gap-5"
-                                >
-                                    <ColumnFlex
-                                        className="gap-1"
-                                    >
-                                        <Typography
-                                            as="span"
-                                            fontSize="lg"
-                                            fontWeight={600}
+                                        <div
+                                            className="col-span-1"
                                         >
-                                            {company}
-                                        </Typography>
-
-                                        <Typography
-                                            as="p"
-                                            color="gray"
-                                        >
-                                            {description}
-                                        </Typography>
-                                    </ColumnFlex>
-
-                                    {link && (
-                                        <a
-                                            href={link}
-                                            className="flex items-center text-yellow-500 max-w-max"
-                                        >
-                                            <span
-                                                className="underline"
+                                            <RowFlex
+                                                alignItems="center"
+                                                className="gap-2"
                                             >
-                                                주요 업무 내용 보기
-                                            </span>
-                                            <span className="ml-1 inline-block animate-rocket no-underline">
-                                                🚀
-                                            </span>
-                                        </a>
-                                    )}
-                                </ColumnFlex>
-                            </div>
-                        </Fragment>
-                    ))}
-                </div>
+                                                <StarIcon
+                                                    className={cn({
+                                                        "fill-yellow-500": isActive,
+                                                        "fill-zinc-300": !isActive,
+                                                    })}
+                                                    width={18}
+                                                    height={18}
+                                                />
+                                                <Typography
+                                                    as="h3"
+                                                    fontWeight={600}
+                                                >
+                                                    {date}
+                                                </Typography>
+                                            </RowFlex>
+                                        </div>
+
+                                        <div
+                                            className="col-span-2"
+                                        >
+                                            <ColumnFlex
+                                                className="gap-2.5"
+                                            >
+                                                <ColumnFlex
+                                                    className="gap-2"
+                                                >
+                                                    <Typography
+                                                        as="span"
+                                                        fontSize="lg"
+                                                        fontWeight={600}
+                                                    >
+                                                        {title}
+                                                    </Typography>
+
+                                                    <Typography
+                                                        as="p"
+                                                        color="gray"
+                                                        className="leading-7"
+                                                    >
+                                                        {description}
+                                                    </Typography>
+                                                </ColumnFlex>
+
+                                                {(() => {
+                                                    if (link) {
+                                                        if (type === "company") {
+                                                            return (
+                                                                <a
+                                                                    href={link}
+                                                                    className="flex items-center text-yellow-500 max-w-max"
+                                                                >
+                                                                    <span
+                                                                        className="underline"
+                                                                    >
+                                                                        {_CareerSection.moreInfo}
+                                                                    </span>
+                                                                    <span className="ml-1 inline-block animate-rocket no-underline">
+                                                                        🚀
+                                                                    </span>
+                                                                </a>
+                                                            );
+                                                        } else if (type === "project") {
+                                                            return (
+                                                                <a
+                                                                    href={link}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="w-max flex items-center gap-1.5 hover:underline"
+                                                                >
+                                                                    <Image
+                                                                        src="/icons/icon-github.svg"
+                                                                        alt="icon-github"
+                                                                        width={16}
+                                                                        height={16}
+                                                                        priority
+                                                                    />
+                                                                    <Typography
+                                                                        as="span"
+                                                                        fontSize="sm"
+                                                                    >
+                                                                        {_CareerSection.github}
+                                                                    </Typography>
+                                                                </a>
+                                                            );
+                                                        }
+                                                    }
+                                                    return null;
+                                                })()}
+                                            </ColumnFlex>
+                                        </div>
+                                    </Fragment>
+                                ))}
+                        </div>
+                    </ColumnFlex>
+                ))}
             </Container>
         </section>
-    )
+    );
 }
