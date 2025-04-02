@@ -1,3 +1,5 @@
+// next
+import Image from "next/image";
 // mocks
 import { _HeroSection } from "@_mocks/home";
 // components
@@ -7,15 +9,15 @@ export default function HomeHeroSection() {
     return (
         <section
             id="hero"
-            className="pt-15 pb-20 px-5 lg:px-0"
+            className="py-15 px-5 lg:px-0"
         >
             <Container
-                className="flex flex-col gap-10"
+                maxWidth="sm"
             >
                 <ColumnFlex
-                    className="text-center gap-2.5"
                     alignItems="center"
                     justifyContent="center"
+                    className="gap-3 text-center"
                 >
                     <Typography
                         as="h1"
@@ -33,15 +35,38 @@ export default function HomeHeroSection() {
                     >
                         {_HeroSection.subtitle}
                     </Typography>
-                </ColumnFlex>
 
-                <Typography
-                    as="p"
-                    color="gray"
-                    className="max-w-4xl leading-7"
-                >
-                    {_HeroSection.description}
-                </Typography>
+                    <Typography
+                        as="p"
+                        color="gray"
+                        className="max-w-4xl leading-7"
+                        whiteSpace="prewrap"
+                    >
+                        {_HeroSection.description}
+                    </Typography>
+
+                    <a
+                        target="_blank" 
+                        href="/resume.pdf"
+                        download
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-100 hover:bg-gray-200 mt-5 transition-all duration-300 ease-in-out"
+                    >
+                        <Typography
+                            as="span"
+                            fontSize="sm"
+                        >
+                            {_HeroSection.resumeDownload}
+                        </Typography>
+                        
+                        <Image
+                            src="/icons/icon-download.svg"
+                            alt="download icon"
+                            width={16}
+                            height={16}
+                            priority
+                        />
+                    </a>
+                </ColumnFlex>
             </Container>
         </section>
     )
