@@ -11,16 +11,15 @@ export const dividerVariants = cva(
     {
         variants: {
             color: {
-                primary: "before:bg-yellow-500 after:bg-yellow-500",
-                black: "before:bg-gray-800 after:bg-gray-800",
-                gray: "before:bg-gray-500 after:bg-gray-500",
-                danger: "before:bg-danger-500 after:bg-danger-500"
+                primary: "before:bg-gradient-to-r before:from-yellow-800/0 before:to-yellow-800/15 after:bg-gradient-to-r after:from-yellow-800/15 after:to-yellow-800/0",
+                black: "before:bg-gradient-to-r before:from-gray-800/0 before:to-gray-800/15 after:bg-gradient-to-r after:from-gray-800/15 after:to-gray-800/0",
+                gray: "before:bg-gradient-to-r before:from-gray-800/0 before:to-gray-800/15 after:bg-gradient-to-r after:from-gray-800/15 after:to-gray-800/0",
+                danger: "before:bg-gradient-to-r before:from-danger-800/0 before:to-danger-800/15 after:bg-gradient-to-r after:from-danger-800/15 after:to-danger-800/0"
             },
             align: {
                 left: rightLine,
                 center: `${leftLine} ${rightLine}`,
                 right: leftLine
-    
             },
             hasContent: {
                 true: "gap-5",
