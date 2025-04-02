@@ -10,60 +10,63 @@ import { ColumnFlex, Container, Typography, Divider } from "@components/ui";
 import { cn } from "@libs/tailwind";
 
 export default function HomeTableOfContents() {
-    const isScrollingRef = useRef<boolean>(false);
-    const [currentHash, setCurrentHash] = useState<string>(_TableOfContents.details[0].link.replace("#", ""));
+    const sectionsRef = useRef<HTMLElement[]>([]);
+    const [currentHash, setCurrentHash] = useState(_TableOfContents.details[0].link.replace("#", ""));
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                // TOC 클릭으로 인한 스크롤 중에는 currentHash를 변경하지 않음
-                if (isScrollingRef.current) {
-                    return;
+        // 마운트 시, 각 link에 해당하는 DOM 요소를 찾아서 sectionsRef에 저장
+        sectionsRef.current = _TableOfContents.details
+            .map(({ link }) => document.querySelector(link))
+            .filter(Boolean) as HTMLElement[];
+        
+        const handleScroll = () => {
+            let activeHash = currentHash;
+
+            sectionsRef.current.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                const isLastSection = index === sectionsRef.current.length - 1;
+
+                // 섹션의 상단이 뷰포트 상단을 지나갔는지 확인
+                const isTopInView = rect.top <= 0;
+                // 섹션의 하단이 뷰포트 하단 아래로 벗어나지 않았는지 확인
+                const isBottomInView = rect.bottom > 0;
+                // 마지막 섹션이 뷰포트 하단에 도달했는지 확인
+                const isLastSectionFullyInView = isLastSection && rect.bottom <= window.innerHeight;
+                
+                // 섹션의 상단이 뷰포트 상단 위에 있고 하단이 뷰포트 내에 있거나,
+                // 마지막 섹션이 뷰포트 하단에 도달한 경우 활성화 대상 섹션으로 설정
+                const shouldActivateSection = (isTopInView && isBottomInView) || isLastSectionFullyInView;
+
+                if (shouldActivateSection) {
+                    activeHash = section.id;
                 }
+            });
 
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        // 해당 section이 Viewport 중앙 근처에 오면 currentHash 갱신
-                        setCurrentHash(entry.target.id);
-                    }
-                });
-            },
-            {
-                // Viewport 중앙 근처에서 section 감지 (상단 50%, 하단 60% 오프셋)
-                rootMargin: "-50% 0px -60% 0px",
-                threshold: 0,
+            if (activeHash !== currentHash) {
+                setCurrentHash(activeHash);
             }
-        );
+        };
 
-        // 목차에 해당하는 모든 section 요소를 가져옴
-        const sections = _TableOfContents.details.map(({ link }) =>
-            document.querySelector(link)
-        ).filter(Boolean) as HTMLElement[];
+        window.addEventListener("scroll", handleScroll);
 
-        // 모든 section 요소에 대해 Intersection Observer 등록
-        sections.forEach((section) => observer.observe(section));
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        };
+    }, [currentHash]);
 
-        // 언마운트 시, observer 해제
-        return () => observer.disconnect();
-    }, []);
-
-    // 목차 클릭 시, 해당 section 으로 이동 및 observer 일시 중단
     const handleChangeCurrentHash = (hash: string, link: string) => {
         const element = document.querySelector(link);
         if (!element) {
             return;
         }
 
-        isScrollingRef.current = true;
+        // 클릭한 Element 최상단으로 스크롤
         element.scrollIntoView({
-            behavior: "smooth"
+            behavior: "smooth",
+            block: "start"
         });
 
-        // 스크롤 완료 후 currentHash 갱신 및 observer 재활성화
-        setTimeout(() => {
-            setCurrentHash(hash);
-            isScrollingRef.current = false;
-        }, 500);
+        setCurrentHash(hash);
     };
 
     return (
