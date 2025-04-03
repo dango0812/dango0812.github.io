@@ -28,6 +28,8 @@
       "@utils/*": ["./app/utils/*"],
       "@components/*": ["./app/components/*"],
       "@assets/*": ["./app/components/assets/*"],
+      "@home/*": ["./app/(homepage)/*"],
+      "@career/*": ["./app/career/[slug]/*"],
       "@_types/*": ["./app/types/*"]
     }
   },
