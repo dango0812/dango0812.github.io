@@ -26,6 +26,7 @@
       "@api/*": ["./app/api/*"],
       "@libs/*": ["./app/libs/*"],
       "@utils/*": ["./app/utils/*"],
+      "@constants/*": ["./app/constants/*"],
       "@components/*": ["./app/components/*"],
       "@assets/*": ["./app/components/assets/*"],
       "@home/*": ["./app/(homepage)/*"],
