@@ -1,3 +1,7 @@
+// constants
+import { paths } from "@constants/paths";
+import { domains } from "@constants/domains";
+
 export const _HeroSection = {
     title: "김동규",
     subtitle: "프론트엔드 개발자",
@@ -41,7 +45,7 @@ export const _CareerSection = {
             title: "자라소프트",
             description: "동영상, 사진 비식별화 글로벌 서비스 블러미와 공공기관 및 폐쇄망 기업에 특화된 엔터프라이즈 솔루션을 함께 만들어가고 있습니다.",
             isActive: true,
-            link: "#"
+            link: paths.career.jarasoft
         },
         {
             type: "company",
@@ -56,7 +60,7 @@ export const _CareerSection = {
             title: "Frontend Study",
             description: "실무 경험이 쌓일수록 더 넓은 시야에서 개발의 본질을 바라보고 싶었습니다. 2025년 목표로 탄탄한 기본기와 지식을 바탕으로 한층 더 깊이 있는 개발자로 나아가고자 시작한 정리형 프로젝트입니다.",
             isActive: true,
-            link: "https://github.com/dango0812/frontend-study"
+            link: domains.github.frontend_study
         },
         {
             type: "project",
@@ -64,7 +68,7 @@ export const _CareerSection = {
             title: "Portfolio Website",
             description: "Next.js 기반의 포트폴리오 웹 페이지입니다.",
             isActive: false,
-            link: "https://github.com/dango0812/dango0812.github.io"
+            link: domains.github.portfolio
         },
         {
             type: "project",
@@ -72,7 +76,7 @@ export const _CareerSection = {
             title: "NextAuth with AWS Cognito",
             description: "NextAuth와 AWS Cognito를 사용한 로그인 연동 프로젝트입니다. 구글 로그인 관련 정보가 부족해 도움을 주고자 시작했으며, 블로그는 4,000회 이상 조회되었습니다.",
             isActive: false,
-            link: "https://github.com/dango0812/nextauth-cognito"
+            link: domains.github.next_auth
         }
     ]
 };
@@ -131,17 +135,17 @@ export const _HomeContactSection = {
         {
             title: "Github",
             content: "@dango0812",
-            link: "https://github.com/dango0812"
+            link: domains.github.root
         },
         {
             title: "전화번호",
             content: "010-2527-1731",
-            link: "tel:010-2527-1731"
+            link: domains.contact.phone
         },
         {
             title: "이메일",
             content: "ehdrbsla12000@gmail.com",
-            link: "mailto:ehdrbsla12000@gmail.com"
+            link: domains.contact.mail
         }
     ]
 };
