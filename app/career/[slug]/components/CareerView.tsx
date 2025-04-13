@@ -13,12 +13,13 @@ interface CareerViewProps {
 
 interface CareerItem {
     year: number;
-    contents: CareerContent[];
+    projects: CareerContent[];
 }
 
 interface CareerContent {
-    date: string;
-    text: string;
+    title: string;
+    usedTech: string[];
+    tasks: string[];
 }
 
 export default function CareerView({
@@ -88,29 +89,65 @@ export default function CareerView({
                 >
                     {career
                         .filter(({ year }) => year === selectedYear)
-                        .map(({ contents }, idx) => (
+                        .map(({ projects }, idx) => (
                             <ColumnFlex
                                 key={idx}
                                 className="gap-10"
                             >
-                                {contents.map(({ date, text }) => (
+                                {projects.map(({ title, usedTech, tasks }) => (
                                     <ColumnFlex
-                                        key={text}
+                                        key={title}
                                     >
-                                        <Typography
-                                            as="span"
-                                            color="black"
-                                            fontWeight={700}
+                                        <ColumnFlex
+                                            className="gap-1.5"
                                         >
-                                            {date}
-                                        </Typography>
+                                            <Typography
+                                                as="span"
+                                                color="primary"
+                                                fontWeight={600}
+                                            >
+                                                📌 {title}
+                                            </Typography>
 
-                                        <Typography
-                                            as="p"
-                                            whiteSpace="prewrap"
-                                        >
-                                            {text}
-                                        </Typography>
+                                            <Typography
+                                                as="span"
+                                                color="gray"
+                                                fontWeight={400}
+                                            >
+                                                사용 기술: {usedTech.join(", ")}
+                                            </Typography>
+                                            
+                                            <ul className="flex flex-col flex-wrap mt-2 pl-6 gap-2.5">
+                                                {tasks.map((task, idx) => {
+                                                    const isBracketedTitle = task.startsWith("[") && task.endsWith("]");
+
+                                                    return (
+                                                        <li
+                                                            key={idx}
+                                                        >
+                                                            <Typography
+                                                                as="p"
+                                                                className={cn(
+                                                                    {
+                                                                        "text-yellow-500 font-semibold": isBracketedTitle
+                                                                    }
+                                                                )}
+                                                                
+                                                            >
+                                                                {(() => {
+                                                                    if (isBracketedTitle) {
+                                                                        return task;
+                                                                    }
+
+                                                                    return `- ${task}`;
+                                                                })()}
+                                                            </Typography>
+                                                        </li>
+                                                    )
+                                                })}
+                                            </ul>
+
+                                        </ColumnFlex>
                                     </ColumnFlex>
                                 ))}
                             </ColumnFlex>
