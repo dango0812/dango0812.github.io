@@ -5,7 +5,7 @@ import { cva, VariantProps } from "class-variance-authority";
 // cn
 import { cn } from "@libs/tailwind";
 
-export type typographyHtmlTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "em" | "pre" | "del" | "ins" | "span" | "p";
+export type TypographyHtmlTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "em" | "pre" | "del" | "ins" | "span" | "p";
 
 export const typographyVariants = cva(
     "antialiased",
@@ -49,7 +49,7 @@ export const typographyVariants = cva(
 )
 
 export interface TypographyProps {
-    as: typographyHtmlTag;
+    as: TypographyHtmlTag;
     children: React.ReactNode;
     className?: string;
     fontSize?: NonNullable<VariantProps<typeof typographyVariants>["fontSize"]>;

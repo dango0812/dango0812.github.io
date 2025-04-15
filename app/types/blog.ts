@@ -1,4 +1,4 @@
-export type blogPost = {
+export type BlogPost = {
     type_of: string;
     id: number;
     title: string;

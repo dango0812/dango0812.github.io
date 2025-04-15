@@ -1,6 +1,6 @@
-import { blogPost } from "@_types/blog";
+import { BlogPost } from "@_types/blog";
 
-export const getBlogPosts = async (): Promise<blogPost[]> => {
+export const getBlogPosts = async (): Promise<BlogPost[]> => {
     const baseUrl = `${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/articles`;
     const params = new URLSearchParams({
         username: process.env.NEXT_PUBLIC_BLOG_API_USERNAME as string,
@@ -16,7 +16,7 @@ export const getBlogPosts = async (): Promise<blogPost[]> => {
     }
 
     const posts = await response.json();
-    return posts.map((post: blogPost) => ({
+    return posts.map((post: BlogPost) => ({
         url: post.url,
         title: post.title,
         description: post.description,
