@@ -24,6 +24,11 @@
     "clsx": "^2.1.1",
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.5.3",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4",
     "typescript": "^5"
