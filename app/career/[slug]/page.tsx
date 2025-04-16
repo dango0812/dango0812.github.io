@@ -3,8 +3,11 @@ import { notFound } from "next/navigation";
 // mocks
 import { _CareerConfig } from "@_mocks/career";
 // components
+import AnimationWrapper from "@career/components/AnimationWrapper";
 import CareerView from "@career/components/CareerView";
 import { ColumnFlex, Container, Typography } from "@components/ui";
+// paths
+import { paths } from "@constants/paths";
 
 interface CareerPageProps {
     params: Promise<{
@@ -29,7 +32,7 @@ export default async function CareerPage({
     }
 
     return (
-        <main>
+        <AnimationWrapper>
             <Container
                 maxWidth="sm"
                 className="py-20 lg:py-25 px-5 lg:px-0"
@@ -46,8 +49,20 @@ export default async function CareerPage({
                     <CareerView
                         career={careerData.details}
                     />
+                    
+                    <a
+                        href={paths.home}
+                        className="w-max px-4 py-2.5 rounded-lg bg-gray-100 hover:bg-gray-200 mt-5 transition-all duration-300 ease-in-out"
+                    >
+                        <Typography
+                            as="span"
+                            fontSize="sm"
+                        >
+                            {careerData.back}
+                        </Typography>
+                    </a>
                 </ColumnFlex>
             </Container>
-        </main>
+        </AnimationWrapper>
     );
 }

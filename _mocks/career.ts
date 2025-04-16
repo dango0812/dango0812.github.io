@@ -2,6 +2,7 @@ export const _CareerConfig = [
     {
         slug: "jarasoft",
         title: "자라소프트와 함께 걸어온 길",
+        back: "뒤로가기",
         details: [
             {
                 year: 2025,

@@ -37,7 +37,7 @@ export default function CareerView({
 
     return (
         <section
-            className="py-10 lg:py-20"
+            className="pt-10 pb-5 lg:pt-20 lg:pb-10"
         >
             <ColumnFlex
                 className="sm:flex-row"
@@ -117,7 +117,9 @@ export default function CareerView({
                                                 사용 기술: {usedTech.join(", ")}
                                             </Typography>
                                             
-                                            <ul className="flex flex-col flex-wrap mt-2 pl-6 gap-2.5">
+                                            <ul
+                                                className="flex flex-col flex-wrap mt-2 pl-3 sm:pl-6 gap-2.5"
+                                            >
                                                 {tasks.map((task, idx) => {
                                                     const isBracketedTitle = task.startsWith("[") && task.endsWith("]");
 
