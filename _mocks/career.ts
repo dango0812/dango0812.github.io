@@ -66,9 +66,7 @@ export const _CareerConfig = [
                             "무한 스크롤(Infinite Scroll) 기능 구현",
                             "Debounce와 AbortController를 활용한 API 호출 최적화",
                             "REST API 연동을 통한 프로젝트 및 결제 내역 조회, 계정 설정, 문의하기 기능 구현",
-                            "Yup 및 React Hook Form을 활용한 Form 유효성 검사 및 에러 처리 컴포넌트 개발",
-                            "Figma 디자인을 기반으로 UI 요소 및 공용 컴포넌트 구현",
-                            "디자이너와 협업하여 사용성을 고려한 인터랙티브 모션 구현"
+                            "Yup 및 React Hook Form을 활용한 Form 유효성 검사 및 에러 처리 컴포넌트 개발"
                         ]
                     },
                     {
@@ -91,16 +89,10 @@ export const _CareerConfig = [
                         usedTech: ["React", "Javascript", "Google Maps", "Google Geocode API", "ApexCharts", "Material UI", "AWS S3"],
                         tasks: [
                             "React를 활용한 반응형 웹페이지 구현",
-                            "[사용자 인증 · 접근 제어]",
-                            "로그인 시, OTP 인증 기능 구현",
-                            "React Context API를 활용한 JWT 인증 상태 관리 로직 구현",
-                            "RefreshToken을 사용한 AccessToken 재발급 기능 구현",
-                            "[기능 구현]",
                             "Google Maps를 활용한 차량 위치 및 연료 변화에 따른 동적 마커 생성 기능 구현",
                             "Google Geocode API를 활용한 대용량 위도·경도 데이터 주소 변환 기능 구현",
                             "차량 단말기 Excel 업로드 및 단말기 정보 다운로드 기능 구현",
-                            "관리자 권한 설정 및 페이지별 접근 제어 기능 구현",
-                            "Swagger 기반의 REST API 연동 및 외부 API 제공업체와 협업 진행"
+                            "관리자 권한 설정 및 페이지별 접근 제어 기능 구현"
                         ]
                     },
                     {
