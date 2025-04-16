@@ -1,3 +1,5 @@
+// react
+import { forwardRef } from "react";
 // cva
 import { cva, VariantProps } from "class-variance-authority";
 // libs
@@ -41,15 +43,16 @@ export interface FlexBoxProps extends React.HTMLAttributes<HTMLDivElement> {
     justifyContent?: NonNullable<VariantProps<typeof flexBoxVariants>["justifyContent"]>;
 }
 
-export function RowFlex({
+export const RowFlex = forwardRef<HTMLDivElement, FlexBoxProps>(({
     children,
     className,
     wrap,
     alignItems = "stretch",
-    justifyContent = "flex-start",
-}: FlexBoxProps) {
+    justifyContent = "flex-start"
+}, ref) => {
     return (
         <div
+            ref={ref}
             className={cn(
                 "flex-row",
                 flexBoxVariants({ wrap, alignItems, justifyContent }),
@@ -58,18 +61,20 @@ export function RowFlex({
         >
             {children}
         </div>
-    )
-}
+    );
+});
+RowFlex.displayName = "RowFlex";
 
-export function ColumnFlex({
+export const ColumnFlex = forwardRef<HTMLDivElement, FlexBoxProps>(({
     children,
     className,
     wrap,
     alignItems = "stretch",
-    justifyContent = "flex-start",
-}: FlexBoxProps) {
+    justifyContent = "flex-start"
+}, ref) => {
     return (
         <div
+            ref={ref}
             className={cn(
                 "flex-col",
                 flexBoxVariants({ wrap, alignItems, justifyContent }),
@@ -78,5 +83,6 @@ export function ColumnFlex({
         >
             {children}
         </div>
-    )
-}
+    );
+});
+ColumnFlex.displayName = "ColumnFlex";
