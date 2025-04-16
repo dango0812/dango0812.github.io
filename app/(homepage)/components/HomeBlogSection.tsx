@@ -12,8 +12,11 @@ import { getBlogPosts } from "@api/blog";
 import { Container, ColumnFlex, Typography, LoadingDot } from "@components/ui";
 // utils
 import { convertUTCtoKSTDate, formatDateTime } from "@utils/date";
+import { useAnimationFadeUp } from "@/app/hooks/useAnimationFadeUp";
 
 export default function HomeBlogSection() {
+    const applyAnimationFadeUp = useAnimationFadeUp();
+
     const { data = [], isLoading, isFetching, isError } = useQuery({
         queryKey: ["blog_posts"],
         queryFn: () => getBlogPosts(),
@@ -25,6 +28,7 @@ export default function HomeBlogSection() {
     return (
         <section
             id="blogPosts"
+            ref={applyAnimationFadeUp}
             className="py-15 px-5 lg:px-0 bg-gray-50"
         >
             <Container

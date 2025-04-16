@@ -1,3 +1,4 @@
+"use client";
 // react
 import { Fragment } from "react";
 // next
@@ -10,6 +11,8 @@ import { Container, RowFlex, ColumnFlex, Typography, Divider } from "@components
 import StarIcon from "@assets/icons/StarIcon";
 // tailwind
 import { cn } from "@libs/tailwind";
+// hooks
+import { useAnimationFadeUp } from "@/app/hooks/useAnimationFadeUp";
 
 const CATEGORIES = [
     { type: "company", label: _CareerSection.companyExperience },
@@ -17,9 +20,12 @@ const CATEGORIES = [
 ];
 
 export default function HomeCareerSection() {
+    const applyAnimationFadeUp = useAnimationFadeUp();
+
     return (
         <section
             id="career"
+            ref={applyAnimationFadeUp}
             className="py-15 px-5 lg:px-0"
         >
             <Container

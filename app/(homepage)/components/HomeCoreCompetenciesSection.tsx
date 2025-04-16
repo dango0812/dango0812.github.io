@@ -1,11 +1,16 @@
+"use client";
+
 // mocks
 import { _CoreCompetenciesSection } from "@_mocks/home";
 // components
 import { Container, RowFlex, ColumnFlex, Typography } from "@components/ui";
 // libs
 import { cn } from "@libs/tailwind";
+import { useAnimationFadeUp } from "@/app/hooks/useAnimationFadeUp";
 
 export default function HeroCoreCompetenciesSection() {
+    const applyAnimationFadeUp = useAnimationFadeUp();
+
     return (
         <section
             id="coreCompetencies"
@@ -34,7 +39,6 @@ export default function HeroCoreCompetenciesSection() {
                     >
                         {_CoreCompetenciesSection.subtitle}
                     </Typography>
-                    
                 </ColumnFlex>
 
                 <div
@@ -43,10 +47,11 @@ export default function HeroCoreCompetenciesSection() {
                     {_CoreCompetenciesSection.details.map(({ icon, title, description }, idx, arr) => (
                         <div
                             key={idx}
+                            ref={applyAnimationFadeUp}
                             className={cn(
                                 "block rounded-3xl bg-gray-100 border border-gray-100",
                                 {
-                                    "md:col-span-2 lg:col-span-1": idx === arr.length -1
+                                    "md:col-span-2 lg:col-span-1": idx === arr.length - 1
                                 }
                             )}
                         >
@@ -82,5 +87,5 @@ export default function HeroCoreCompetenciesSection() {
                 </div>
             </Container>
         </section>
-    )
+    );
 }

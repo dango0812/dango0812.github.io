@@ -1,11 +1,16 @@
+"use client";
+
 // next
 import Image from "next/image";
 // mocks
 import { _HomeTimelineSection } from "@_mocks/home";
 // components
 import { Container, ColumnFlex, Typography, RowFlex } from "@components/ui";
+import { useAnimationFadeUp } from "@/app/hooks/useAnimationFadeUp";
 
 export default function HomeTimelineSection() {
+    const applyAnimationFadeUp = useAnimationFadeUp();
+
     return (
         <section
             id="timeline"
@@ -52,6 +57,7 @@ export default function HomeTimelineSection() {
                                 <ColumnFlex
                                     className="w-full max-w-80 gap-2.5"
                                     key={title}
+                                    ref={applyAnimationFadeUp}
                                 >
                                     <Image
                                         src={iconSrc}
