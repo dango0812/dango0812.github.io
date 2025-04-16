@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { _MetaData } from "@_mocks/layout";
 // components
 import ReactQueryProvider from "@provider/ReactQueryProvider";
-import ScrollToTopWrapper from "@components/ui/layout/ScrollToTopWrapper";
 // styles
 import "@styles/globals.css";
 
@@ -43,9 +42,7 @@ export default function RootLayout({
 
       <body>
         <ReactQueryProvider>
-          <ScrollToTopWrapper>
-            {children}
-          </ScrollToTopWrapper>
+          {children}
         </ReactQueryProvider>
       </body>
     </html>
