@@ -1,5 +1,3 @@
-// next
-import Image from "next/image";
 // mocks
 import { _HeroSection } from "@_mocks/home";
 // components
@@ -45,6 +43,8 @@ export default function HomeHeroSection() {
                         {_HeroSection.description}
                     </Typography>
 
+                    {/*
+                    // 추후 이력서 다운로드 기능 추가
                     <a
                         target="_blank" 
                         href="/resume.pdf"
@@ -66,6 +66,7 @@ export default function HomeHeroSection() {
                             priority
                         />
                     </a>
+                    */}
                 </ColumnFlex>
             </Container>
         </section>
