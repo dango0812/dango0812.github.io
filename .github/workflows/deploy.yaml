@@ -29,6 +29,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: release
-          folder: dist
+          folder: out
           clean: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
