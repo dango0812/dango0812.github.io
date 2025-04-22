@@ -4,16 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 5173",
-    "build": "pnpm run lint && next build",
+    "build": "next build && touch ./out/.nojekyll && echo 'dango0812.github.io' > ./out/CNAME",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "touch out/.nojekyll && gh-pages -d out -b release -t true"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.69.0",
+    "gh-pages": "^3.2.3",
     "gsap": "^3.12.7",
     "next": "15.2.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "touch-cli": "^0.0.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.8",
@@ -35,5 +38,6 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "typescript-eslint": "^8.30.1"
-  }
+  },
+  "homepage": "https://dango0812.github.io"
 }
