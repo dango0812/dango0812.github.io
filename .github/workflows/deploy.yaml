@@ -9,6 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      NEXT_PUBLIC_BLOG_API_KEY: ${{ secrets.NEXT_PUBLIC_BLOG_API_KEY }}
+      NEXT_PUBLIC_BLOG_API_URL: ${{ secrets.NEXT_PUBLIC_BLOG_API_URL }}
+      NEXT_PUBLIC_BLOG_API_USERNAME: ${{ secrets.NEXT_PUBLIC_BLOG_API_USERNAME }}
+      ASSETS_CDN_URL: ${{ secrets.ASSETS_CDN_URL }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
