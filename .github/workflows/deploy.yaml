@@ -24,6 +24,12 @@ jobs:
           pnpm install
           pnpm run build
 
+      # create .nojekyll and CNAME
+      - name: Next.js SSG Env Setting
+        run: |
+          touch ./out/.nojekyll
+          echo 'dango0812.github.io' > ./out/CNAME
+
       # deploy & use github-pages-deploy action ( gh-pages )
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
