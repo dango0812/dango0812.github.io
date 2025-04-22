@@ -1,3 +1,5 @@
+// react
+import { memo } from "react";
 // libs
 import { cn } from "@libs/tailwind";
 
@@ -5,7 +7,7 @@ interface WaveProps {
   className?: string;
 }
 
-export default function Wave({
+function Wave({
   className
 }: WaveProps) {
   return (
@@ -42,3 +44,5 @@ export default function Wave({
     </svg>
   )
 }
+
+export default memo(Wave);
