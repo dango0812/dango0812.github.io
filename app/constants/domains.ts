@@ -1,12 +1,11 @@
-const GITHUB_DOMAIN_ROOT = "https://github.com";
-const DANGO0812 = "dango0812";
+const GITHUB_DOMAIN = "https://github.com/dango0812";
 
 export const domains = {
     github: {
-        root: `${GITHUB_DOMAIN_ROOT}/${DANGO0812}`,
-        portfolio: `${GITHUB_DOMAIN_ROOT}/${DANGO0812}/dango0812.github.io`,
-        frontend_study: `${GITHUB_DOMAIN_ROOT}/${DANGO0812}/frontend-study`,
-        next_auth: `${GITHUB_DOMAIN_ROOT}/${DANGO0812}/next-auth`,
+        root: `${GITHUB_DOMAIN}`,
+        portfolio: `${GITHUB_DOMAIN}/dango0812.github.io`,
+        frontend_study: `${GITHUB_DOMAIN}/frontend-study`,
+        next_auth: `${GITHUB_DOMAIN}/next-auth`,
     },
     contact: {
         phone: "tel:010-2527-1731",
