@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Donggyu
 
-## Getting Started
+Next.js와 Typescript 기반으로 제작된 포트폴리오 웹 사이트예요.  
+간략한 소개와, 역량, 경력, 수상 및 독서 내역, 진행한 프로젝트의 내용을 담았어요.
 
-First, run the development server:
+[<a href="https://dango0812.github.io/" target="_blank">
+    🔗 포트폴리오 사이트 방문
+</a>](https://dango0812.github.io/)
+
+## ⚙️ 사용 기술
+
+| 분류           | 기술 스택                                 |
+|----------------|-------------------------------------------|
+| **프레임워크** | Next.js (v15), Typescript                 |
+| **스타일링**   | Tailwind CSS (v4), GSAP                   |
+| **상태 관리**  | React Query                              |
+| **패키지 매니저** | PNPM                                     |
+| **코드 스타일링**  | ESLint, Prettier                         |
+| **CI/CD**      | GitHub Actions                           |
+
+
+## 📁 프로젝트 구조
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+/
+├── .github/workflows
+├── app
+│   ├── (homepage)
+│   ├── career
+│   │   ├── [slug]
+│   ├── api
+│   └── components
+├── constants
+├── hooks
+├── libs
+├── styles
+├── types
+└── utils
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ❕참고
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Tailwind css 최신 버전으로 커스텀을 진행했어요.
+- ESLint 최신 버전으로 코드 스타일링을 진행했어요.
+- 경력 상세 페이지는 Dynamic Routes 구조로 설계했어요.
+- GitHub Pages 에 배포하기 위해 정적 내보내기 방식으로 빌드돼요.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 컴포넌트 구현 스타일은 `components/ui`에서 확인할 수 있어요.  
+[<a href="https://github.com/dango0812/dango0812.github.io/tree/main/app/components/ui" target="_blank">
+    🔗 Component/ui
+</a>](https://github.com/dango0812/dango0812.github.io/tree/main/app/components/ui)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 코드 스타일은 `HomeTableOfContents`와 `useAnimationFadeUp` 에서 볼 수 있어요.  
+[<a href="https://github.com/dango0812/dango0812.github.io/blob/main/app/(homepage)/components/HomeTableOfContents.tsx" target="_blank">
+    🔗 HomeTableOfContents
+</a>](https://github.com/dango0812/dango0812.github.io/blob/main/app/(homepage)/components/HomeTableOfContents.tsx)  
+[<a href="https://github.com/dango0812/dango0812.github.io/blob/main/app/hooks/useAnimationFadeUp.ts" target="_blank">
+    🔗 useAnimationFadeUp
+</a>](https://github.com/dango0812/dango0812.github.io/blob/main/app/hooks/useAnimationFadeUp.ts)
