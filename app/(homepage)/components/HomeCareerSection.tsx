@@ -140,7 +140,7 @@ export default function HomeCareerSection() {
                                                                     className="flex items-center text-yellow-500 max-w-max"
                                                                 >
                                                                     <span
-                                                                        className="underline"
+                                                                        className="underline font-semibold"
                                                                     >
                                                                         {_CareerSection.moreInfo}
                                                                     </span>

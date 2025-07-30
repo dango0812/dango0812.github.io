@@ -11,11 +11,21 @@ export const _CareerConfig = [
                         title: "블러미 동영상·이미지 비식별화 웹 페이지 (Milestone 4)",
                         usedTech: ["Next.js (v14)", "Typescript", "Jotai", "Pnpm workspace", "Tailwind css"],
                         tasks: [
-                            "Next.js를 활용한 반응형 웹페이지 구현",
+                            "[최적화]",
+                            "CSR 되어있던 코드를 SSR·ISR·서버 컴포넌트를 활용한 페이지 구조 개선 및 렌더링 최적화",
+                            "DOM에 그리는 항목이 많아질 경우 발생하는 속도 저하 문제로 가상화 테이블을 활용한 최적화 진행",
+                            "Recoil 업데이트 중단, 메모리 누수 등 많은 문제가 확인되어, Jotai 상태 관리 라이브러리로 마이그레이션 진행",
+                            "데스크탑·모바일 컴포넌트 분리되어 관리되던 컴포넌트 통합 및 리팩토링",
+                            "레거시 코드 개선",
+                            "[기능 구현]",
+                            "자체 개발된 WASM Native module를 사용한 전체 화면 블러/블러 방식 선택 기능 구현",
                             "비회원 사용자 동영상·이미지 업로드 기능 구현",
-                            "비식별화 기능을 직접 사용해볼 수 있는 무료 체험 기능 구현",
-                            "블러 및 모자이크 기능을 기존 프로젝트에서 포팅하고, 신규 UI 컴포넌트에 적용",
-                            "Recoil 업데이트 중단, 메모리 누수, 주요 개발자 퇴직 등 문제가 발견되어, Jotai 상태 관리 라이브러리로 마이그레이션 진행"
+                            "비로그인 사용자의 서비스 무료 체험 환경 및 기능 구현",
+                            "동적으로 추가·삭제 가능한 Event Banner CMS 컴포넌트 구현",
+                            "[성과]",
+                            "지속적인 SEO 개선 및 최적화 결과 페이지 클릭 수 향상 (2월 600회 노출 6,775회 → 5월 28일 13,170회, 노출 292,083회 달성)",
+                            "페이지 색인 문제로 색인 되지 않은 페이지 13,762회로 크롤링 문제되던 것을 개선하여 780회로 감소 후 크롤링 향상",
+                            "코어 웹 바이탈 294개의 느린 페이지를 개선하여 130회로 감소 (7월 30일 기준 742개 페이지 중 612개의 빠른 페이지 달성)"
                         ]
                     }
                 ]
@@ -27,7 +37,6 @@ export const _CareerConfig = [
                         title: "블러미 동영상·이미지 비식별화 웹 페이지 (Milestone 3)",
                         usedTech: ["Next.js (v13)", "Javascript", "Typescript", "ESLint (v8)", "Prettier", "Pnpm workspace", "Strapi (CMS)", "Recoil", "Next-Auth", "Storybook", "Framer-Motion", "Tailwind css", "Emotion", "AWS-SDK", "AWS Cognito", "AWS Amplify", "AWS Lightsail"],
                         tasks: [
-                            "Next.js를 활용한 반응형 웹페이지 구현",
                             "Next.js App Router, 서버 컴포넌트 등 신기능과 렌더링 방식에 대한 사내 발표 진행",
 
                             "EventListener를 활용한 외부 스크립트 Lazy Load 구현 (FCP → 0.7초, LCP → 0.4초 개선)",

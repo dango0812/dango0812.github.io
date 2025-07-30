@@ -56,11 +56,19 @@ export const _CareerSection = {
         },
         {
             type: "project",
-            date: "2025.01 - 진행중",
-            title: "Frontend Study",
-            description: "실무 경험이 쌓일수록 더 넓은 시야에서 개발의 본질을 바라보고 싶었습니다. 2025년 목표로 탄탄한 기본기와 지식을 바탕으로 한층 더 깊이 있는 개발자로 나아가고자 시작한 정리형 프로젝트입니다.",
+            date: "2025.07 - 진행중",
+            title: "Tanstack Virtual Grid",
+            description: "@tanstack/virtual을 사용하여 가상화된 그리드를 구현하는 방법과 그리드 항목의 종횡비를 유지하면서 구현하는 방법에 대한 블로그 게시글과 코드를 제공합니다.",
             isActive: true,
-            link: domains.github.frontend_study
+            link: domains.github.tanstackVirtualGrid
+        },
+        {
+            type: "project",
+            date: "2025.07 - 진행중",
+            title: "Social Share Urls",
+            description: "웹 환경 내에서 라이브러리 도움없이 소셜 미디어에 컨텐츠를 공유할 때 어떻게 접근해야하는지 도움을 주기 위해 만들어졌습니다",
+            isActive: true,
+            link: domains.github.socialShareUrls
         },
         {
             type: "project",
@@ -74,9 +82,9 @@ export const _CareerSection = {
             type: "project",
             date: "2024.08 - 2024.10",
             title: "NextAuth with AWS Cognito",
-            description: "NextAuth와 AWS Cognito를 사용한 로그인 연동 프로젝트입니다. 구글 로그인 관련 정보가 부족해 도움을 주고자 시작했으며, 블로그는 4,000회 이상 조회되었습니다.",
+            description: "NextAuth와 AWS Cognito를 사용한 로그인 연동 프로젝트입니다. AWS Cognito를 사용한 구글 로그인 방법의 정보가 부족해 도움을 주고자 시작했습니다.",
             isActive: false,
-            link: domains.github.next_auth
+            link: domains.github.nextAuth
         }
     ]
 };
@@ -103,7 +111,9 @@ export const _HomeTimelineSection = {
             title: "자격증",
             iconSrc: "/icons/icon-certificate-medal.svg",
             items: [
-                { icon: "🪪", title: "워드프로세서 1급" }
+                { icon: "🪪", title: "워드프로세서 1급" },
+                { icon: "🪪", title: "정보기술자격 ITQ 인터넷" },
+                { icon: "🪪", title: "Google Analytics Certification" }
             ]
         },
         {
@@ -112,7 +122,7 @@ export const _HomeTimelineSection = {
             items: [
                 { icon: "📖", title: "Clean Code 애자일 소프트웨어 장인 정신" },
                 { icon: "📙", title: "봉제인형 살인사건" },
-                { icon: "📙", title: "어쩌면 별들이 너의 슬픔을 가져갈지도 몰라" },
+                { icon: "📙", title: "어쩌면 별들이 너의 슬픔을 가져갈지도 몰라" }
             ]
         },
         {
