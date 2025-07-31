@@ -103,6 +103,7 @@ export const _HomeTimelineSection = {
             title: "교육",
             iconSrc: "/icons/icon-graduation-cap.svg",
             items: [
+                { icon: "🎯", title: "프로그래밍 Catch Up 동아리" },
                 { icon: "🏫", title: "수원과학대학교" },
                 { icon: "🏫", title: "야탑고등학교" }
             ]

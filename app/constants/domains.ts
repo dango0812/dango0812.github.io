@@ -6,7 +6,7 @@ export const domains = {
         portfolio: `${GITHUB_DOMAIN}/dango0812.github.io`,
         tanstackVirtualGrid: `${GITHUB_DOMAIN}/tanstack-virtual-grid`,
         socialShareUrls: `${GITHUB_DOMAIN}/social-share-urls`,
-        nextAuth: `${GITHUB_DOMAIN}/next-auth`,
+        nextAuth: `${GITHUB_DOMAIN}/nextauth-cognito`,
     },
     contact: {
         phone: "tel:010-2527-1731",
