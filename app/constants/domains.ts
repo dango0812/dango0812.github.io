@@ -11,5 +11,8 @@ export const domains = {
     contact: {
         phone: "tel:010-2527-1731",
         mail: "mailto:ehdrbsla12000@gmail.com"
+    },
+    deploy: {
+        tanstackVirtualGrid: "https://tanstack-virtual-grid.vercel.app",
     }
 }

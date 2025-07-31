@@ -56,17 +56,28 @@ export const _CareerSection = {
         },
         {
             type: "project",
-            date: "2025.07 - 진행중",
+            date: "2025.07.21 - 2025.07.31",
             title: "Tanstack Virtual Grid",
-            description: "@tanstack/virtual을 사용하여 가상화된 그리드를 구현하는 방법과 그리드 항목의 종횡비를 유지하면서 구현하는 방법에 대한 블로그 게시글과 코드를 제공합니다.",
-            isActive: true,
-            link: domains.github.tanstackVirtualGrid
+            description: "@tanstack/virtual을 사용하여 가상화된 그리드를 구현하는 방법과 그리드 항목의 종횡비를 유지하면서 구현하는 방법에 대한 블로그 게시글과 예제 코드를 제공합니다.",
+            isActive: false,
+            links: [
+                {
+                    id: "github",
+                    link: domains.github.tanstackVirtualGrid,
+                    label: "Github"
+                },
+                {
+                    id: "website",
+                    link: domains.deploy.tanstackVirtualGrid,
+                    label: "Website"
+                }
+            ]
         },
         {
             type: "project",
             date: "2025.07 - 진행중",
             title: "Social Share Urls",
-            description: "웹 환경 내에서 라이브러리 도움없이 소셜 미디어에 컨텐츠를 공유할 때 어떻게 접근해야하는지 도움을 주기 위해 만들어졌습니다",
+            description: "웹 환경 내에서 라이브러리 도움없이 소셜 미디어에 컨텐츠를 공유할 때 어떻게 접근해야하는지에 대한 내용을 다룹니다.",
             isActive: true,
             link: domains.github.socialShareUrls
         },
@@ -74,7 +85,7 @@ export const _CareerSection = {
             type: "project",
             date: "2025.01 - 2025.04",
             title: "Portfolio Website",
-            description: "Next.js 기반의 포트폴리오 웹 페이지입니다.",
+            description: "Next.js 프레임워크를 사용한 포트폴리오 웹 페이지입니다.",
             isActive: false,
             link: domains.github.portfolio
         },
@@ -82,7 +93,7 @@ export const _CareerSection = {
             type: "project",
             date: "2024.08 - 2024.10",
             title: "NextAuth with AWS Cognito",
-            description: "NextAuth와 AWS Cognito를 사용한 로그인 연동 프로젝트입니다. AWS Cognito를 사용한 구글 로그인 방법의 정보가 부족해 도움을 주고자 시작했습니다.",
+            description: "NextAuth와 AWS Cognito를 사용한 로그인 연동 프로젝트입니다. AWS Cognito를 사용한 구글 로그인 방법의 정보가 부족해 도움을 주고자 시작했습니다. 5,000 이상의 조회 수를 기록하며 지속적으로 증가하고 있습니다.",
             isActive: false,
             link: domains.github.nextAuth
         }

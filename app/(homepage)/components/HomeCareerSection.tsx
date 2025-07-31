@@ -77,7 +77,7 @@ export default function HomeCareerSection() {
                         >
                             {_CareerSection.details
                                 .filter((item) => item.type === type)
-                                .map(({ date, title, description, isActive, link }, idx) => (
+                                .map(({ date, title, description, isActive, link, links }, idx) => (
                                     <Fragment
                                         key={idx}
                                     >
@@ -174,6 +174,50 @@ export default function HomeCareerSection() {
                                                             );
                                                         }
                                                     }
+
+                                                    if (Array.isArray(links) && links.length > 0) {
+                                                        return (
+                                                            <RowFlex
+                                                                alignItems="center"
+                                                                className="gap-5"
+                                                            >
+                                                                {links.map(({ id, link, label }) => (
+                                                                    <a
+                                                                        key={id}
+                                                                        href={link}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="w-max flex items-center gap-1.5 hover:underline"
+                                                                    >
+                                                                        {id === "github" ? (
+                                                                            <Image
+                                                                                src="/icons/icon-github.svg"
+                                                                                alt="icon-github"
+                                                                                width={16}
+                                                                                height={16}
+                                                                                priority
+                                                                            />
+                                                                        ) : (
+                                                                            <Image
+                                                                                src="/icons/icon-link.svg"
+                                                                                alt="icon-link"
+                                                                                width={16}
+                                                                                height={16}
+                                                                                priority
+                                                                            />
+                                                                        )}
+                                                                        <Typography
+                                                                            as="span"
+                                                                            fontSize="sm"
+                                                                        >
+                                                                            {label}
+                                                                        </Typography>
+                                                                    </a>
+                                                                ))}
+                                                            </RowFlex>
+                                                        )
+                                                    }
+
                                                     return null;
                                                 })()}
                                             </ColumnFlex>
