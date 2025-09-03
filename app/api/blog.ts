@@ -5,7 +5,7 @@ export const getBlogPosts = async (): Promise<BlogPost[]> => {
     const params = new URLSearchParams({
         username: process.env.NEXT_PUBLIC_BLOG_API_USERNAME as string,
         api_keys: process.env.NEXT_PUBLIC_BLOG_API_KEY as string,
-        per_page: "4",
+        per_page: "6",
     });
 
     const url = `${baseUrl}?${params.toString()}`;
