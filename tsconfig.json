@@ -44,45 +44,6 @@
       "@/*": [
         "./*"
       ],
-      "@_mocks/*": [
-        "./_mocks/*"
-      ],
-      "@styles/*": [
-        "./app/styles/*"
-      ],
-      "@provider/*": [
-        "./app/components/provider/*"
-      ],
-      "@api/*": [
-        "./app/api/*"
-      ],
-      "@libs/*": [
-        "./app/libs/*"
-      ],
-      "@utils/*": [
-        "./app/utils/*"
-      ],
-      "@hooks/*": [
-        "./app/hooks/*"
-      ],
-      "@constants/*": [
-        "./app/constants/*"
-      ],
-      "@components/*": [
-        "./app/components/*"
-      ],
-      "@assets/*": [
-        "./app/components/assets/*"
-      ],
-      "@home/*": [
-        "./app/(homepage)/*"
-      ],
-      "@career/*": [
-        "./app/career/[slug]/*"
-      ],
-      "@_types/*": [
-        "./app/types/*"
-      ]
     },
     "noEmit": true
   },
