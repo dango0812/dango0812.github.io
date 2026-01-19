@@ -1,74 +1,120 @@
-// node
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-// eslint
-import js from "@eslint/js";
-import ts from "typescript-eslint";
-import prettierConfig from "eslint-plugin-prettier";
+import { defineConfig, globalIgnores } from 'eslint/config';
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import nextPlugin from '@next/eslint-plugin-next';
+import prettier from 'eslint-plugin-prettier/recommended';
 
-import { FlatCompat } from "@eslint/eslintrc";
-import { fixupConfigRules } from "@eslint/compat";
+export default defineConfig([
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'node_modules/**', 'next-env.d.ts', '**/*.d.ts']),
 
-const _filename = fileURLToPath(import.meta.url);
-const _dirname = dirname(_filename);
-
-const compat = new FlatCompat({
-  baseDirectory: _dirname,
-  resolvePluginsRelativeTo: _dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
-});
-
-const patchedConfig = fixupConfigRules([
-  ...compat.extends("next", "next/core-web-vitals", "prettier")
-]);
-
-const config = [
-  ...patchedConfig,
-  ...ts.configs.recommended,
+  // 공통 설정
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
-    ignores: [".next", "node_modules"],
-    settings: {
-      plugins: {
-        prettierConfig
-      },
-      react: {
-        version: "detect",
-      },
-    },
     languageOptions: {
-      parser: ts.parser,
-      ecmaVersion: "latest",
-      sourceType: "module",
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.es2015,
+      },
       parserOptions: {
         ecmaFeatures: {
-				  jsx: true
-				}
-      }
-    }
+          jsx: true,
+        },
+      },
+    },
   },
+
+  // JS/TS 권장 설정
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+
+  // Next.js 플러그인
+  {
+    plugins: {
+      '@next/next': nextPlugin,
+    },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+    },
+  },
+
+  // TypeScript 파일 전용
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: './tsconfig.json',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true, caughtErrors: 'none' }],
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-empty-object-type': 'error',
+      '@typescript-eslint/no-inferrable-types': 'warn',
+      '@typescript-eslint/no-empty-function': 'error',
+      '@typescript-eslint/no-require-imports': 'warn',
+      '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
+      '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-use-before-define': 'off',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+          selector: 'variable',
+          leadingUnderscore: 'allow',
+        },
+        { format: ['camelCase', 'PascalCase'], selector: 'function' },
+        { format: ['PascalCase'], selector: 'interface' },
+        { format: ['PascalCase'], selector: 'typeAlias' },
+      ],
+      '@typescript-eslint/member-ordering': [
+        'error',
+        {
+          default: [
+            'public-static-field',
+            'private-static-field',
+            'public-instance-field',
+            'private-instance-field',
+            'public-constructor',
+            'private-constructor',
+            'public-instance-method',
+            'private-instance-method',
+          ],
+        },
+      ],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'CallExpression[callee.object.name="console"]',
+          message: 'console.log() is not allowed in source code.',
+        },
+        {
+          selector: 'CallExpression[callee.object.name="Object"][callee.property.name="entries"]',
+          message: 'Do not use Object.entries for performance. Consider using Object.keys() or Object.values().',
+        },
+      ],
+    },
+  },
+
+  // 공통 규칙
   {
     rules: {
-      "no-var": "error", // var 사용 금지
-      "@typescript-eslint/no-explicit-any": "error", // any type 에러
-      "@typescript-eslint/no-empty-object-type": "error", // 빈 객체 사용 에러
-      curly: ["error", "all"], // 모든 조건문(if, else, for 등)에 중괄호({}) 사용
-      eqeqeq: ["error", "always"], // == 대신 ===를 사용
-      "@typescript-eslint/no-inferrable-types": "warn", // 타입 추론이 가능한 경우 타입을 명시하지 않도록
-      "@typescript-eslint/no-empty-function": "error", // 빈 함수 사용 에러
-      "@typescript-eslint/array-type": ["error", { default: "array-simple" }], // 배열 타입을 간단하게 사용
-      "@typescript-eslint/naming-convention": [ // 일관된 이름 규칙
-        "error",
-        { format: ["camelCase", "UPPER_CASE", "PascalCase"], selector: "variable", leadingUnderscore: "allow" },
-        { format: ["camelCase", "PascalCase"], selector: "function" },
-        { format: ["PascalCase"], selector: "interface" },
-        { format: ["PascalCase"], selector: "typeAlias" },
-      ],
-      "no-unused-vars": "off", // 아래 typescript 로 검사하므로 충돌하지 않도록 설정 해제
-      "@typescript-eslint/no-unused-vars": "error", // 사용하지 않는 변수는 경고
-    }
-  }
-]
+      'no-var': 'error',
+      'no-implicit-coercion': 'error',
+      curly: ['error', 'all'],
+      eqeqeq: ['error', 'always', { null: 'ignore' }],
+      'prefer-object-has-own': 'error',
+      'no-warning-comments': ['warn', { terms: ['TODO', 'FIXME', 'XXX', 'BUG'], location: 'anywhere' }],
+    },
+  },
 
-export default config;
+  prettier,
+]);

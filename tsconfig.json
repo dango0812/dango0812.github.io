@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ], // 사용할 라이브러리 정의 (DOM 관련 및 최신 JS 기능)
+    "lib": ["dom", "dom.iterable", "esnext"], // 사용할 라이브러리 정의 (DOM 관련 및 최신 JS 기능)
     "target": "ESNext", // ECMAScript 버전
     "module": "ESNext", // 모듈 시스템
     "moduleResolution": "bundler", // 모듈 해석 방식 설정4
@@ -34,18 +30,9 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-    },
+      "@/*": ["./*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
