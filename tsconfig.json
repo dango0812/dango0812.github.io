@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "esnext"], // 사용할 라이브러리 정의 (DOM 관련 및 최신 JS 기능)
     "target": "ESNext", // ECMAScript 버전
     "module": "ESNext", // 모듈 시스템
@@ -8,7 +9,6 @@
     "verbatimModuleSyntax": true, // import/export 구문을 변환 없이 유지
     "moduleDetection": "force", // 모든 파일을 모듈로 간주
     "noEmit": true, // 결과 파일 생성 안 함 (Vite가 빌드 담당)
-    "jsx": "preserve", // JSX를 변환하지 않고 유지 (Next.js가 자체 처리)
     "strict": true, // 모든 엄격한 타입 검사 활성화
     "noUnusedLocals": true, // 사용하지 않는 지역 변수 에러
     "noUnusedParameters": true, // 사용하지 않는 매개변수 에러
@@ -30,9 +30,17 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./app/*"],
+      "@providers/*": ["./app/providers/*"],
+      "@components/*": ["./app/components/*"],
+      "@constants/*": ["./app/constants/*"],
+      "@hooks/*": ["./app/hooks/*"],
+      "@libs/*": ["./app/libs/*"],
+      "@utils/*": ["./app/utils/*"],
+      "@styles/*": ["./app/styles/*"]
+    },
+    "resolveJsonModule": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
