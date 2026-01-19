@@ -1,53 +1,44 @@
 {
   "compilerOptions": {
-    /* Modules */
-    "baseUrl": ".", // 기본 경로
-    "module": "esnext", // 모듈 설정
-    "moduleResolution": "bundler", // 모듈 해석 방식 설정
-    "resolveJsonModule": true, // JSON 모듈 import 허용
-    "isolatedModules": true, // 모듈 단위로 격리 (Next.js의 빠른 빌드를 위해 필수)
-    /* Language and Environment */
-    "jsx": "preserve", // JSX를 변환하지 않고 유지 (Next.js가 자체 처리)
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ], // 사용할 라이브러리 정의 (DOM 관련 및 최신 JS 기능)
-    "target": "ES2020", // 코드에서 사용할 ECMAScript 버전 설정
-    /* Type Checking */
-    "strict": true, // 모든 엄격한 타입 검사 옵션 활성화
+    "target": "ESNext", // ECMAScript 버전
+    "module": "ESNext", // 모듈 시스템
+    "moduleResolution": "bundler", // 모듈 해석 방식 설정4
+    "allowImportingTsExtensions": true, // .ts 확장자 import 허용
+    "verbatimModuleSyntax": true, // import/export 구문을 변환 없이 유지
+    "moduleDetection": "force", // 모든 파일을 모듈로 간주
+    "noEmit": true, // 결과 파일 생성 안 함 (Vite가 빌드 담당)
+    "jsx": "preserve", // JSX를 변환하지 않고 유지 (Next.js가 자체 처리)
+    "strict": true, // 모든 엄격한 타입 검사 활성화
+    "noUnusedLocals": true, // 사용하지 않는 지역 변수 에러
+    "noUnusedParameters": true, // 사용하지 않는 매개변수 에러
+    "erasableSyntaxOnly": true, // 지워질 수 있는 구문만 허용
+    "noFallthroughCasesInSwitch": true, // switch 문에서 fallthrough 방지
+    "noUncheckedSideEffectImports": true, // 부수 효과가 있는 import에 대한 검사
+    "preserveConstEnums": true, // const enum 유지 (단, isolatedModules=true 시 사용 불가)
+    "removeComments": false, // 주석 제거 여부
     "incremental": true, // 증분 컴파일 활성화
-    "noUnusedLocals": true, // 사용되지 않는 지역 변수에 대한 에러 발생
-    "noUnusedParameters": true, // 사용되지 않는 매개변수에 대한 에러 발생
     "noImplicitReturns": true, // 함수의 모든 경로가 값을 반환하지 않으면 에러 발생
-    "noFallthroughCasesInSwitch": true, // 잘못 적혔다고 판단되는 switch문에 대한 에러 발생
-    /* Module Interop */
     "allowSyntheticDefaultImports": true, // 기본 내보내기 없는 모듈에서 기본 가져오기 허용
     "esModuleInterop": true, // CommonJS 모듈과 ES 모듈 간의 호환성 제공
     "forceConsistentCasingInFileNames": true, // 파일 이름 대소문자 일관성 강제
-    /* Emit */
-    "declaration": false, // .d.ts 생성 (라이브러리 배포용 설정 / Next.js에서 굳이 필요 없음)
-    "downlevelIteration": true, // ES3/ES5에서도 for..of, spread, destructuring 지원
-    "preserveConstEnums": true, // const enum 유지 (단, isolatedModules=true 시 사용 불가)
-    "removeComments": false, // 주석 제거 여부
-    /* Completeness */
     "allowJs": true, // 자바스크립트 파일 컴파일 허용 여부
     "skipLibCheck": true, // d.ts 타입 검사 생략
-    /* Plugins */
     "plugins": [
       {
         "name": "next"
       }
     ],
-    /* Path Alias */
     "paths": {
       "@/*": [
         "./*"
       ],
     },
-    "noEmit": true
   },
-  /* include & exclude */
   "include": [
     "next-env.d.ts",
     "**/*.ts",
