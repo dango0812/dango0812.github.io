@@ -3,7 +3,11 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import nextPlugin from '@next/eslint-plugin-next';
+import queryPlugin from '@tanstack/eslint-plugin-query';
 import prettier from 'eslint-plugin-prettier/recommended';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 export default defineConfig([
   globalIgnores(['.next/**', 'out/**', 'build/**', 'node_modules/**', 'next-env.d.ts', '**/*.d.ts']),
@@ -27,6 +31,29 @@ export default defineConfig([
   // JS/TS 권장 설정
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+
+  // 외부 설정
+  prettier,
+  ...queryPlugin.configs['flat/recommended'],
+  {
+    plugins: {
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+      'jsx-a11y': jsxA11y,
+    },
+    rules: {
+      // React Hooks 규칙
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      // React Refresh 규칙
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // a11y 규칙
+      'jsx-a11y/alt-text': 'warn',
+      'jsx-a11y/anchor-is-valid': 'warn',
+      'jsx-a11y/no-autofocus': 'warn',
+      'jsx-a11y/no-static-element-interactions': 'warn',
+    },
+  },
 
   // Next.js 플러그인
   {
@@ -115,6 +142,4 @@ export default defineConfig([
       'no-warning-comments': ['warn', { terms: ['TODO', 'FIXME', 'XXX', 'BUG'], location: 'anywhere' }],
     },
   },
-
-  prettier,
 ]);
