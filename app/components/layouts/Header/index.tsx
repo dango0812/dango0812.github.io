@@ -2,28 +2,25 @@
 
 import { useOffSetTop } from '@/hooks/useOffSetTop';
 import { m } from 'motion/react';
+import { type Transition } from 'motion/react';
 
 import HeaderLogo from './HeaderLogo';
 import HeaderNavList from './HeaderNavList';
 import { RowFlex } from '@/components/base';
+import { fadeInDown } from '@/constants/animations';
 
-const headerVariants = {
-  hidden: { y: -100, opacity: 0 },
-  visible: { y: 0, opacity: 1 },
-} as const;
-
-const springTransition = {
+const springTransition: Transition = {
   type: 'spring',
   damping: 20,
   stiffness: 300,
-} as const;
+};
 
 export default function Header() {
   const isOffsetTop = useOffSetTop();
 
   return (
     <m.header
-      variants={headerVariants}
+      variants={fadeInDown}
       initial="hidden"
       animate={isOffsetTop ? 'hidden' : 'visible'}
       transition={springTransition}
