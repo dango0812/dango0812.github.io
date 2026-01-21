@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
 import { cva } from 'class-variance-authority';
 import type { VariantProps } from 'class-variance-authority';
-import { cn } from '@libs/tailwind';
+import { cn } from '@/libs/tailwind';
 
-const flexBoxVariants = cva('w-full flex', {
+const flexBoxVariants = cva('flex', {
   variants: {
     /** flex-wrap 속성 */
     wrap: {
@@ -40,7 +40,11 @@ interface FlexBoxProps extends React.HTMLAttributes<HTMLDivElement>, VariantProp
 /**
  * 가로 방향 Flex 컴포넌트
  *
- * @description flex-direction: row 레이아웃
+ * @param {React.ReactNode} props.children - 내부에 렌더링할 자식 요소
+ * @param {string} props.className - 추가적인 스타일 클래스 이름
+ * @param {string} props.wrap - flex-wrap 속성 설정
+ * @param {string} props.align - align-items 속성 설정
+ * @param {string} props.justify - justify-content 속성 설정
  *
  * @example
  * ```tsx
@@ -64,7 +68,11 @@ RowFlex.displayName = 'RowFlex';
 /**
  * 세로 방향 Flex 컴포넌트
  *
- * @description flex-direction: column 레이아웃
+ * @param {React.ReactNode} props.children - 내부에 렌더링할 자식 요소
+ * @param {string} props.className - 추가적인 스타일 클래스 이름
+ * @param {string} props.wrap - flex-wrap 속성 설정
+ * @param {string} props.align - align-items 속성 설정
+ * @param {string} props.justify - justify-content 속성 설정
  *
  * @example
  * ```tsx
@@ -83,4 +91,4 @@ export const ColumnFlex = forwardRef<HTMLDivElement, FlexBoxProps>(
     );
   }
 );
-ColumnFlex.displayName = 'ColumnFlex'; // 이거의 의미는 ㅜ머지 ? =
+ColumnFlex.displayName = 'ColumnFlex';
