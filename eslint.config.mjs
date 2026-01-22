@@ -1,13 +1,14 @@
-import { defineConfig, globalIgnores } from 'eslint/config';
-import globals from 'globals';
 import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
 import nextPlugin from '@next/eslint-plugin-next';
 import queryPlugin from '@tanstack/eslint-plugin-query';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import prettier from 'eslint-plugin-prettier/recommended';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig([
   globalIgnores(['.next/**', 'out/**', 'build/**', 'node_modules/**', 'next-env.d.ts', '**/*.d.ts']),
@@ -40,6 +41,7 @@ export default defineConfig([
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       'jsx-a11y': jsxA11y,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
       // React Hooks 규칙
@@ -52,6 +54,22 @@ export default defineConfig([
       'jsx-a11y/anchor-is-valid': 'warn',
       'jsx-a11y/no-autofocus': 'warn',
       'jsx-a11y/no-static-element-interactions': 'warn',
+      // simple import sort 규칙
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            ['^react$', '^@?\\w'],
+            ['^node:'],
+            ['^@/'],
+            ['^src/'],
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$', '^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+            ['^.+\\.module\\.s?css$', '^.+\\.s?css$', '^.+\\.(png|jpe?g|svg|gif|webp)$'],
+            ['^\\u0000'],
+          ],
+        },
+      ],
+      'simple-import-sort/exports': 'warn',
     },
   },
 
