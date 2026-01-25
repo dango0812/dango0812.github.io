@@ -1,9 +1,10 @@
 'use client';
 
 import { useCallback } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { m } from 'motion/react';
 import { type Variants } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+
 import { ColumnFlex, Typography } from '@/components/base';
 import { fadeInUp } from '@/constants/animations';
 
@@ -18,7 +19,7 @@ const scrollIndicator: Variants = {
   },
 };
 
-export default function HeroScrollDownIndicator() {
+export default function ScrollDownIndicator() {
   const handleScrollDown = useCallback(() => {
     window.scrollTo({
       top: window.innerHeight,

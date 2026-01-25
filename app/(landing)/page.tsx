@@ -1,19 +1,19 @@
-import AboutSection from './components/AboutSection';
+// import AboutSection from './components/AboutSection';
 import HeroSection from './components/HeroSection';
-// import CareerSection from './components/CareerSection';
 // import BlogSection from './components/BlogSection';
-// import CredentialsSection from './components/CredentialsSection';
+// import CareerSection from './components/CareerSection';
+// import ProfileSection from './components/ProfileSection';
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
       {/*
+      <AboutSection />
       <CareerSection />
-      <BlogSection />
-      <CredentialsSection />
-      */}
+       <BlogSection />
+      <ProfileSection />
+       */}
     </>
   );
 }

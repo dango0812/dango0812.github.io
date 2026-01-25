@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import { Header } from '@/components/layouts';
 import { MotionProvider, QueryProvider } from '@/providers';
 

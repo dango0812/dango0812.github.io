@@ -1,4 +1,4 @@
-export default function HeroBackground() {
+export default function BackgroundOverlay() {
   return (
     <>
       {/* 메인 그라데이션 */}

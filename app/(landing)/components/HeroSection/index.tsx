@@ -1,16 +1,19 @@
 'use client';
 
 import { m } from 'motion/react';
-import { Container, ColumnFlex, Typography } from '@/components/base';
+
+import { ColumnFlex, Container, Typography } from '@/components/base';
+import Section from '@/components/common/Section';
 import { fadeInUp } from '@/constants/animations';
+
+import BackgroundOverlay from './BackgroundOverlay';
 import HeroCTA from './HeroCTA';
-import HeroScrollDownIndicator from './HeroScrollDownIndicator';
-import HeroBackgroundOverlay from './HeroBackgroundOverlay';
+import ScrollDownIndicator from './ScrollDownIndicator';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-      <HeroBackgroundOverlay />
+    <Section>
+      <BackgroundOverlay />
       <Container className="relative z-10 py-20 px-5">
         <ColumnFlex align={'center'} className="text-center gap-6">
           <m.div variants={fadeInUp} initial="hidden" animate="visible" custom={0.1}>
@@ -25,11 +28,12 @@ export default function HeroSection() {
             </Typography>
           </m.div>
 
-          <HeroCTA />
+          <m.div variants={fadeInUp} initial="hidden" animate="visible" custom={0.3}>
+            <HeroCTA />
+          </m.div>
         </ColumnFlex>
       </Container>
-
-      <HeroScrollDownIndicator />
-    </section>
+      <ScrollDownIndicator />
+    </Section>
   );
 }
