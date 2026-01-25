@@ -2,12 +2,14 @@
 
 import { useRef } from 'react';
 import { useScroll, useSpring } from 'motion/react';
+import { m } from 'motion/react';
 
 import { ColumnFlex, Container } from '@/components/base';
-import { For } from '@/components/common';
+import { For, Section } from '@/components/common';
+import { fadeInUp } from '@/constants/animations';
 
+import SectionHeader from '../../../components/common/Section/SectionHeader';
 import { DesktopCard, MobileCard } from './AboutCard';
-import AboutSectionHeader from './AboutSectionHeader';
 import { ABOUT_CARDS } from './constants';
 
 const SPRING_CONFIG = {
@@ -28,22 +30,28 @@ export default function AboutSection() {
   const smoothProgress = useSpring(scrollYProgress, SPRING_CONFIG);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-white py-24 md:py-40">
+    <Section ref={sectionRef} className="overflow-hidden py-24 md:py-40">
       <Container className="relative z-10 px-5 md:px-0">
-        <AboutSectionHeader />
+        <m.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>
+          <SectionHeader
+            head="핵심 역량"
+            title="서비스를 만들어가며 쌓인 경험"
+            description={`AI 기반 비식별화 서비스 블러미의 초기 기획 단계부터 참여해,\n프론트엔드 개발과 배포, 운영까지 전 과정을 경험했습니다.`}
+          />
 
-        {/* 모바일: 그리드 레이아웃 */}
-        <ColumnFlex className="gap-4 md:hidden">
-          <For each={ABOUT_CARDS}>{(card, index) => <MobileCard key={card.title} card={card} index={index} />}</For>
-        </ColumnFlex>
+          {/* 모바일: 그리드 레이아웃 */}
+          <ColumnFlex className="mt-10 gap-4 md:hidden">
+            <For each={ABOUT_CARDS}>{(card, index) => <MobileCard key={card.title} card={card} index={index} />}</For>
+          </ColumnFlex>
 
-        {/* 데스크톱: 스프레드 애니메이션 */}
-        <ColumnFlex align={'center'} justify={'center'} className="relative hidden md:flex h-[480px]">
-          <For each={ABOUT_CARDS}>
-            {(card, index) => <DesktopCard key={card.title} card={card} index={index} progress={smoothProgress} />}
-          </For>
-        </ColumnFlex>
+          {/* 데스크톱: 스프레드 애니메이션 */}
+          <ColumnFlex align={'center'} justify={'center'} className="relative mt-10 hidden md:flex h-[480px]">
+            <For each={ABOUT_CARDS}>
+              {(card, index) => <DesktopCard key={card.title} card={card} index={index} progress={smoothProgress} />}
+            </For>
+          </ColumnFlex>
+        </m.div>
       </Container>
-    </section>
+    </Section>
   );
 }

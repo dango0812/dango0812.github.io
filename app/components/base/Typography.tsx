@@ -8,11 +8,11 @@ const typographyVariants = cva('', {
     /** 태그별 기본 스타일 */
     as: {
       /** 48px, 700, 1.25 */
-      h1: 'text-5xl font-bold leading-tight',
+      h1: 'text-3xl sm:text-4xl md:text-5xl font-bold leading-tight',
       /** 36px, 700, 1.25 */
-      h2: 'text-4xl font-bold leading-tight',
+      h2: 'text-2xl sm:text-3xl md:text-4xl font-bold leading-tight',
       /** 30px, 600, 1.375 */
-      h3: 'text-3xl font-semibold leading-snug',
+      h3: 'text-2xl md:text-3xl font-semibold leading-snug',
       /** 24px, 600, 1.375 */
       h4: 'text-2xl font-semibold leading-snug',
       /** 20px, 500, 1.5 */
@@ -88,6 +88,7 @@ const typographyVariants = cva('', {
       blue: 'text-blue-600',
       green: 'text-green-600',
       red: 'text-red-600',
+      purple: 'text-indigo-600',
       orange: 'text-orange-600',
       gray: 'text-gray-600',
     },
