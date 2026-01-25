@@ -1,9 +1,18 @@
-import type { ReactNode } from 'react';
+import { forwardRef, type HTMLAttributes, type ReactNode } from 'react';
 
-interface SectionProps {
+import { cn } from '@/lib/tailwind';
+interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
 }
 
-export default function Section({ children }: SectionProps) {
-  return <section className="relative min-h-screen flex items-center">{children}</section>;
-}
+export const Section = forwardRef<HTMLElement, SectionProps>(({ children, className, ...props }, ref) => {
+  return (
+    <section ref={ref} className={cn('relative min-h-screen flex items-center', className)} {...props}>
+      {children}
+    </section>
+  );
+});
+
+Section.displayName = 'Section';
+
+export default Section;
