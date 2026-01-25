@@ -3,7 +3,7 @@
 import { m } from 'motion/react';
 
 import { ColumnFlex, Container, Typography } from '@/components/base';
-import Section from '@/components/common/Section';
+import { Section } from '@/components/common';
 import { fadeInUp } from '@/constants/animations';
 
 import BackgroundOverlay from './BackgroundOverlay';
