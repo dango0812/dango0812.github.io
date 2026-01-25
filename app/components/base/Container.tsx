@@ -1,5 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/libs/tailwind';
+
+import { cn } from '@/lib/tailwind';
 
 const containerVariants = cva('w-full mx-auto', {
   variants: {

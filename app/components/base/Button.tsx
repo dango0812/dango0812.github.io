@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/libs/tailwind';
+
+import { cn } from '@/lib/tailwind';
 
 const buttonVariants = cva(
   [
