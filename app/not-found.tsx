@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button, ColumnFlex, Container, Typography } from './components/base';
-import Section from './components/common/Section';
+import { Section } from './components/common';
 import { PATHS } from './constants/routes';
 
 export default function NotFoundPage() {
