@@ -5,7 +5,7 @@ import { useScroll, useSpring } from 'motion/react';
 import { m } from 'motion/react';
 
 import { ColumnFlex, Container } from '@/components/base';
-import { For, Section } from '@/components/common';
+import { Section } from '@/components/common';
 import { fadeInUp } from '@/constants/animations';
 
 import SectionHeader from '../../../components/common/Section/SectionHeader';
