@@ -6,7 +6,8 @@ import { m, useInView } from 'motion/react';
 
 import { useGetProfile } from '@/api/profile';
 import { ColumnFlex, Container, RowFlex } from '@/components/base';
-import { Section, SectionHeader } from '@/components/common';
+import { ErrorRetry, Section, SectionHeader } from '@/components/common';
+import { LoadingDot } from '@/components/common';
 
 import BackgroundOverlay from './BackgroundOverlay';
 import {
@@ -18,13 +19,12 @@ import {
   CategoryGroup,
   CategoryOpenSourceItem,
 } from './category';
-import ProfileLoading from './ProfileLoading';
 
 export default function ProfileSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
-  const { data, isLoading } = useGetProfile();
+  const { data, isLoading, refetch } = useGetProfile();
 
   return (
     <Section
@@ -45,7 +45,7 @@ export default function ProfileSection() {
 
         {(() => {
           if (isLoading) {
-            return <ProfileLoading />;
+            return <LoadingDot />;
           }
 
           if (data) {
@@ -97,7 +97,7 @@ export default function ProfileSection() {
             );
           }
 
-          return '데이터를 불러오는 중 오류가 발생했습니다.';
+          return <ErrorRetry error="프로필" onRetry={refetch} />;
         })()}
       </Container>
     </Section>

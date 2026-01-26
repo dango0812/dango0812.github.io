@@ -3,6 +3,7 @@ import { m } from 'motion/react';
 import type { ReactNode } from 'react';
 
 import { Divider, RowFlex, Typography } from '@/components/base';
+import { fadeInUp } from '@/constants/animations';
 import { cn } from '@/lib/tailwind';
 
 type Color = 'black' | 'blue' | 'green' | 'red' | 'orange' | 'purple' | 'gray';
@@ -49,13 +50,10 @@ export default function CategoryGroup({ children, label, icon: Icon, count, colo
 
   return (
     <m.div
-      variants={{
-        hidden: { opacity: 0 },
-        visible: {
-          opacity: 1,
-          transition: { staggerChildren: 0.08 },
-        },
-      }}
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
       className="space-y-3 h-auto md:min-h-64"
     >
       {/* Header */}
