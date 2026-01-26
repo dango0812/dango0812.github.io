@@ -82,14 +82,14 @@ export default function BlogCard({ post, isLatest }: BlogCardProps) {
 
           <Typography
             as="h4"
-            size="xl"
+            size="lg"
             weight={700}
             className="group-hover:text-indigo-600 transition-colors duration-200 line-clamp-2"
           >
             {post.title}
           </Typography>
 
-          <Typography size="base" color="gray" className="leading-relaxed line-clamp-2 h-12 min-h-12 max-h-12">
+          <Typography size="sm" color="gray" className="leading-relaxed line-clamp-2 h-12 min-h-12 max-h-12">
             {post.description}
           </Typography>
 
