@@ -1,14 +1,15 @@
 import Link from 'next/link';
 
 import { RowFlex } from '@/components/base';
-import { HEADER_NAV_CONFIG } from '@/constants/navigation';
 import type { NavItem } from '@/constants/navigation';
-import { For } from '@/components/common';
+import { HEADER_NAV_CONFIG } from '@/constants/navigation';
 
 export default function HeaderNavList() {
   return (
     <RowFlex align="center" className="gap-6">
-      <For each={HEADER_NAV_CONFIG}>{({ label, href }) => <NavItem key={label} label={label} href={href} />}</For>
+      {HEADER_NAV_CONFIG.map(({ label, href }) => (
+        <NavItem key={label} label={label} href={href} />
+      ))}
     </RowFlex>
   );
 }

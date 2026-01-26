@@ -41,14 +41,16 @@ export default function AboutSection() {
 
           {/* 모바일: 그리드 레이아웃 */}
           <ColumnFlex className="mt-10 gap-4 md:hidden">
-            <For each={ABOUT_CARDS}>{(card, index) => <MobileCard key={card.title} card={card} index={index} />}</For>
+            {ABOUT_CARDS.map((card, index) => (
+              <MobileCard key={card.title} card={card} index={index} />
+            ))}
           </ColumnFlex>
 
           {/* 데스크톱: 스프레드 애니메이션 */}
           <ColumnFlex align={'center'} justify={'center'} className="relative mt-10 hidden md:flex h-[480px]">
-            <For each={ABOUT_CARDS}>
-              {(card, index) => <DesktopCard key={card.title} card={card} index={index} progress={smoothProgress} />}
-            </For>
+            {ABOUT_CARDS.map((card, index) => (
+              <DesktopCard key={card.title} card={card} index={index} progress={smoothProgress} />
+            ))}
           </ColumnFlex>
         </m.div>
       </Container>

@@ -3,7 +3,6 @@
 import { Code, Download } from 'lucide-react';
 
 import { Button, RowFlex } from '@/components/base';
-import { For } from '@/components/common';
 import { GITHUB_URL, RESUME_URL } from '@/constants/routes';
 
 /** 외부 링크 열기 */
@@ -33,14 +32,12 @@ const BUTTON_CONFIG = [
 export default function HeroCTA() {
   return (
     <RowFlex justify="center" className="gap-4 mt-4">
-      <For each={BUTTON_CONFIG}>
-        {({ label, icon, url, variant, color, size }) => (
-          <Button key={label} variant={variant} color={color} size={size} onClick={openExternalLink(url)}>
-            {label}
-            {icon}
-          </Button>
-        )}
-      </For>
+      {BUTTON_CONFIG.map(({ label, icon, url, variant, color, size }) => (
+        <Button key={label} variant={variant} color={color} size={size} onClick={openExternalLink(url)}>
+          {label}
+          {icon}
+        </Button>
+      ))}
     </RowFlex>
   );
 }
