@@ -1,11 +1,8 @@
-export interface NavItem {
-  href: string;
-  label: string;
-}
+import type { NavItem } from '@/types';
 
 export const HEADER_NAV_CONFIG: NavItem[] = [
-  { label: '기술', href: '#' },
-  { label: '경력', href: '#' },
-  { label: '프로젝트', href: '#' },
-  { label: '블로그', href: '#' },
-];
+  { label: '역량', href: '#about' },
+  { label: '경력', href: '#career' },
+  { label: '블로그', href: '#blog' },
+  { label: '프로필', href: '#profile' },
+] as const;

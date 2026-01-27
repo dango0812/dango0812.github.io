@@ -21,6 +21,7 @@ export default function BlogSection() {
 
   return (
     <Section
+      id="blog"
       ref={sectionRef}
       className="py-24 md:py-32 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden"
     >
@@ -31,11 +32,7 @@ export default function BlogSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <SectionHeader
-            head="기록"
-            title="최근 작성한 글"
-            description="기술, 경험 등 자유롭게 다양한 기록을 남깁니다."
-          />
+          <SectionHeader head="기록" title="블로그" description="기술과 경험을 중심으로 자유롭게 기록합니다." />
         </m.div>
 
         {(() => {

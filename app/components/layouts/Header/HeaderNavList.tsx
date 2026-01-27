@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import { RowFlex } from '@/components/base';
-import type { NavItem } from '@/constants/navigation';
 import { HEADER_NAV_CONFIG } from '@/constants/navigation';
+import type { NavItem } from '@/types';
 
 export default function HeaderNavList() {
   return (
@@ -16,7 +16,10 @@ export default function HeaderNavList() {
 
 function NavItem({ label, href }: NavItem) {
   return (
-    <Link href={href} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">
+    <Link
+      href={href}
+      className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200 whitespace-nowrap"
+    >
       {label}
     </Link>
   );

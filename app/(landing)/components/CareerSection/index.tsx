@@ -18,6 +18,7 @@ export default function CareerSection() {
 
   return (
     <Section
+      id="career"
       ref={sectionRef}
       className="py-24 md:py-32 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden"
     >
@@ -30,11 +31,7 @@ export default function CareerSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <SectionHeader
-            head="경력 사항"
-            title="회사 경력"
-            description="끊임없이 학습하고 성장하며, 소중한 경험과 노하우를 쌓아왔습니다."
-          />
+          <SectionHeader head="회사 경력" title="경력" description="소중한 경험과 노하우를 만들어 왔습니다." />
         </m.div>
         {(() => {
           if (isLoading) {

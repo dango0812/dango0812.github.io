@@ -30,13 +30,13 @@ export default function AboutSection() {
   const smoothProgress = useSpring(scrollYProgress, SPRING_CONFIG);
 
   return (
-    <Section ref={sectionRef} className="overflow-hidden py-24 md:py-40">
+    <Section id="about" ref={sectionRef} className="overflow-hidden py-24 md:py-40">
       <Container className="relative z-10 px-5 md:px-0">
         <m.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>
           <SectionHeader
-            head="핵심 역량"
-            title="서비스를 만들어가며 쌓인 경험"
-            description={`AI 기반 비식별화 서비스 블러미의 초기 기획 단계부터 참여해,\n프론트엔드 개발과 배포, 운영까지 전 과정을 경험했습니다.`}
+            head="역량"
+            title="서비스를 만들며 쌓인 경험"
+            description="서비스 개발 전 과정을 경험하며, 다양한 경험을 해왔습니다."
           />
 
           {/* 모바일: 그리드 레이아웃 */}

@@ -7,7 +7,7 @@ export const ABOUT_CARDS: IconCardData[] = [
     icon: Zap,
     title: '성능 최적화',
     description:
-      'GTmetrix와 Lighthouse로 성능을 분석하며 최적화를 지속해왔습니다. 이를 통해 렌더링 속도를 높이고 SEO 지표를 개선한 경험이 있습니다.',
+      '서비스 초기부터 SEO를 전담하여 성능을 분석하며 최적화를 해왔습니다. 렌더링 속도를 높이고 SEO 지표를 개선한 경험이 있습니다.',
     bgColor: 'bg-amber-50',
     iconColor: 'text-amber-600',
   },
@@ -28,7 +28,7 @@ export const ABOUT_CARDS: IconCardData[] = [
   {
     icon: Users,
     title: '협업 능력',
-    description: `Pnpm Monorepo 협업 환경을 구축한 경험이 있습니다. 내가 겪은 문제를 동료들이 반복하지 않도록 문서화하여 공유해왔습니다.`,
+    description: `내가 겪은 문제를 동료들이 반복하지 않도록 문서화하여 공유해왔으며, Pnpm Monorepo 협업 환경 구축 및 경험이 있습니다.`,
     bgColor: 'bg-emerald-50',
     iconColor: 'text-emerald-600',
   },

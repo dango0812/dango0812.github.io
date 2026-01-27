@@ -28,6 +28,7 @@ export default function ProfileSection() {
 
   return (
     <Section
+      id="profile"
       ref={sectionRef}
       className="py-24 md:py-32 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden"
     >
@@ -40,7 +41,7 @@ export default function ProfileSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <SectionHeader head="기록" title="자격 & 활동" description="나의 기록을 통해 성장합니다." />
+          <SectionHeader head="프로필" title="자격 & 활동" description="기록하며 돌아보고, 채우며 성장합니다." />
         </m.div>
 
         {(() => {
