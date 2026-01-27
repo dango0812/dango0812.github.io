@@ -14,6 +14,7 @@ jobs:
       NEXT_PUBLIC_RESUME_URL: ${{ secrets.RESUME_URL }}
       NEXT_PUBLIC_GITHUB_URL: ${{ secrets._GITHUB_URL }}
       NEXT_PUBLIC_BLOG_URL: ${{ secrets.BLOG_URL }}
+      NEXT_PUBLIC_SITE_URL: ${{ secrets.SITE_URL }}
 
     steps:
       - name: Checkout
