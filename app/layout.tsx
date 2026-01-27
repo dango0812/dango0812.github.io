@@ -4,9 +4,9 @@ import { OverlayProvider } from 'overlay-kit';
 import { Header } from '@/components/layouts';
 import { MotionProvider, QueryProvider } from '@/providers';
 
-import '@/styles/globals.css';
+import { SITE_URL } from './constants/routes';
 
-const SITE_URL = 'https://dango0812.github.io';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
