@@ -3,5 +3,4 @@ export { Button } from './Button';
 export { Container } from './Container';
 export { Divider } from './Divider';
 export { ColumnFlex, RowFlex } from './FlexBox';
-export { Grid } from './Grid';
 export { Typography } from './Typography';

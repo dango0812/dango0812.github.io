@@ -12,15 +12,21 @@ type HttpMethod = (typeof HttpMethod)[keyof typeof HttpMethod];
 
 /** API 엔드포인트 */
 export const API_ENDPOINT = {
-  blog: {
-    getBlogPosts: () => ({
-      url: `${process.env.NEXT_PUBLIC_BLOG_API}/metadata.json`,
-      method: HttpMethod.GET,
-    }),
-  },
   profile: {
     getProfile: () => ({
       url: `${process.env.NEXT_PUBLIC_HOST_API}/profile.json`,
+      method: HttpMethod.GET,
+    }),
+  },
+  career: {
+    getCareers: () => ({
+      url: `${process.env.NEXT_PUBLIC_HOST_API}/careers.json`,
+      method: HttpMethod.GET,
+    }),
+  },
+  blog: {
+    getBlogPosts: () => ({
+      url: `${process.env.NEXT_PUBLIC_BLOG_URL}/metadata.json`,
       method: HttpMethod.GET,
     }),
   },

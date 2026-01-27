@@ -43,7 +43,7 @@ export default function BlogSection() {
             return <LoadingDot />;
           }
 
-          if (data && data?.length > 0) {
+          if (Array.isArray(data) && data?.length > 0) {
             return (
               <ColumnFlex className="gap-10">
                 <m.div

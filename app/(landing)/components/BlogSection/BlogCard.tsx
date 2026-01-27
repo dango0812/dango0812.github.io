@@ -75,7 +75,7 @@ export default function BlogCard({ post, isLatest }: BlogCardProps) {
             <RowFlex align={'center'} className="gap-1.5 text-gray-400">
               <Calendar size={14} />
               <Typography size={'sm'} className="text-inherit">
-                {post.date} · {post.readTime}분 읽기
+                {post.date} • {post.readTime}분 읽기
               </Typography>
             </RowFlex>
           </RowFlex>
@@ -84,7 +84,7 @@ export default function BlogCard({ post, isLatest }: BlogCardProps) {
             as="h4"
             size="lg"
             weight={700}
-            className="group-hover:text-indigo-600 transition-colors duration-200 line-clamp-2"
+            className="group-hover:text-blue-600 transition-colors duration-200 line-clamp-2"
           >
             {post.title}
           </Typography>
@@ -93,7 +93,7 @@ export default function BlogCard({ post, isLatest }: BlogCardProps) {
             {post.description}
           </Typography>
 
-          <RowFlex align={'center'} className="gap-1.5 text-indigo-600 mt-auto pt-2">
+          <RowFlex align={'center'} className="gap-1.5 text-blue-600 mt-auto pt-2">
             <Typography size="sm" weight={500} className="text-inherit">
               글 읽기
             </Typography>

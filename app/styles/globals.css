@@ -11,23 +11,26 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  html::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #7878784d transparent;
   }
 
-  html::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
     background-color: #7878784d;
     border-radius: 8px;
     background-clip: padding-box;
-  }
-
-  html::-webkit-scrollbar-track {
-    background-color: transparent;
   }
 
   body {

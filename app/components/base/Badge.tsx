@@ -12,7 +12,7 @@ const badgeVariants = cva('inline-flex items-center rounded-full font-semibold',
       red: 'bg-red-100 text-red-600',
       orange: 'bg-orange-100 text-orange-600',
       purple: 'bg-indigo-100 text-indigo-600',
-      gray: 'bg-blue-50 text-blue-600',
+      gray: 'bg-gray-50 text-gray-600',
     },
     /** 뱃지 크기 */
     size: {

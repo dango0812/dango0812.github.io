@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { OverlayProvider } from 'overlay-kit';
 
 import { Header } from '@/components/layouts';
 import { MotionProvider, QueryProvider } from '@/providers';
@@ -37,7 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <QueryProvider>
           <MotionProvider>
             <Header />
-            {children}
+            <OverlayProvider>{children}</OverlayProvider>
           </MotionProvider>
         </QueryProvider>
       </body>
