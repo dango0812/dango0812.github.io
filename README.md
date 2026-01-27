@@ -1,59 +1,53 @@
 # Donggyu
 
-Next.js와 Typescript 기반으로 제작된 포트폴리오 웹 사이트예요.  
-간략한 소개와, 역량, 경력, 수상 및 독서 내역, 진행한 프로젝트의 내용을 담았어요.
+안녕하세요, 프론트엔드 개발자 김동규의 포트폴리오 웹사이트입니다.
 
-[<a href="https://dango0812.github.io/" target="_blank">
-    🔗 포트폴리오 사이트 방문
-</a>](https://dango0812.github.io/)
+🔗 **WebSite:** [https://dango0812.github.io](https://dango0812.github.io)
 
-## ⚙️ 사용 기술
+## 🛠 Tech Stack
 
-| 분류           | 기술 스택                                 |
-|----------------|-------------------------------------------|
-| **프레임워크** | Next.js (v15), Typescript                 |
-| **스타일링**   | Tailwind CSS (v4), GSAP                   |
-| **상태 관리**  | React Query                              |
-| **패키지 매니저** | PNPM                                     |
-| **코드 스타일링**  | ESLint, Prettier                         |
-| **CI/CD**      | GitHub Actions                           |
+### Core
 
+- **Framework**: Next.js v16.1.3 (App Router)
+- **Language**: TypeScript
 
-## 📁 프로젝트 구조
+### Styling & Animation
+
+- **Styling**: Tailwind CSS
+- **Animation**: Motion (Framer Motion)
+- **Icons**: Lucide React
+
+### State & Data Management
+
+- **Data Fetching**: TanStack Query (React Query) v5
+- **HTTP Client**: Axios
+
+### Utilities
+
+- **UI Modal management**: Overlay-Kit
+- **Date Handling**: Day.js
+- **Package Manager**: pnpm
+
+## 📁 Project Structure
 
 ```bash
-/
-├── .github/workflows
-├── app
-│   ├── (homepage)
-│   ├── career
-│   │   ├── [slug]
-│   ├── api
-│   └── components
-├── constants
-├── hooks
-├── libs
-├── styles
-├── types
-└── utils
+📦 app
+├── 📂 (landing)        # 메인 랜딩 페이지 및 섹션별 컴포넌트
+│   ├── 📂 AboutSection
+│   ├── 📂 BlogSection
+│   ├── 📂 CareerSection
+│   ├── 📂 HeroSection
+│   └── 📂 ProfileSection
+├── 📂 api              # API 관련 로직
+├── 📂 components       # 공통 컴포넌트
+│   ├── 📂 base         # 기본 UI 요소 (Button, Typography, Container, FlexBox 등)
+│   ├── 📂 common       # 비즈니스 로직이 포함된 공통 컴포넌트
+│   └── 📂 layouts      # 레이아웃 컴포넌트 (Header, Footer)
+├── 📂 constants        # 상수 데이터
+├── 📂 hooks            # 커스텀 훅
+├── 📂 lib              # 외부 라이브러리 설정 (Axios, Tailwind)
+├── 📂 providers        # 전역 Provider (React Query, Motion)
+├── 📂 styles           # 전역 스타일
+├── 📂 types            # TypeScript 타입 정의
+└── 📂 utils            # 유틸리티 함수
 ```
-
-## ❕참고
-
-- Tailwind css 최신 버전으로 커스텀을 진행했어요.
-- ESLint 최신 버전으로 코드 스타일링을 진행했어요.
-- 경력 상세 페이지는 Dynamic Routes 구조로 설계했어요.
-- GitHub Pages 에 배포하기 위해 정적 내보내기 방식으로 빌드돼요.
-
-- 컴포넌트 구현 스타일은 `components/ui`에서 확인할 수 있어요.  
-[<a href="https://github.com/dango0812/dango0812.github.io/tree/main/app/components/ui" target="_blank">
-    🔗 Component/ui
-</a>](https://github.com/dango0812/dango0812.github.io/tree/main/app/components/ui)
-
-- 코드 스타일은 `HomeTableOfContents`와 `useAnimationFadeUp` 에서 볼 수 있어요.  
-[<a href="https://github.com/dango0812/dango0812.github.io/blob/main/app/(homepage)/components/HomeTableOfContents.tsx" target="_blank">
-    🔗 HomeTableOfContents
-</a>](https://github.com/dango0812/dango0812.github.io/blob/main/app/(homepage)/components/HomeTableOfContents.tsx)  
-[<a href="https://github.com/dango0812/dango0812.github.io/blob/main/app/hooks/useAnimationFadeUp.ts" target="_blank">
-    🔗 useAnimationFadeUp
-</a>](https://github.com/dango0812/dango0812.github.io/blob/main/app/hooks/useAnimationFadeUp.ts)
