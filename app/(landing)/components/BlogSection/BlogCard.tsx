@@ -64,9 +64,9 @@ export default function BlogCard({ post, isLatest }: BlogCardProps) {
             <Badge
               size="sm"
               className={cn({
-                'bg-blue-100 ': post.tag === 'Tech',
-                'bg-purple-100 ': post.tag === 'Insight',
-                'bg-amber-100 ': post.tag === 'Life',
+                'bg-blue-100 text-blue-500': post.tag === 'Tech',
+                'bg-purple-100 text-purple-500 ': post.tag === 'Insight',
+                'bg-amber-100 text-amber-500': post.tag === 'Life',
               })}
             >
               {post.tag}
