@@ -2,7 +2,7 @@
 
 안녕하세요, 프론트엔드 개발자 김동규의 포트폴리오 웹사이트입니다.
 
-🔗 **WebSite:** [https://dong-gyu.com](dong-gyu.com)
+🔗 **WebSite:** [dong-gyu.com](https://dong-gyu.com)
 
 ## 🛠 Tech Stack
 
