@@ -1,9 +1,9 @@
 'use client';
 
-import { Github, Rss, Send } from 'lucide-react';
+import { Github, Rss } from 'lucide-react';
 
 import { Button, RowFlex } from '@/components/base';
-import { BLOG_URL, GITHUB_URL, MAIL_TO } from '@/constants/routes';
+import { BLOG_URL, GITHUB_URL } from '@/constants/routes';
 
 /** 외부 링크 열기 */
 const openExternalLink = (url: string) => () => {
