@@ -37,14 +37,6 @@ const BUTTON_CONFIG = [
     color: 'gray',
     size: 'sm',
   },
-  {
-    label: '메일 전송',
-    icon: <Send size={20} />,
-    url: MAIL_TO,
-    variant: 'outline',
-    color: 'gray',
-    size: 'sm',
-  },
 ] as const;
 
 export default function HeroCTA() {
