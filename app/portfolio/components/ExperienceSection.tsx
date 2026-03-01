@@ -190,19 +190,26 @@ function TimelineChart({
               <m.div
                 key={`${item.company}-${item.startDate}`}
                 className="relative h-[10px]"
-                initial={{ opacity: 0, scaleX: 0 }}
-                whileInView={{ opacity: 1, scaleX: 1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: '-30px' }}
                 transition={{
                   duration: 0.6,
                   delay: index * 0.1,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                style={{ transformOrigin: 'left' }}
               >
-                <div
+                <m.div
                   className={cn('absolute top-0 h-full rounded-full', barColor)}
-                  style={{ left: `${left}%`, width: `${width}%`, minWidth: '12px' }}
+                  style={{ left: `${left}%`, minWidth: '12px' }}
+                  initial={{ width: '0%' }}
+                  whileInView={{ width: `${width}%` }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                 />
               </m.div>
             );
