@@ -32,10 +32,10 @@ export default function CareerDetailModal({ item, isOpen, onClose }: CareerDetai
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             onClick={e => e.stopPropagation()}
-            className="w-full max-w-2xl max-h-[85vh] rounded-3xl shadow-2xl"
+            className="w-full max-w-2xl max-h-[85vh] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* 헤더 */}
-            <div className="relative h-32 bg-blue-500 rounded-t-3xl overflow-hidden">
+            <div className="relative h-32 bg-blue-500 shrink-0">
               <RowFlex
                 align={'center'}
                 justify={'center'}
@@ -59,7 +59,7 @@ export default function CareerDetailModal({ item, isOpen, onClose }: CareerDetai
             </div>
 
             {/* 콘텐츠 */}
-            <div className="p-8 bg-white rounded-b-3xl max-h-[calc(85dvh-8rem)] overflow-y-auto">
+            <div className="p-8 bg-white overflow-y-auto flex-1">
               <ColumnFlex className="gap-2.5">
                 {/** 회사명 + 직무 */}
                 <ColumnFlex justify={'center'} className="gap-0.5">

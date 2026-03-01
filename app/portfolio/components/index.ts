@@ -1,0 +1,10 @@
+export { default as ContactSection } from './ContactSection';
+export { default as ExperienceSection } from './ExperienceSection';
+export { default as HeroSection } from './HeroSection';
+export { default as ImageModal } from './ImageModal';
+export { default as PortfolioFooter } from './PortfolioFooter';
+export { default as SectionTitle } from './SectionTitle';
+export { default as SpeakingSection } from './SpeakingSection';
+export { default as WorkCard } from './WorkCard';
+export { default as WorkSection } from './WorkSection';
+export { default as YearTimelineSection } from './YearTimelineSection';

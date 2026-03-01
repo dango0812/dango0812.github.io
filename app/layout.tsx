@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { OverlayProvider } from 'overlay-kit';
 
-import { Header } from '@/components/layouts';
 import { MotionProvider, QueryProvider } from '@/providers';
 
 import { SITE_URL } from './constants/routes';
@@ -37,8 +36,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <QueryProvider>
           <MotionProvider>
-            <Header />
-            <OverlayProvider>{children}</OverlayProvider>
+            <OverlayProvider>
+              <div className="min-h-screen bg-white">{children}</div>
+            </OverlayProvider>
           </MotionProvider>
         </QueryProvider>
       </body>

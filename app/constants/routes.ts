@@ -1,5 +1,6 @@
 export const PATHS = {
   HOME: '/',
+  TEMP: '/temp',
 } as const;
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL as string;
