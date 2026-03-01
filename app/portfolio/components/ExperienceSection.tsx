@@ -226,9 +226,17 @@ function getEndDateLabel(item: CareerItem): string {
     return item.endDate;
   }
   if (item.category === 'education') {
-    return '재학중';
+    return '재학 중';
   }
   return '현재';
+}
+
+/** 대학교 졸업 상태 표시 텍스트 */
+function getEducationStatus(item: CareerItem): string {
+  if (item.endDate) {
+    return '졸업';
+  }
+  return '재학 중';
 }
 
 /** ──── 경력 카드 항목 ──── */
@@ -273,13 +281,22 @@ function CareerCard({ item, index }: { item: CareerItem; index: number }) {
         </h3>
 
         <p className="text-sm text-gray-400 shrink-0">
-          <span className="whitespace-nowrap">
-            {item.startDate} – {getEndDateLabel(item)}
-          </span>
-          {!(item.category === 'education' && !item.endDate) && (
-            <span className="ml-1 text-gray-400 whitespace-nowrap">
-              ({formatDuration(item.startDate, item.endDate)})
-            </span>
+          {item.category === 'education' ? (
+            <>
+              <span className="whitespace-nowrap">
+                {item.startDate} – {item.endDate || '현재'}
+              </span>
+              <span className="ml-1 text-gray-400 whitespace-nowrap">({getEducationStatus(item)})</span>
+            </>
+          ) : (
+            <>
+              <span className="whitespace-nowrap">
+                {item.startDate} – {getEndDateLabel(item)}
+              </span>
+              <span className="ml-1 text-gray-400 whitespace-nowrap">
+                ({formatDuration(item.startDate, item.endDate)})
+              </span>
+            </>
           )}
         </p>
       </div>
