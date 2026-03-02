@@ -162,12 +162,13 @@ export const works: CompanyWork[] = [
         ],
       },
       {
-        title: '사용자 도메인 설계',
+        title: '사용자 인증 개발',
         period: '2022 - 2024',
         descriptions: [
-          '로그인·회원가입·이메일 인증·비밀번호 재설정 등 사용자 인증 전담하여 페이지 구현 [1] [2] [3]',
+          '로그인·회원가입·이메일 인증·비밀번호 재설정 등 사용자 인증 체계를 전담하여 UI 및 로직 구현 [1] [2] [3]',
           'NextAuth & AWS Cognito 기반 이메일/소셜 로그인 사용자 플로우 구현 [관련 아티클](https://dev.to/dango0812/nextauth-with-aws-cognito-email-google-sign-in-5ef6)',
           'JWT 토큰 자동 갱신 및 인증 상태 관리 구조 설계 (MAU 9만 명 규모의 환경에서 안정적으로 서비스 동작)',
+          '가입 쿠폰·인증번호·크레딧 만료 전 플랫폼 환경에서 일관된 UI 확보, HTML/CSS 메일 템플릿 표준화 구현 [4] [5] [6]',
           'UTM 추적 및 Mixpanel, GTM 연동으로 마케팅 데이터 수집 체계 통합',
         ],
         images: [
@@ -186,6 +187,21 @@ export const works: CompanyWork[] = [
             alt: '비밀번호 재설정 페이지',
             caption: '비밀번호 재설정 페이지',
           },
+          {
+            src: '/assets/otp-code.png',
+            alt: '인증번호 메일 템플릿',
+            caption: '인증번호 메일 템플릿',
+          },
+          {
+            src: '/assets/sign-up-coupon.png',
+            alt: '회원가입 쿠폰 메일 템플릿',
+            caption: '회원가입 쿠폰 메일 템플릿',
+          },
+          {
+            src: '/assets/credit.png',
+            alt: '크레딧 만료 메일 템플릿',
+            caption: '크레딧 만료 메일 템플릿',
+          },
         ],
       },
       {
@@ -195,7 +211,7 @@ export const works: CompanyWork[] = [
           'Headless CMS 기반 Strapi 구조 설계 및 운영/관리',
           'AWS Lightsail 기반 Ghost Framework 운영 환경 구성 및 운영/관리',
           'AWS Lightsail Ghost 인스턴스와 AWS Amplify의 Reverse Proxy 환경 구성',
-          '랜딩 페이지 수정 기간 1주 → 1일 단축, 운영 개입 시간 월 40시간 → 2시간 내 감소',
+          '랜딩 페이지 추가/수정 기간 1주 → 1일 단축, 운영 개입 시간 월 40시간 → 2시간 내 감소',
         ],
         images: [],
       },
