@@ -16,11 +16,13 @@ export const speakingItems: SpeakingItem[] = [
     date: '2026.02',
     title: 'Next.js 오픈소스 기여 경험',
     url: 'https://blog.dong-gyu.com/posts/2026/nextjs/',
+    githubUrl: 'https://github.com/vercel/next.js/pull/88985',
   },
   {
     date: '2026.01',
     title: 'Lucide Icons 기여 경험 (첫 오픈소스 기여 경험)',
     url: 'https://blog.dong-gyu.com/posts/2026/lucide-icons/',
+    githubUrl: 'https://github.com/lucide-icons/lucide/pull/4024',
   },
   {
     date: '2025.08',

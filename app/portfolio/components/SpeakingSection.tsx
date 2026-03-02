@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { m } from 'motion/react';
 
 import type { SpeakingItem } from '@/types/portfolio';
@@ -57,10 +57,10 @@ export default function SpeakingSection({ items }: SpeakingSectionProps) {
                       href={item.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-2 py-0.5 text-xs text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200 font-medium"
                     >
-                      GitHub
-                      <ExternalLink size={10} />
+                      <Github size={12} />
+                      Pull Request
                     </a>
                   )}
                 </span>
