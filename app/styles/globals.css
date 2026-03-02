@@ -39,3 +39,119 @@
     font-family: var(--font-display);
   }
 }
+
+/* PDF 인쇄 스타일 */
+@media print {
+  @page {
+    margin: 2cm 1.5cm;
+    size: A4;
+  }
+
+  html,
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  main {
+    overflow: visible !important;
+  }
+
+  /* 애니메이션 비활성화 - 요소는 보이게 유지 */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* 헤더/푸터 숨김 */
+  header,
+  nav {
+    display: none !important;
+  }
+
+  /* 섹션 스타일 */
+  section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* 페이지 구분 강제 */
+  .print-page-break {
+    display: block !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    height: 1px !important;
+    visibility: hidden !important;
+  }
+
+  /* WorkCard 이미지 갤러리를 grid로, 크기 확대 */
+  .print-image-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    overflow: visible !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .print-image-grid figure {
+    width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .print-image-grid img {
+    width: 100% !important;
+    height: 160px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
+    object-fit: cover !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+
+  /* 링크 URL 표시 제거 (깔끔하게) */
+  a[href]:after {
+    content: '' !important;
+  }
+
+  /* 모든 motion 요소 강제 표시 */
+  div,
+  ul,
+  li,
+  p,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  figure {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* WorkCard 간격 조정 */
+  .space-y-12 > * + * {
+    margin-top: 2rem !important;
+  }
+
+  /* 섹션 타이틀 여백 */
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* 리스트 아이템 분리 방지 */
+  li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

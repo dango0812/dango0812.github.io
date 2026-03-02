@@ -63,6 +63,8 @@ export interface SpeakingItem {
   title: string;
   /** 관련 링크 */
   url?: string;
+  /** GitHub PR/이슈 링크 */
+  githubUrl?: string;
 }
 
 /** 연락처 */
@@ -81,6 +83,8 @@ export interface PortfolioProfile {
   nameEn?: string;
   /** 자기소개 (여러 줄 가능) */
   bio: string;
+  /** PDF용 자기소개 (격식있는 문구) */
+  pdfBio?: string;
 }
 
 /** 연간 타임라인 아이템 카테고리 */

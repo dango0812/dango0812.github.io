@@ -111,7 +111,7 @@ export default function WorkCard({ work, index }: WorkCardProps) {
 
         {/* 이미지 갤러리 (작은 썸네일, 한 줄) */}
         {work.images && work.images.length > 0 && (
-          <div className="flex gap-3 mb-4 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+          <div className="flex gap-3 mb-4 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent print-image-grid">
             {work.images.map((img, i) => (
               <figure
                 key={i}
@@ -132,15 +132,15 @@ export default function WorkCard({ work, index }: WorkCardProps) {
                   className="w-full h-[160px] object-cover transition-all duration-300 group-hover:brightness-75"
                 />
 
-                {/* Hover 시 돋보기 아이콘 */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                {/* Hover 시 돋보기 아이콘 (PDF에서 숨김) */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none print:hidden">
                   <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
                     <Search size={20} className="text-gray-700" />
                   </div>
                 </div>
 
                 {img.caption && (
-                  <figcaption className="px-2 py-1 text-[12px] text-gray-400 text-center truncate bg-gray-50">
+                  <figcaption className="px-2 py-1.5 text-[12px] text-gray-700 font-medium text-center truncate bg-gray-50 border-t border-gray-100">
                     {img.caption}
                   </figcaption>
                 )}

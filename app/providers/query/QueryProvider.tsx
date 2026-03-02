@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { getQueryClient } from './queryClient';
 
 interface QueryProviderProps {
@@ -22,7 +22,9 @@ export default function QueryProvider({ children }: QueryProviderProps) {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-      <ReactQueryDevtools initialIsOpen={false} buttonPosition="bottom-right" />
+      {/*
+      <ReactQueryDevtools  initialIsOpen={false} buttonPosition="bottom-left" />
+      */}
     </QueryClientProvider>
   );
 }

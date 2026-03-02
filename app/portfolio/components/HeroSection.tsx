@@ -23,9 +23,9 @@ export default function HeroSection({ profile }: HeroSectionProps) {
             {profile.nameEn && <span className="ml-2 text-base font-normal text-gray-400">{profile.nameEn}</span>}
           </h1>
 
-          {/* 소개 */}
+          {/* 웹 화면용 소개 */}
           <m.p
-            className="mt-6 text-[15px]  text-gray-600 leading-8 whitespace-pre-line"
+            className="mt-6 text-[15px] text-gray-600 leading-8 whitespace-pre-line print:hidden"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -36,6 +36,13 @@ export default function HeroSection({ profile }: HeroSectionProps) {
           >
             {profile.bio}
           </m.p>
+
+          {/* PDF 인쇄용 소개 */}
+          {profile.pdfBio && (
+            <p className="hidden print:block mt-6 text-[14px] text-gray-800 leading-7 whitespace-pre-line">
+              {profile.pdfBio}
+            </p>
+          )}
         </m.div>
       </div>
     </section>
