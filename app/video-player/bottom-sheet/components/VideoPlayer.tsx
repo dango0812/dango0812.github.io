@@ -17,9 +17,10 @@ function formatTime(sec: number): string {
 interface VideoPlayerProps {
   src: string;
   poster?: string;
+  onAspectRatio?: (ar: number) => void;
 }
 
-export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
+export default function VideoPlayer({ src, poster, onAspectRatio }: VideoPlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -91,7 +92,9 @@ export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
     const onLoadedMetadata = () => {
       setDuration(video.duration);
       if (video.videoWidth && video.videoHeight) {
-        setVideoAR(video.videoWidth / video.videoHeight);
+        const ar = video.videoWidth / video.videoHeight;
+        setVideoAR(ar);
+        onAspectRatio?.(ar);
       }
     };
 
@@ -107,7 +110,7 @@ export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
       video.removeEventListener('loadedmetadata', onLoadedMetadata);
       stopRAF();
     };
-  }, [startRAF, stopRAF]);
+  }, [startRAF, stopRAF, onAspectRatio]);
 
   useEffect(() => {
     return () => {
@@ -289,34 +292,25 @@ export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
           )}
         </AnimatePresence>
 
-        {/* 클릭 ripple — flash + 아이콘 펄스만 (퍼지는 원 없음) */}
+        {/* 클릭 ripple — 가운데 아이콘 펄스 */}
         {rippleActive && (
-          <>
-            <m.div
-              key={`flash-${rippleKey}`}
-              className="absolute inset-0 bg-white/15 pointer-events-none"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 0.38, times: [0, 0.2, 1] }}
-            />
-            <m.div
-              key={`icon-${rippleKey}`}
-              className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          <m.div
+            key={`icon-${rippleKey}`}
+            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          >
+            <m.span
+              className="flex h-20 w-20 items-center justify-center rounded-full bg-black/40 text-white"
+              initial={{ scale: 0.85, opacity: 1 }}
+              animate={{ scale: 1.6, opacity: 0 }}
+              transition={{ duration: 0.44, ease: 'easeOut' }}
             >
-              <m.span
-                className="flex h-20 w-20 items-center justify-center rounded-full bg-black/40 text-white"
-                initial={{ scale: 0.85, opacity: 1 }}
-                animate={{ scale: 1.6, opacity: 0 }}
-                transition={{ duration: 0.44, ease: 'easeOut' }}
-              >
-                {rippleIsPlay ? (
-                  <Play size={34} fill="currentColor" className="ml-1" />
-                ) : (
-                  <Pause size={34} fill="currentColor" />
-                )}
-              </m.span>
-            </m.div>
-          </>
+              {rippleIsPlay ? (
+                <Play size={34} fill="currentColor" className="ml-1" />
+              ) : (
+                <Pause size={34} fill="currentColor" />
+              )}
+            </m.span>
+          </m.div>
         )}
 
         {/* 하단 컨트롤: 제목 + 진행 바 + 시간 */}
