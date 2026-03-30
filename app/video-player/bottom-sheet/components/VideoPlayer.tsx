@@ -36,6 +36,7 @@ export default function VideoPlayer({ src, poster, onAspectRatio }: VideoPlayerP
   const [rippleIsPlay, setRippleIsPlay] = useState(true);
   /** 영상의 자연 가로세로 비율 (videoWidth / videoHeight) */
   const [videoAR, setVideoAR] = useState<number | null>(null);
+  const [isBuffering, setIsBuffering] = useState(false);
 
   // ── RAF-based smooth progress ─────────────────────────────────────
   const startRAF = useCallback(() => {
@@ -97,17 +98,26 @@ export default function VideoPlayer({ src, poster, onAspectRatio }: VideoPlayerP
         onAspectRatio?.(ar);
       }
     };
+    const onWaiting = () => setIsBuffering(true);
+    const onCanPlay = () => setIsBuffering(false);
+    const onPlaying = () => setIsBuffering(false);
 
     video.addEventListener('play', onPlay);
     video.addEventListener('pause', onPause);
     video.addEventListener('ended', onEnded);
     video.addEventListener('loadedmetadata', onLoadedMetadata);
+    video.addEventListener('waiting', onWaiting);
+    video.addEventListener('canplay', onCanPlay);
+    video.addEventListener('playing', onPlaying);
 
     return () => {
       video.removeEventListener('play', onPlay);
       video.removeEventListener('pause', onPause);
       video.removeEventListener('ended', onEnded);
       video.removeEventListener('loadedmetadata', onLoadedMetadata);
+      video.removeEventListener('waiting', onWaiting);
+      video.removeEventListener('canplay', onCanPlay);
+      video.removeEventListener('playing', onPlaying);
       stopRAF();
     };
   }, [startRAF, stopRAF, onAspectRatio]);
@@ -252,7 +262,7 @@ export default function VideoPlayer({ src, poster, onAspectRatio }: VideoPlayerP
         className="w-full h-full object-contain"
         poster={poster}
         playsInline
-        preload="metadata"
+        preload="auto"
         style={{ pointerEvents: 'none' }}
       >
         <source src={src} type="video/mp4" />
@@ -291,6 +301,13 @@ export default function VideoPlayer({ src, poster, onAspectRatio }: VideoPlayerP
             </m.div>
           )}
         </AnimatePresence>
+
+        {/* 버퍼링 스피너 */}
+        {isBuffering && isPlaying && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="h-12 w-12 animate-spin rounded-full border-[3px] border-white/30 border-t-white" />
+          </div>
+        )}
 
         {/* 클릭 ripple — 가운데 아이콘 펄스 */}
         {rippleActive && (
