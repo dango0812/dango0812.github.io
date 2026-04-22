@@ -1,1 +1,4 @@
-import './styles/globals.scss';
+import '@styles/global.scss';
+import { loadIcons } from '@icons';
+
+loadIcons();

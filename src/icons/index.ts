@@ -1,0 +1,1 @@
+export { loadIcons } from './load-icons';
