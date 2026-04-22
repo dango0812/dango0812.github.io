@@ -1,39 +1,15 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"], // 사용할 라이브러리 정의 (DOM 관련 및 최신 JS 기능)
-    "target": "ESNext", // ECMAScript 버전
-    "module": "ESNext", // 모듈 시스템
-    "moduleResolution": "bundler", // 모듈 해석 방식 설정4
-    "allowImportingTsExtensions": true, // .ts 확장자 import 허용
-    "verbatimModuleSyntax": true, // import/export 구문을 변환 없이 유지
-    "moduleDetection": "force", // 모든 파일을 모듈로 간주
-    "noEmit": true, // 결과 파일 생성 안 함 (Vite가 빌드 담당)
-    "strict": true, // 모든 엄격한 타입 검사 활성화
-    "noUnusedLocals": true, // 사용하지 않는 지역 변수 에러
-    "noUnusedParameters": true, // 사용하지 않는 매개변수 에러
-    "erasableSyntaxOnly": true, // 지워질 수 있는 구문만 허용
-    "noFallthroughCasesInSwitch": true, // switch 문에서 fallthrough 방지
-    "noUncheckedSideEffectImports": true, // 부수 효과가 있는 import에 대한 검사
-    "preserveConstEnums": true, // const enum 유지 (단, isolatedModules=true 시 사용 불가)
-    "removeComments": false, // 주석 제거 여부
-    "incremental": true, // 증분 컴파일 활성화
-    "noImplicitReturns": true, // 함수의 모든 경로가 값을 반환하지 않으면 에러 발생
-    "allowSyntheticDefaultImports": true, // 기본 내보내기 없는 모듈에서 기본 가져오기 허용
-    "esModuleInterop": true, // CommonJS 모듈과 ES 모듈 간의 호환성 제공
-    "forceConsistentCasingInFileNames": true, // 파일 이름 대소문자 일관성 강제
-    "allowJs": true, // 자바스크립트 파일 컴파일 허용 여부
-    "skipLibCheck": true, // d.ts 타입 검사 생략
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./app/*"]
-    },
-    "resolveJsonModule": true
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src", "vite.config.ts"]
 }
