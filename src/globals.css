@@ -1,5 +1,5 @@
-@import 'tailwindcss';
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import 'tailwindcss';
 
 @layer reset, base, tokens, recipes, utilities;
 
@@ -20,12 +20,20 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family:
-      'Pretendard',
+      'Pretendard Variable',
+      Pretendard,
       -apple-system,
       BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      'Helvetica Neue',
       'Segoe UI',
+      'Apple SD Gothic Neo',
+      'Noto Sans KR',
       'Malgun Gothic',
-      '맑은 고딕',
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
       sans-serif;
   }
   img,
