@@ -1,53 +1,73 @@
-# Donggyu
+# React + TypeScript + Vite
 
-안녕하세요, 프론트엔드 개발자 김동규의 포트폴리오 웹사이트입니다.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-🔗 **WebSite:** [dong-gyu.com](https://dong-gyu.com)
+Currently, two official plugins are available:
 
-## 🛠 Tech Stack
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-### Core
+## React Compiler
 
-- **Framework**: Next.js v16.1.3 (App Router)
-- **Language**: TypeScript
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### Styling & Animation
+## Expanding the ESLint configuration
 
-- **Styling**: Tailwind CSS
-- **Animation**: Motion (Framer Motion)
-- **Icons**: Lucide React
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### State & Data Management
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-- **Data Fetching**: TanStack Query (React Query) v5
-- **HTTP Client**: Axios
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-### Utilities
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-- **UI Modal management**: Overlay-Kit
-- **Date Handling**: Day.js
-- **Package Manager**: pnpm
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## 📁 Project Structure
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-```bash
-📦 app
-├── 📂 (landing)        # 메인 랜딩 페이지 및 섹션별 컴포넌트
-│   ├── 📂 AboutSection
-│   ├── 📂 BlogSection
-│   ├── 📂 CareerSection
-│   ├── 📂 HeroSection
-│   └── 📂 ProfileSection
-├── 📂 api              # API 관련 로직
-├── 📂 components       # 공통 컴포넌트
-│   ├── 📂 base         # 기본 UI 요소 (Button, Typography, Container, FlexBox 등)
-│   ├── 📂 common       # 비즈니스 로직이 포함된 공통 컴포넌트
-│   └── 📂 layouts      # 레이아웃 컴포넌트 (Header, Footer)
-├── 📂 constants        # 상수 데이터
-├── 📂 hooks            # 커스텀 훅
-├── 📂 lib              # 외부 라이브러리 설정 (Axios, Tailwind)
-├── 📂 providers        # 전역 Provider (React Query, Motion)
-├── 📂 styles           # 전역 스타일
-├── 📂 types            # TypeScript 타입 정의
-└── 📂 utils            # 유틸리티 함수
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```

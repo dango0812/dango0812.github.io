@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-set -e
-echo "[STARTED] 💡 Running eslint & prettier for staged files..."
-pnpm lint-staged
-echo "[COMPLETED] ✅ ESLint & Prettier check completed."
