@@ -22,6 +22,7 @@
     /* Path Aliases */
     "paths": {
       "@/*": ["./src/*"],
+      "@pages/*": ["./src/pages/*"]
     },
 
     /* Jest */
@@ -29,7 +30,5 @@
     "esModuleInterop": true
   },
   "include": ["src"],
-  "references": [
-    { "path": "./tsconfig.node.json" }
-  ]
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
