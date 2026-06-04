@@ -22,7 +22,9 @@
     /* Path Aliases */
     "paths": {
       "@/*": ["./src/*"],
-      "@pages/*": ["./src/pages/*"]
+      "@pages/*": ["./src/pages/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@assets/*": ["./src/assets/*"]
     },
 
     /* Jest */
