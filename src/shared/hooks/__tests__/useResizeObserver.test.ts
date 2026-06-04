@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { useResizeObserver } from '@/hooks/useResizeObserver';
+import { useResizeObserver } from '@/shared/hooks/useResizeObserver';
 
 // jsdom은 ResizeObserver를 지원하지 않으므로 mock으로 대체
 let capturedCallback: ResizeObserverCallback;
