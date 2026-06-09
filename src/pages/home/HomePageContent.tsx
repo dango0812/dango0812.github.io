@@ -16,7 +16,7 @@ export function HomePageContent() {
 
   useParticleText(canvasRef, {
     text: PARTICLE_TEXT,
-    color: getComputedStyle(document.documentElement).getPropertyValue('--color-green-500').trim(),
+    color: '#00c950',
   });
 
   return (
