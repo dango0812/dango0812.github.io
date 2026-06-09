@@ -1,43 +1,72 @@
-import js from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import pluginJs from '@eslint/js';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import prettier from 'eslint-plugin-prettier/recommended';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
-import prettier from 'eslint-config-prettier';
+import tseslint from 'typescript-eslint';
 
-export default [
+export default defineConfig([
+  globalIgnores(['dist/**', 'build/**', 'node_modules/**']),
+
   {
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
       globals: {
+        ...globals.node,
         ...globals.browser,
         ...globals.es2015,
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
   },
 
-  js.configs.recommended,
+  pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+
   prettier,
 
   {
+    plugins: {
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+      'jsx-a11y': jsxA11y,
+      'simple-import-sort': simpleImportSort,
+    },
     rules: {
-      'no-var': 'error',
-      'no-implicit-coercion': 'error',
-      'no-unused-vars': 'off',
-      'no-unused-expressions': 'warn',
-      'no-duplicate-imports': 'error',
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
-      'prefer-const': 'error',
-      curly: ['error', 'all'],
-      eqeqeq: ['error', 'always', { null: 'ignore' }],
-      'prefer-object-has-own': 'error',
-      'no-warning-comments': ['warn', { terms: ['TODO', 'FIXME', 'XXX', 'BUG'], location: 'anywhere' }],
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+
+      'jsx-a11y/alt-text': 'warn',
+      'jsx-a11y/anchor-is-valid': 'warn',
+      'jsx-a11y/no-autofocus': 'warn',
+      'jsx-a11y/no-static-element-interactions': 'warn',
+
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            ['^react$', '^@?\\w'],
+            ['^node:'],
+            ['^@/'],
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$', '^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+            ['^.+\\.module\\.s?css$', '^.+\\.s?css$', '^.+\\.(png|jpe?g|svg|gif|webp)$'],
+            ['^\\u0000'],
+          ],
+        },
+      ],
+      'simple-import-sort/exports': 'warn',
     },
   },
 
-  // TypeScript
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
@@ -46,15 +75,12 @@ export default [
       },
     },
     rules: {
+      'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true, caughtErrors: 'none' }],
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-empty-object-type': 'error',
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
-      ],
       '@typescript-eslint/no-inferrable-types': 'warn',
-      '@typescript-eslint/no-empty-function': 'off',
+      '@typescript-eslint/no-empty-function': 'error',
       '@typescript-eslint/no-require-imports': 'warn',
       '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
       '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
@@ -64,13 +90,13 @@ export default [
       '@typescript-eslint/naming-convention': [
         'error',
         {
-          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
           selector: 'variable',
+          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
           leadingUnderscore: 'allow',
         },
-        { format: ['camelCase', 'PascalCase'], selector: 'function' },
-        { format: ['PascalCase'], selector: 'interface' },
-        { format: ['PascalCase'], selector: 'typeAlias' },
+        { selector: 'function', format: ['camelCase', 'PascalCase'] },
+        { selector: 'interface', format: ['PascalCase'] },
+        { selector: 'typeAlias', format: ['PascalCase'] },
       ],
       '@typescript-eslint/member-ordering': [
         'error',
@@ -87,6 +113,28 @@ export default [
           ],
         },
       ],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'CallExpression[callee.object.name="console"]',
+          message: 'console.log() is not allowed in source code.',
+        },
+        {
+          selector: 'CallExpression[callee.object.name="Object"][callee.property.name="entries"]',
+          message: 'Do not use Object.entries for performance. Consider using Object.keys() or Object.values().',
+        },
+      ],
     },
   },
-];
+
+  {
+    rules: {
+      'no-var': 'error',
+      'no-implicit-coercion': 'error',
+      curly: ['error', 'all'],
+      eqeqeq: ['error', 'always', { null: 'ignore' }],
+      'prefer-object-has-own': 'error',
+      'no-warning-comments': ['warn', { terms: ['TODO', 'FIXME', 'XXX', 'BUG'], location: 'anywhere' }],
+    },
+  },
+]);
