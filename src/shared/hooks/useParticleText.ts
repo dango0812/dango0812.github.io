@@ -1,16 +1,11 @@
 import { type RefObject, useEffect, useRef } from 'react';
-import { ParticleText } from 'canvas-text-particle';
+import { ParticleText, type ParticleTextOptions } from 'canvas-text-particle';
 
 import { useResizeObserver } from './useResizeObserver';
 
-interface ParticleTextOptions {
-  text: string[];
-  color: string;
-  fontSizeRatio?: number;
-}
-
 /**
- * canvas 요소에 파티클 텍스트 애니메이션을 렌더링하는 커스텀 훅
+ * canvas-text-particle 라이브러리 관리를 위한 커스텀 훅
+ * @see https://github.com/dango0812/canvas-text-particle
  *
  * @example
  * ```tsx
@@ -30,7 +25,7 @@ export function useParticleText(canvasRef: RefObject<HTMLCanvasElement | null>, 
     }
 
     const { width, height } = entry.contentRect;
-    const { text, color, fontSizeRatio = 12 } = optionsRef.current;
+    const { text, color, fontSize = 12, spread = 0.9 } = optionsRef.current;
 
     particleRef.current?.destroy();
     canvas.width = width;
@@ -38,7 +33,8 @@ export function useParticleText(canvasRef: RefObject<HTMLCanvasElement | null>, 
 
     particleRef.current = new ParticleText(canvas, {
       text,
-      fontSize: Math.floor(width / fontSizeRatio),
+      fontSize: Math.floor(width / fontSize),
+      spread,
       color,
     }).mount();
   });
