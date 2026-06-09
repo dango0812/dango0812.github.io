@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  base: '/dango0812.github.io/',
   plugins: [tailwindcss(), svgr(), react()],
   resolve: {
     alias: {
