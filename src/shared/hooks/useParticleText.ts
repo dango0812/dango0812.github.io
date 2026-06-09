@@ -18,6 +18,24 @@ export function useParticleText(canvasRef: RefObject<HTMLCanvasElement | null>, 
   const optionsRef = useRef(options);
   optionsRef.current = options;
 
+  const destroyParticleText = () => {
+    const particle = particleRef.current;
+
+    if (!particle) {
+      return;
+    }
+
+    particleRef.current = null;
+
+    try {
+      particle.destroy();
+    } catch (error) {
+      if (!(error instanceof DOMException && error.name === 'NotFoundError')) {
+        throw error;
+      }
+    }
+  };
+
   useResizeObserver(canvasRef, entry => {
     const canvas = canvasRef.current;
     if (!canvas) {
@@ -25,9 +43,13 @@ export function useParticleText(canvasRef: RefObject<HTMLCanvasElement | null>, 
     }
 
     const { width, height } = entry.contentRect;
+    if (width <= 0 || height <= 0) {
+      return;
+    }
+
     const { text, color, fontSize = 12, spread = 0.9 } = optionsRef.current;
 
-    particleRef.current?.destroy();
+    destroyParticleText();
     canvas.width = width;
     canvas.height = height;
 
@@ -41,7 +63,7 @@ export function useParticleText(canvasRef: RefObject<HTMLCanvasElement | null>, 
 
   useEffect(() => {
     return () => {
-      particleRef.current?.destroy();
+      destroyParticleText();
     };
   }, []);
 }
