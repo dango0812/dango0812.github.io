@@ -3,20 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 export interface VideoPlayer {
   videoRef: React.RefObject<HTMLVideoElement | null>;
   isReady: boolean;
-  onLoadedMetadata: () => void;
 }
 
-/**
- * video 요소의 메타데이터 로딩 완료를 감지하는 커스텀 훅
- *
- * @example
- * ```tsx
- * const { videoRef, isReady, onLoadedMetadata } = useVideoMetadata();
- * <video ref={videoRef} onLoadedMetadata={onLoadedMetadata} src="..." />
- * ```
- */
-export function useVideoMetadata(): VideoPlayer {
+export function useVideoMetadata(onReady?: () => void): VideoPlayer {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const onReadyRef = useRef(onReady);
+  onReadyRef.current = onReady;
+
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -25,20 +18,20 @@ export function useVideoMetadata(): VideoPlayer {
       return;
     }
 
-    // video error는 non-bubbling이라 React 합성 이벤트로 전달되지 않으므로 네이티브로 등록
-    const handleError = () => setIsReady(true);
-    video.addEventListener('error', handleError);
+    const handleReady = () => {
+      setIsReady(true);
+      onReadyRef.current?.();
+    };
 
-    // 네트워크 이슈 등으로 아무 이벤트도 오지 않을 경우 폴백
-    const timeout = setTimeout(() => setIsReady(true), 5000);
+    // video error는 non-bubbling이라 React 합성 이벤트로 전달되지 않으므로 네이티브로 등록
+    video.addEventListener('loadedmetadata', handleReady);
+    video.addEventListener('error', handleReady);
 
     return () => {
-      video.removeEventListener('error', handleError);
-      clearTimeout(timeout);
+      video.removeEventListener('loadedmetadata', handleReady);
+      video.removeEventListener('error', handleReady);
     };
   }, []);
 
-  const onLoadedMetadata = () => setIsReady(true);
-
-  return { videoRef, isReady, onLoadedMetadata };
+  return { videoRef, isReady };
 }
