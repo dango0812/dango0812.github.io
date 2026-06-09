@@ -19,29 +19,31 @@ export function VideoPlayerPageContent() {
       >
         <div
           className={cn('flex flex-col gap-2', {
-            'md:w-48 md:shrink-0': isVertical,
+            'md:w-56 md:shrink-0': isVertical,
           })}
         >
           <span className="text-sm font-medium tracking-widest text-gray-500">DEMO</span>
-          <h1 id="demo-title" className="wrap-break-word text-3xl font-bold text-gray-900">
+          <h1 id="demo-title" className="break-keep text-3xl font-bold text-gray-900">
             {description}
           </h1>
         </div>
 
         <section className="flex flex-1 justify-center" aria-label="데모 영상">
-          <video
-            controls
-            playsInline
-            preload="metadata"
-            title={description}
-            aria-label={description}
-            className={cn('rounded-3xl', {
-              'h-[85vh] w-auto': isVertical,
-              'h-full w-full': isHorizontal,
-            })}
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
+          <div className="overflow-hidden rounded-3xl">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              title={description}
+              aria-label={description}
+              className={cn('block', {
+                'h-[85vh] w-auto': isVertical,
+                'w-full': isHorizontal,
+              })}
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </video>
+          </div>
         </section>
       </article>
     </main>

@@ -9,7 +9,6 @@ import VideoPlayerPage from '@/pages/video-player/VideoPlayerPage';
 
 import './globals.css';
 
-// slug에 해당하는 video item을 반환하는 함수
 const getVideoItemBySlug = (slug: string) => {
   return VIDEO_DEMO_ITEMS.find(item => item.slug === slug);
 };
@@ -27,7 +26,6 @@ const router = createBrowserRouter([
       if (!videoItem) {
         return redirect('/404');
       }
-
       return videoItem;
     },
   },
