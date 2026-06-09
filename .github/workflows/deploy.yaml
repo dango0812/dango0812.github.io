@@ -20,7 +20,7 @@ jobs:
       # 의존성 설치 및 빌드
       - name: Install and Build
         run: |
-          pnpm install
+          pnpm install --dangerously-allow-all-builds
           pnpm run build
 
       # GitHub Pages 배포
