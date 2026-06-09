@@ -1,25 +1,19 @@
 import { useVideoMetadata } from '@shared/hooks/useVideoMetadata';
-import { Skeleton } from '@shared/ui/Skeleton';
 import { cn } from '@shared/lib/tailwind';
+import { Skeleton } from '@shared/ui/Skeleton';
 
-import type { Demo } from './config';
+import { VideoDemoItem } from '@/shared/model/video';
 
 interface VideoPlayerPageContentProps {
-  demo: Demo | undefined;
+  videoItem: VideoDemoItem;
 }
 
-export function VideoPlayerPageContent({ demo }: VideoPlayerPageContentProps) {
-  const { videoRef, isReady, onLoadedMetadata } = useVideoMetadata();
+export function VideoPlayerPageContent({ videoItem }: VideoPlayerPageContentProps) {
+  const { videoRef, isReady } = useVideoMetadata();
 
-  if (!demo) {
-    return (
-      <main className="flex h-screen items-center justify-center">
-        <p className="text-gray-600">데모를 찾을 수 없습니다.</p>
-      </main>
-    );
-  }
+  const { description, videoSrc, orientation } = videoItem;
 
-  const isPortrait = demo.orientation === 'portrait';
+  const isPortrait = orientation === 'portrait';
 
   return (
     <main className="flex min-h-screen items-center justify-center px-8 py-16">
@@ -33,7 +27,7 @@ export function VideoPlayerPageContent({ demo }: VideoPlayerPageContentProps) {
         <header className={cn('flex flex-col gap-2', isPortrait && 'md:w-48 md:shrink-0')}>
           <span className="text-sm font-medium tracking-widest text-gray-500">DEMO</span>
           <h1 id="demo-title" className="text-3xl font-bold text-gray-900">
-            {demo.title}
+            {description}
           </h1>
         </header>
 
@@ -44,17 +38,16 @@ export function VideoPlayerPageContent({ demo }: VideoPlayerPageContentProps) {
 
           <video
             ref={videoRef}
-            src={demo.videoSrc}
+            src={videoSrc}
             controls
             playsInline
             preload="metadata"
-            onLoadedMetadata={onLoadedMetadata}
-            title={`${demo.title} 구현 영상`}
-            aria-label={`${demo.title} 구현 영상`}
+            title={`${description} 구현 영상`}
+            aria-label={`${description} 구현 영상`}
             className={cn(
               !isReady && 'absolute aspect-9/16 w-64 opacity-0 pointer-events-none',
               isReady && 'rounded-3xl shadow-2xl',
-              isReady && isPortrait && 'h-[75vh] w-auto',
+              isReady && isPortrait && 'h-[85vh] w-auto',
               isReady && !isPortrait && 'w-full'
             )}
           />
