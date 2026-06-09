@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib/tailwind';
+import { cn } from '../tailwind';
 
 describe('cn', () => {
   it('단일 클래스를 그대로 반환한다', () => {
