@@ -36,11 +36,6 @@ jobs:
 
       - run: pnpm build
 
-      # GitHub Pages는 정적 파일 서버라 존재하지 않는 경로 접근 시 404.html을 반환함
-      # index.html을 404.html로 복사해두면 SPA 라우팅이 정상 동작
-      - name: Copy index.html to 404.html for SPA routing
-        run: cp dist/index.html dist/404.html
-
       # 빌드 결과물을 GitHub Pages artifact로 업로드
       - uses: actions/upload-pages-artifact@v3
         with:

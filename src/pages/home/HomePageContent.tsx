@@ -3,7 +3,7 @@ import GithubIcon from '@assets/icons/github.svg?react';
 import { useParticleText } from '@shared/hooks/useParticleText';
 import { Mail, Rss } from 'lucide-react';
 
-const PARTICLE_TEXT = ['Frontend developer', 'Donggyu'];
+const PARTICLE_TEXT = 'Developer, Donggyu';
 
 const SOCIAL_LINKS = [
   { href: 'https://github.com/dango0812', label: 'GitHub', icon: GithubIcon },
@@ -16,13 +16,15 @@ export function HomePageContent() {
 
   useParticleText(canvasRef, {
     text: PARTICLE_TEXT,
+    fontSize: 20,
+    spread: 0.7,
     color: getComputedStyle(document.documentElement).getPropertyValue('--color-green-500').trim(),
   });
 
   return (
     <div className="flex h-screen flex-col items-center justify-center">
       <main className="w-full">
-        <canvas ref={canvasRef} role="img" aria-label="Frontend developer, Donggyu" className="aspect-3/1 w-full" />
+        <canvas ref={canvasRef} role="img" aria-label="Developer, Donggyu" className="aspect-3/1 w-full" />
       </main>
 
       <nav aria-label="소셜 링크" className="flex gap-10">
